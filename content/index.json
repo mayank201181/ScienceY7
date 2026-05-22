@@ -1,0 +1,14 @@
+{
+  "course": "Year 7 Science — Tanglin (IGCSE pathway)",
+  "topics": [
+    { "code": "IS", "title": "Introduction to Science", "emoji": "🔬", "questionCount": 30, "flashcardCount": 16 },
+    { "code": "CS", "title": "Cells to Systems", "emoji": "🧫", "questionCount": 30, "flashcardCount": 16 },
+    { "code": "MS", "title": "Matter and Separation", "emoji": "⚗️", "questionCount": 30, "flashcardCount": 16 },
+    { "code": "EE", "title": "Electricity and Energy", "emoji": "⚡", "questionCount": 30, "flashcardCount": 16 },
+    { "code": "EI", "title": "Ecological Interactions", "emoji": "🌿", "questionCount": 30, "flashcardCount": 16 },
+    { "code": "PM", "title": "The Particle Model", "emoji": "🧊", "questionCount": 30, "flashcardCount": 16 },
+    { "code": "RV", "title": "Reproduction and Variation", "emoji": "🧬", "questionCount": 30, "flashcardCount": 16 },
+    { "code": "WS", "title": "Waves and Sound", "emoji": "🔊", "questionCount": 30, "flashcardCount": 16 },
+    { "code": "AE", "title": "Atoms and Elements", "emoji": "⚛️", "questionCount": 30, "flashcardCount": 16 }
+  ]
+}

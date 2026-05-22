@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vanshika's Science Revision — Year 7</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <button id="homeBtn" class="brand" title="Home">
+      <span class="logo">🔬</span>
+      <span class="brand-text">Year 7 Science Revision</span>
+    </button>
+    <div class="exam-countdown" id="countdown"></div>
+  </header>
+
+  <!-- HOME / TOPIC PICKER -->
+  <main id="view-home" class="view">
+    <section class="hero">
+      <h1>Hi Vanshika 👋</h1>
+      <p class="hero-sub">Pick a topic to revise. Each one has a <b>Study Guide</b>, <b>Flashcards</b>, and a <b>Quiz</b> with three levels.</p>
+    </section>
+    <div id="topicGrid" class="topic-grid"></div>
+    <section class="exam-info">
+      <h3>📅 Your exams</h3>
+      <ul>
+        <li><b>Paper 1</b> — Fri 12 June (45 min): 60 multiple-choice questions on content.</li>
+        <li><b>Paper 2</b> — Tue 16 June (45 min): 45 marks of short-answer + skills (graphs, conclusions).</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- TOPIC HUB -->
+  <main id="view-topic" class="view hidden">
+    <button class="back" data-go="home">← All topics</button>
+    <div class="topic-head">
+      <span class="topic-badge" id="topicBadge"></span>
+      <h1 id="topicTitle"></h1>
+      <p id="topicSubtitle" class="muted"></p>
+    </div>
+    <div class="mode-tabs">
+      <button class="tab" data-mode="guide">📖 Study Guide</button>
+      <button class="tab" data-mode="flash">🃏 Flashcards</button>
+      <button class="tab" data-mode="quiz">📝 Quiz</button>
+      <button class="tab" data-mode="mistakes">⚠️ Exam Mistakes</button>
+    </div>
+    <div id="modeBody" class="mode-body"></div>
+  </main>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <footer class="footer">Made with care for Vanshika · Year 7 IGCSE Science · Tanglin</footer>
+
+  <script src="js/content.js"></script>
+  <script src="js/grade.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
