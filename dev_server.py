@@ -1,49 +1,25 @@
-"""Local dev server: serves the static site and the /api/grade endpoint.
+"""Local dev server: serves the static site for quick previewing on your Mac.
 
-Run:  source .venv/bin/activate && python dev_server.py
-Then open http://localhost:8000
+Run:  python dev_server.py   →  open http://localhost:8000
 
-If ANTHROPIC_API_KEY is set in your environment, short-answer grading uses
-Claude; otherwise it falls back to the offline keyword heuristic.
+This serves the static files only. Short-answer grading falls back to the
+offline keyword check locally (the browser handles that automatically).
+To test the real Claude-powered grading locally, use the Vercel dev server
+instead:  npx vercel dev   (it runs the api/*.js functions with your key).
 """
-import json
 import os
-import sys
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 
-_HERE = os.path.dirname(os.path.abspath(__file__))
-os.chdir(_HERE)  # serve the site regardless of where we're launched from
-sys.path.insert(0, os.path.join(_HERE, "api"))
-from grade import grade  # noqa: E402
-from generate import generate  # noqa: E402
-
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 PORT = int(os.environ.get("PORT", 8000))
 
 
 class Handler(SimpleHTTPRequestHandler):
-    def do_POST(self):
-        route = self.path.rstrip("/")
-        if route in ("/api/grade", "/api/generate"):
-            length = int(self.headers.get("Content-Length", 0))
-            try:
-                payload = json.loads(self.rfile.read(length) or b"{}")
-                result = grade(payload) if route == "/api/grade" else generate(payload)
-            except Exception as e:  # noqa: BLE001
-                result = {"verdict": "partial", "feedback": "Server hiccup.", "questions": [], "error": str(e)}
-            body = json.dumps(result).encode()
-            self.send_response(200)
-            self.send_header("Content-Type", "application/json")
-            self.end_headers()
-            self.wfile.write(body)
-        else:
-            self.send_error(404)
-
     def end_headers(self):
         self.send_header("Cache-Control", "no-store")
         super().end_headers()
 
 
 if __name__ == "__main__":
-    key = "set ✅" if os.environ.get("ANTHROPIC_API_KEY") else "NOT set (offline keyword grading)"
-    print(f"Serving http://localhost:{PORT}  ·  ANTHROPIC_API_KEY {key}")
+    print(f"Serving http://localhost:{PORT}  (static preview; AI grading runs in production)")
     ThreadingHTTPServer(("0.0.0.0", PORT), Handler).serve_forever()
