@@ -18,7 +18,11 @@
     },
     {
       "heading": "Food webs and energy loss",
-      "html": "<ul><li>A <span class='kterm'>food web</span> is several food chains linked together, showing that animals eat more than one thing.</li><li>Only about <b>10%</b> of energy passes to the next level; the rest is lost as heat, movement and waste.</li><li>That is why food chains are usually short (3–5 links) and there are fewer top predators than producers.</li></ul>"
+      "html": "<ul><li>A <span class='kterm'>food web</span> is several food chains linked together, showing that animals eat more than one thing.</li><li>Only about <b>10%</b> of energy passes to the next level; the rest is lost as heat, movement and waste.</li><li>That is why food chains are usually short (3–5 links) and there are fewer top predators than producers.</li></ul>",
+      "diagram": {
+        "svg": "<svg viewBox='0 0 430 178' xmlns='http://www.w3.org/2000/svg'><style>.o{fill:#e6f7ef;stroke:#2b9d6b;stroke-width:2}.d{stroke:#2b9d6b;stroke-width:1.5}.n{font:bold 12px Nunito;fill:#1f2a44}.l{font:10px Nunito;fill:#3f6fd1}.w{font:9px Nunito;fill:#e0524d}</style><polygon class='o' points='180,15 305,160 55,160'/><line class='d' x1='150' y1='50' x2='210' y2='50'/><line class='d' x1='115' y1='90' x2='245' y2='90'/><line class='d' x1='85' y1='125' x2='275' y2='125'/><text class='n' x='180' y='41' text-anchor='middle'>10</text><text class='n' x='180' y='76' text-anchor='middle'>100</text><text class='n' x='180' y='112' text-anchor='middle'>1000</text><text class='n' x='180' y='148' text-anchor='middle'>10 000</text><text class='l' x='312' y='41'>top predator</text><text class='l' x='312' y='76'>2nd consumer</text><text class='l' x='312' y='112'>1st consumer</text><text class='l' x='312' y='148'>producers</text><text class='w' x='6' y='150'>~90% energy lost</text><text class='w' x='6' y='162'>at each level (heat,</text><text class='w' x='6' y='174'>movement, waste)</text></svg>",
+        "caption": "Energy (in units) falls to about a tenth at each level up — so there is far less at the top, and only a few top predators."
+      }
     },
     {
       "heading": "Interdependence — what happens if numbers change",

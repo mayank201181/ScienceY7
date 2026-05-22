@@ -35,7 +35,11 @@
     },
     {
       "heading": "Chromatography",
-      "html": "<ul><li>Separates a mixture of <span class='kterm'>coloured substances</span> (e.g. inks, dyes).</li><li>A spot of ink is placed on paper above the solvent; as the solvent rises, different dyes travel different distances depending on how soluble they are.</li><li>More soluble dyes travel <b>further</b> up the paper.</li><li>The pattern of spots is a <span class='kterm'>chromatogram</span>.</li></ul>"
+      "html": "<ul><li>Separates a mixture of <span class='kterm'>coloured substances</span> (e.g. inks, dyes).</li><li>A spot of ink is placed on paper above the solvent; as the solvent rises, different dyes travel different distances depending on how soluble they are.</li><li>More soluble dyes travel <b>further</b> up the paper.</li><li>The pattern of spots is a <span class='kterm'>chromatogram</span>.</li></ul>",
+      "diagram": {
+        "svg": "<svg viewBox='0 0 250 185' xmlns='http://www.w3.org/2000/svg'><style>.s{stroke:#1f2a44;stroke-width:2;fill:none}.t{font:9px Nunito;fill:#1f2a44}.p{font:9px Nunito;fill:#3f6fd1}</style><path class='s' d='M55 110 L55 172 L185 172 L185 110'/><rect x='57' y='150' width='126' height='22' fill='#cdeafd'/><text class='t' x='188' y='166'>solvent</text><rect x='105' y='30' width='34' height='134' fill='#fff' stroke='#1f2a44' stroke-width='1.5'/><line x1='105' y1='143' x2='139' y2='143' stroke='#1f2a44' stroke-dasharray='3'/><text class='t' x='143' y='146'>start line (pencil)</text><line x1='105' y1='44' x2='139' y2='44' stroke='#6b7790' stroke-dasharray='3'/><text class='t' x='143' y='47'>solvent front</text><ellipse cx='122' cy='143' rx='8' ry='4' fill='#8e44ad'/><ellipse cx='122' cy='116' rx='7' ry='4' fill='#e0524d'/><ellipse cx='122' cy='88' rx='7' ry='4' fill='#2b9d6b'/><ellipse cx='122' cy='62' rx='7' ry='4' fill='#5b8def'/><text class='p' x='150' y='92'>dyes separate</text><text class='p' x='150' y='104'>by solubility</text></svg>",
+        "caption": "The dyes in the ink rise with the solvent; the most soluble travels furthest. The start spot must sit above the solvent."
+      }
     }
   ],
   "flashcards": [

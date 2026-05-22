@@ -27,7 +27,12 @@
     },
     {
       "heading": "Hearing and the ear",
-      "html": "<ul><li>Sound waves enter the ear and make the <span class='kterm'>eardrum</span> vibrate.</li><li>Tiny bones pass the vibrations to the <span class='kterm'>cochlea</span>, which turns them into nerve signals sent to the brain.</li><li>Humans hear roughly <b>20 Hz to 20,000 Hz</b>. Sounds above this are <span class='kterm'>ultrasound</span>; we lose the ability to hear high frequencies as we age.</li><li>Very loud sounds can damage the ear — wear ear protection.</li></ul>"
+      "html": "<ul><li>Sound waves enter the ear and make the <span class='kterm'>eardrum</span> vibrate.</li><li>Tiny bones pass the vibrations to the <span class='kterm'>cochlea</span>, which turns them into nerve signals sent to the brain.</li><li>Humans hear roughly <b>20 Hz to 20,000 Hz</b>. Sounds above this are <span class='kterm'>ultrasound</span>; we lose the ability to hear high frequencies as we age.</li><li>Very loud sounds can damage the ear — wear ear protection.</li></ul>",
+      "diagram": {
+        "svg": "<svg viewBox='0 0 380 175' xmlns='http://www.w3.org/2000/svg'><style>.s{stroke:#1f2a44;stroke-width:2;fill:none}.t{font:10px Nunito;fill:#1f2a44}.lab{font:bold 10px Nunito;fill:#3f6fd1}</style><path d='M28 55 q-18 45 12 88 q34 -4 38 -44 q-6 -50 -50 -44 z' fill='#fde6ef' stroke='#e0524d' stroke-width='2'/><text class='t' x='8' y='160'>pinna (outer ear)</text><text class='lab' x='6' y='42'>sound in →</text><rect x='70' y='78' width='62' height='26' fill='#eaf1fe' stroke='#1f2a44' stroke-width='2'/><text class='t' x='74' y='124'>ear canal</text><line x1='134' y1='70' x2='134' y2='112' stroke='#e0524d' stroke-width='4'/><text class='lab' x='104' y='60'>eardrum</text><circle cx='150' cy='86' r='5' fill='#f0a35a' stroke='#1f2a44'/><circle cx='164' cy='97' r='5' fill='#f0a35a' stroke='#1f2a44'/><circle cx='178' cy='86' r='5' fill='#f0a35a' stroke='#1f2a44'/><text class='t' x='150' y='74'>tiny bones</text><path d='M250 96 a22 22 0 1 1 -16 -21 a14 14 0 1 1 10 14 a7 7 0 1 1 -5 -7' fill='none' stroke='#5b8def' stroke-width='3'/><text class='lab' x='222' y='150'>cochlea</text><line x1='190' y1='90' x2='214' y2='92' class='s'/><line x1='276' y1='92' x2='345' y2='92' stroke='#2b9d6b' stroke-width='2.5'/><text class='lab' x='300' y='84'>→ brain</text></svg>",
+        "caption": "Sound funnels in, vibrates the eardrum, the bones pass it to the cochlea, which sends signals to the brain."
+      },
+      "mnemonic": "The sound's journey through the ear: <b>Drum → Bones → Cochlea → Brain</b>."
     },
     {
       "heading": "Echoes and the speed of sound",

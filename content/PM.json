@@ -22,7 +22,11 @@
     },
     {
       "heading": "Heating, cooling and energy",
-      "html": "<ul><li>Heating gives particles more <span class='kterm'>kinetic energy</span> so they move/vibrate faster.</li><li>During melting or boiling, the temperature <b>stays constant</b> even though heating continues — the energy is used to break the forces between particles, not to raise the temperature.</li><li>This gives the flat parts (<span class='kterm'>plateaus</span>) on a heating/cooling graph.</li></ul>"
+      "html": "<ul><li>Heating gives particles more <span class='kterm'>kinetic energy</span> so they move/vibrate faster.</li><li>During melting or boiling, the temperature <b>stays constant</b> even though heating continues — the energy is used to break the forces between particles, not to raise the temperature.</li><li>This gives the flat parts (<span class='kterm'>plateaus</span>) on a heating/cooling graph.</li></ul>",
+      "diagram": {
+        "svg": "<svg viewBox='0 0 370 185' xmlns='http://www.w3.org/2000/svg'><style>.ax{stroke:#1f2a44;stroke-width:1.5}.c{fill:none;stroke:#e0524d;stroke-width:3}.t{font:10px Nunito;fill:#1f2a44}.p{font:bold 9px Nunito;fill:#3f6fd1}.st{font:bold 9px Nunito;fill:#2b9d6b}</style><line class='ax' x1='42' y1='18' x2='42' y2='152'/><line class='ax' x1='42' y1='152' x2='352' y2='152'/><text class='t' x='12' y='95' transform='rotate(-90 12 95)'>Temperature →</text><text class='t' x='150' y='174'>Time / heat added →</text><polyline class='c' points='42,140 92,106 152,106 202,60 282,60 332,32'/><line stroke='#3f6fd1' stroke-dasharray='3' stroke-width='1' x1='122' y1='106' x2='122' y2='152'/><line stroke='#3f6fd1' stroke-dasharray='3' stroke-width='1' x1='242' y1='60' x2='242' y2='152'/><text class='p' x='98' y='100'>melting</text><text class='p' x='208' y='54'>boiling</text><text class='st' x='52' y='134'>solid</text><text class='st' x='150' y='90'>liquid</text><text class='st' x='296' y='46'>gas</text></svg>",
+        "caption": "The line goes flat while the substance melts and boils — the heat is breaking the forces between particles, not raising the temperature."
+      }
     },
     {
       "heading": "Diffusion",
