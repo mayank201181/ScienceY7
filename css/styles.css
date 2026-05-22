@@ -126,6 +126,19 @@ body {
 .level-pill.advanced.active { background: var(--bad); border-color: var(--bad); }
 .qcount { margin-left: auto; font-size: 13px; color: var(--muted); font-weight: 700; }
 
+/* Question-number strip */
+.qnav { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+.qnum {
+  width: 32px; height: 32px; border-radius: 8px; border: 1px solid var(--line);
+  background: var(--card); color: var(--ink); font: inherit; font-weight: 700; font-size: 13px;
+  cursor: pointer; padding: 0; line-height: 1;
+}
+.qnum:hover { border-color: var(--brand); }
+.qnum.current { box-shadow: 0 0 0 2px var(--brand); border-color: var(--brand); }
+.qnum.answered.correct { background: var(--good-bg); border-color: var(--good); color: var(--good); }
+.qnum.answered.partial { background: var(--partial-bg); border-color: var(--partial); color: var(--partial); }
+.qnum.answered.wrong { background: var(--bad-bg); border-color: var(--bad); color: var(--bad); }
+
 .q-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; box-shadow: var(--shadow); }
 .q-meta { display: flex; gap: 8px; align-items: center; font-size: 12px; font-weight: 800; color: var(--muted); margin-bottom: 8px; }
 .q-text { font-size: 18px; font-weight: 700; margin-bottom: 14px; }

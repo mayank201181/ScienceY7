@@ -54,6 +54,7 @@ async function openTopic(code) {
   $('#topicBadge').textContent = state.topic.code;
   $('#topicTitle').textContent = state.topic.title;
   $('#topicSubtitle').textContent = state.topic.subtitle || '';
+  state.answers = {};  // fresh answer memory per topic
   setMode('guide');
 }
 
@@ -131,6 +132,7 @@ function renderQuiz() {
       ${levels.map(l => `<button class="level-pill ${l}" data-level="${l}">${l[0].toUpperCase() + l.slice(1)}</button>`).join('')}
       <span class="qcount" id="qcount"></span>
     </div>
+    <div id="qnav" class="qnav"></div>
     <div id="qhost"></div>
     <div style="margin-top:14px;text-align:center">
       <button class="btn ghost" id="genMore">✨ Generate more practice</button>
@@ -154,8 +156,8 @@ async function generateMore() {
     if (data.questions && data.questions.length) {
       state.topic.questions.push(...data.questions);          // keep for this session
       state.quiz.pool.push(...shuffle(data.questions.slice()));
-      const all = state.topic.questions.filter(q => q.level === state.level);
-      $('#qcount').textContent = `${all.length} questions`;
+      $('#qcount').textContent = `${state.quiz.pool.length} questions`;
+      renderNav();
       toast(`Added ${data.questions.length} new ${state.level} questions!`);
     } else {
       toast(data.error ? 'AI generation needs the API key set (works once deployed).' : 'No new questions returned.');
@@ -178,54 +180,105 @@ function startQuiz() {
   document.querySelectorAll('.level-pill').forEach(p => p.classList.toggle('active', p.dataset.level === state.level));
   const all = (state.topic.questions || []).filter(q => q.level === state.level);
   state.quiz = { pool: shuffle(all.slice()), idx: 0 };
+  if (!state.answers) state.answers = {};
   $('#qcount').textContent = `${all.length} questions`;
+  renderNav();
   drawQuestion();
+}
+
+// Clickable strip of question numbers at the top of the quiz.
+function renderNav() {
+  const nav = $('#qnav');
+  if (!nav) return;
+  nav.innerHTML = '';
+  state.quiz.pool.forEach((q, i) => {
+    const b = el('button', 'qnum', String(i + 1));
+    const ans = state.answers[q.id];
+    if (ans) b.classList.add('answered', ans.verdict);
+    if (i === state.quiz.idx) b.classList.add('current');
+    b.onclick = () => { state.quiz.idx = i; drawQuestion(); };
+    nav.appendChild(b);
+  });
+}
+
+function updateNav() {
+  const nav = $('#qnav');
+  if (!nav) return;
+  [...nav.children].forEach((b, i) => {
+    const ans = state.answers[state.quiz.pool[i].id];
+    b.className = 'qnum' + (ans ? ' answered ' + ans.verdict : '') + (i === state.quiz.idx ? ' current' : '');
+  });
 }
 
 function drawQuestion() {
   const host = $('#qhost');
   const { pool, idx } = state.quiz;
   if (!pool.length) { host.innerHTML = '<p class="muted">No questions at this level yet.</p>'; return; }
-  const q = pool[idx % pool.length];
+  const q = pool[idx];
   state.quiz.current = q;
+  const saved = state.answers[q.id];
   const card = el('div', 'q-card');
-  card.appendChild(el('div', 'q-meta', `${q.level.toUpperCase()} · ${q.type === 'mcq' ? 'Multiple choice' : 'Short answer'} ${q.marks ? '· ' + q.marks + ' mark' + (q.marks > 1 ? 's' : '') : ''} · Q${(idx % pool.length) + 1}/${pool.length}`));
+  card.appendChild(el('div', 'q-meta', `${q.level.toUpperCase()} · ${q.type === 'mcq' ? 'Multiple choice' : 'Short answer'} ${q.marks ? '· ' + q.marks + ' mark' + (q.marks > 1 ? 's' : '') : ''} · Q${idx + 1}/${pool.length}`));
   card.appendChild(el('div', 'q-text', q.q));
 
+  let optList = null;
   if (q.type === 'mcq') {
-    const list = el('div', 'opt-list');
+    optList = el('div', 'opt-list');
     q.options.forEach((opt, oi) => {
       const b = el('button', 'opt', opt);
-      b.onclick = () => submitMCQ(q, oi, list);
-      list.appendChild(b);
+      b.onclick = () => submitMCQ(q, oi, optList);
+      optList.appendChild(b);
     });
-    card.appendChild(list);
+    card.appendChild(optList);
   } else {
     const ta = el('textarea', 'short-input');
     ta.id = 'shortAns';
     ta.placeholder = 'Write your answer here…';
+    if (saved) ta.value = saved.text || '';
     card.appendChild(ta);
   }
 
   const actions = el('div', 'q-actions');
+  const prev = el('button', 'btn ghost', '← Prev');
+  prev.disabled = idx === 0;
+  prev.onclick = () => { if (state.quiz.idx > 0) { state.quiz.idx--; drawQuestion(); } };
+  actions.appendChild(prev);
+
   if (q.type === 'short') {
-    const submit = el('button', 'btn', 'Check my answer');
+    const submit = el('button', 'btn', saved ? 'Re-check' : 'Check my answer');
     submit.onclick = () => submitShort(q, submit);
     actions.appendChild(submit);
   }
   const hintBtn = el('button', 'btn ghost', '💡 Hint');
   hintBtn.onclick = () => {
     if (card.querySelector('.hint-box')) return;
-    card.querySelector('.q-actions').insertAdjacentHTML('afterend', `<div class="hint-box"><b>Hint:</b> ${q.hint || 'Think about the key words from your study guide.'}</div>`);
+    actions.insertAdjacentHTML('afterend', `<div class="hint-box"><b>Hint:</b> ${q.hint || 'Think about the key words from your study guide.'}</div>`);
   };
   actions.appendChild(hintBtn);
-  const skip = el('button', 'btn ghost', 'Next →');
-  skip.onclick = nextQuestion;
-  actions.appendChild(skip);
+
+  const next = el('button', 'btn ghost', 'Next →');
+  next.disabled = idx >= pool.length - 1;
+  next.onclick = () => { if (state.quiz.idx < pool.length - 1) { state.quiz.idx++; drawQuestion(); } };
+  actions.appendChild(next);
   card.appendChild(actions);
 
   host.innerHTML = '';
   host.appendChild(card);
+
+  // Restore a previously-given answer so she can review it.
+  if (saved) {
+    if (q.type === 'mcq' && optList) {
+      [...optList.children].forEach((b, i) => {
+        b.disabled = true;
+        if (i === q.answer) b.classList.add('correct');
+        else if (i === saved.chosen) b.classList.add('wrong');
+        if (i === saved.chosen) b.classList.add('chosen');
+      });
+    }
+    showVerdict(saved.res, q);
+  }
+  updateNav();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function submitMCQ(q, chosen, list) {
@@ -235,7 +288,9 @@ function submitMCQ(q, chosen, list) {
     if (i === q.answer) b.classList.add('correct');
     else if (i === chosen) b.classList.add('wrong');
   });
+  state.answers[q.id] = { type: 'mcq', chosen, verdict: res.verdict, res };
   showVerdict(res, q);
+  updateNav();
 }
 
 async function submitShort(q, btn) {
@@ -243,8 +298,11 @@ async function submitShort(q, btn) {
   btn.disabled = true;
   btn.innerHTML = '<span class="spinner"></span> Checking…';
   const res = await Grader.gradeShort(q, answer);
-  btn.innerHTML = 'Check my answer';
+  btn.disabled = false;
+  btn.innerHTML = 'Re-check';
+  state.answers[q.id] = { type: 'short', text: answer, verdict: res.verdict, res };
   showVerdict(res, q);
+  updateNav();
 }
 
 function showVerdict(res, q) {
@@ -260,13 +318,6 @@ function showVerdict(res, q) {
     v.insertAdjacentHTML('beforeend', `<div class="exam-mistake">⚠️ Common mistake: ${q.examMistake}</div>`);
   }
   card.appendChild(v);
-  v.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-}
-
-function nextQuestion() {
-  state.quiz.idx++;
-  if (state.quiz.idx % state.quiz.pool.length === 0) state.quiz.pool = shuffle(state.quiz.pool);
-  drawQuestion();
 }
 
 // ---------- common mistakes ----------
