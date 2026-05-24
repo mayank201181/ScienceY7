@@ -5,6 +5,26 @@ const el = (tag, cls, html) => { const n = document.createElement(tag); if (cls)
 
 const state = { topic: null, mode: 'guide', level: 'basic', quiz: {} };
 
+// Persistent answer store — keeps her progress when she switches topics,
+// closes the tab, or comes back another day. Keyed as "<topic>::<qid>".
+const Store = {
+  ANS_KEY: 'vsci_answers_v1',
+  ORD_KEY: 'vsci_order_v1',
+  _ans: null, _ord: null,
+  _loadAns() { if (!this._ans) { try { this._ans = JSON.parse(localStorage.getItem(this.ANS_KEY) || '{}'); } catch { this._ans = {}; } } return this._ans; },
+  _saveAns() { try { localStorage.setItem(this.ANS_KEY, JSON.stringify(this._ans || {})); } catch {} },
+  _loadOrd() { if (!this._ord) { try { this._ord = JSON.parse(localStorage.getItem(this.ORD_KEY) || '{}'); } catch { this._ord = {}; } } return this._ord; },
+  _saveOrd() { try { localStorage.setItem(this.ORD_KEY, JSON.stringify(this._ord || {})); } catch {} },
+  get(topic, qid) { return this._loadAns()[topic + '::' + qid]; },
+  set(topic, qid, val) { this._loadAns()[topic + '::' + qid] = val; this._saveAns(); },
+  getOrder(topic, level) { return this._loadOrd()[topic + '::' + level] || null; },
+  setOrder(topic, level, qids) { this._loadOrd()[topic + '::' + level] = qids; this._saveOrd(); },
+  clearTopicLevel(topic, level, pool) {
+    const a = this._loadAns(); pool.forEach(q => { if (q.level === level) delete a[topic + '::' + q.id]; }); this._saveAns();
+    const o = this._loadOrd(); delete o[topic + '::' + level]; this._saveOrd();
+  }
+};
+
 // ---------- countdown ----------
 function renderCountdown() {
   const days = Math.ceil((EXAM_DATE - new Date()) / 86400000);
@@ -54,7 +74,6 @@ async function openTopic(code) {
   $('#topicBadge').textContent = state.topic.code;
   $('#topicTitle').textContent = state.topic.title;
   $('#topicSubtitle').textContent = state.topic.subtitle || '';
-  state.answers = {};  // fresh answer memory per topic
   setMode('guide');
 }
 
@@ -134,12 +153,23 @@ function renderQuiz() {
     </div>
     <div id="qnav" class="qnav"></div>
     <div id="qhost"></div>
-    <div style="margin-top:14px;text-align:center">
+    <div style="margin-top:14px;text-align:center;display:flex;justify-content:center;gap:10px;flex-wrap:wrap">
       <button class="btn ghost" id="genMore">✨ Generate more practice</button>
+      <button class="btn ghost" id="resetAns" title="Clear your saved answers for this level">↺ Reset answers</button>
     </div>`;
   body.querySelectorAll('.level-pill').forEach(p => p.onclick = () => { state.level = p.dataset.level; startQuiz(); });
   $('#genMore').onclick = generateMore;
+  $('#resetAns').onclick = resetAnswers;
   startQuiz();
+}
+
+function resetAnswers() {
+  if (!confirm(`Clear your saved answers for "${state.topic.title}" — ${state.level} level?`)) return;
+  Store.clearTopicLevel(state.topic.code, state.level, state.quiz.pool);
+  state.quiz.idx = 0;
+  renderNav();
+  drawQuestion();
+  toast('Answers reset for this level.');
 }
 
 async function generateMore() {
@@ -156,6 +186,7 @@ async function generateMore() {
     if (data.questions && data.questions.length) {
       state.topic.questions.push(...data.questions);          // keep for this session
       state.quiz.pool.push(...shuffle(data.questions.slice()));
+      Store.setOrder(state.topic.code, state.level, state.quiz.pool.map(q => q.id));
       $('#qcount').textContent = `${state.quiz.pool.length} questions`;
       renderNav();
       toast(`Added ${data.questions.length} new ${state.level} questions!`);
@@ -179,8 +210,20 @@ function toast(msg) {
 function startQuiz() {
   document.querySelectorAll('.level-pill').forEach(p => p.classList.toggle('active', p.dataset.level === state.level));
   const all = (state.topic.questions || []).filter(q => q.level === state.level);
-  state.quiz = { pool: shuffle(all.slice()), idx: 0 };
-  if (!state.answers) state.answers = {};
+  // Freeze the question order per topic+level so Q1, Q2... stay the same
+  // every visit. Shuffle only the very first time, then save the order.
+  const savedOrder = Store.getOrder(state.topic.code, state.level);
+  let pool;
+  if (savedOrder) {
+    const byId = new Map(all.map(q => [q.id, q]));
+    pool = savedOrder.map(id => byId.get(id)).filter(Boolean);
+    all.forEach(q => { if (!pool.includes(q)) pool.push(q); });   // any new questions go at the end
+    if (pool.length !== savedOrder.length) Store.setOrder(state.topic.code, state.level, pool.map(q => q.id));
+  } else {
+    pool = shuffle(all.slice());
+    Store.setOrder(state.topic.code, state.level, pool.map(q => q.id));
+  }
+  state.quiz = { pool, idx: 0 };
   $('#qcount').textContent = `${all.length} questions`;
   renderNav();
   drawQuestion();
@@ -193,7 +236,7 @@ function renderNav() {
   nav.innerHTML = '';
   state.quiz.pool.forEach((q, i) => {
     const b = el('button', 'qnum', String(i + 1));
-    const ans = state.answers[q.id];
+    const ans = Store.get(state.topic.code, q.id);
     if (ans) b.classList.add('answered', ans.verdict);
     if (i === state.quiz.idx) b.classList.add('current');
     b.onclick = () => { state.quiz.idx = i; drawQuestion(); };
@@ -205,7 +248,7 @@ function updateNav() {
   const nav = $('#qnav');
   if (!nav) return;
   [...nav.children].forEach((b, i) => {
-    const ans = state.answers[state.quiz.pool[i].id];
+    const ans = Store.get(state.topic.code, state.quiz.pool[i].id);
     b.className = 'qnum' + (ans ? ' answered ' + ans.verdict : '') + (i === state.quiz.idx ? ' current' : '');
   });
 }
@@ -216,7 +259,7 @@ function drawQuestion() {
   if (!pool.length) { host.innerHTML = '<p class="muted">No questions at this level yet.</p>'; return; }
   const q = pool[idx];
   state.quiz.current = q;
-  const saved = state.answers[q.id];
+  const saved = Store.get(state.topic.code, q.id);
   const card = el('div', 'q-card');
   card.appendChild(el('div', 'q-meta', `${q.level.toUpperCase()} · ${q.type === 'mcq' ? 'Multiple choice' : 'Short answer'} ${q.marks ? '· ' + q.marks + ' mark' + (q.marks > 1 ? 's' : '') : ''} · Q${idx + 1}/${pool.length}`));
   card.appendChild(el('div', 'q-text', q.q));
@@ -288,7 +331,7 @@ function submitMCQ(q, chosen, list) {
     if (i === q.answer) b.classList.add('correct');
     else if (i === chosen) b.classList.add('wrong');
   });
-  state.answers[q.id] = { type: 'mcq', chosen, verdict: res.verdict, res };
+  Store.set(state.topic.code, q.id, { type: 'mcq', chosen, verdict: res.verdict, res });
   showVerdict(res, q);
   updateNav();
 }
@@ -300,7 +343,7 @@ async function submitShort(q, btn) {
   const res = await Grader.gradeShort(q, answer);
   btn.disabled = false;
   btn.innerHTML = 'Re-check';
-  state.answers[q.id] = { type: 'short', text: answer, verdict: res.verdict, res };
+  Store.set(state.topic.code, q.id, { type: 'short', text: answer, verdict: res.verdict, res });
   showVerdict(res, q);
   updateNav();
 }
