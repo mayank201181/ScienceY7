@@ -6,6 +6,9 @@ answer + skills).
 
 **Live site: https://vanshikascience.vercel.app** (hosted on Vercel; share freely).
 
+The repo on GitHub at <https://github.com/mayank201181/ScienceY7> is connected to
+Vercel — every push to `main` auto-deploys to the live site.
+
 Each of the **9 topics** has:
 
 - **Study Guide** — concepts explained simply, with diagrams and memory tricks (mnemonics)
