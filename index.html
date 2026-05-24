@@ -24,6 +24,16 @@
       <p class="hero-sub">Pick a topic to revise. Each one has a <b>Study Guide</b>, <b>Flashcards</b>, and a <b>Quiz</b> with three levels.</p>
     </section>
     <div id="topicGrid" class="topic-grid"></div>
+
+    <button id="mocksCard" class="mocks-cta">
+      <span class="mocks-emoji">📝</span>
+      <span class="mocks-text">
+        <b>Mock Exam Papers</b>
+        <span class="muted">8 timed papers in the real exam format · 45 minutes each</span>
+      </span>
+      <span class="mocks-arrow">→</span>
+    </button>
+
     <section class="exam-info">
       <h3>📅 Your exams</h3>
       <ul>
@@ -31,6 +41,12 @@
         <li><b>Paper 2</b> — Tue 16 June (45 min): 45 marks of short-answer + skills (graphs, conclusions).</li>
       </ul>
     </section>
+  </main>
+
+  <!-- MOCK PAPERS -->
+  <main id="view-mocks" class="view hidden">
+    <button class="back" data-go="home">← Home</button>
+    <div id="mocksBody"></div>
   </main>
 
   <!-- TOPIC HUB -->

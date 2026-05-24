@@ -380,10 +380,281 @@ function renderMistakes() {
 // ---------- utils ----------
 function shuffle(a) { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
 
+// ============================================================
+// MOCK PAPERS — timed full-exam practice (Paper 1 MCQ, Paper 2 short answer)
+// ============================================================
+const Mocks = (() => {
+  let cached = null;
+  async function load() {
+    if (cached) return cached;
+    const r = await fetch('content/mocks.json');
+    cached = await r.json();
+    return cached;
+  }
+  const k = id => 'vsci_mock_' + id;
+  function get(id) { try { return JSON.parse(localStorage.getItem(k(id)) || 'null'); } catch { return null; } }
+  function put(id, s) { try { localStorage.setItem(k(id), JSON.stringify(s)); } catch {} }
+  function del(id) { localStorage.removeItem(k(id)); }
+  return { load, get, put, del };
+})();
+
+let examState = null;        // { mock, idx, tickHandle }
+let submittingExam = false;
+
+async function openMocksList() {
+  show('mocks');
+  const body = $('#mocksBody');
+  body.innerHTML = '<p class="muted">Loading mock papers…</p>';
+  const { mocks } = await Mocks.load();
+  body.innerHTML = `
+    <h1 style="margin:6px 0">📝 Mock Exam Papers</h1>
+    <p class="muted" style="margin-top:0">Timed practice in the real exam format. Your progress is saved if you pause.</p>
+    <h3 style="margin-top:18px">Paper 1 — multiple choice (60 questions · 45 min)</h3>
+    <div id="mockListP1" class="mock-list"></div>
+    <h3 style="margin-top:24px">Paper 2 — short answer + skills (~45 marks · 45 min)</h3>
+    <div id="mockListP2" class="mock-list"></div>`;
+  for (const m of mocks) {
+    const card = el('button', 'mock-card');
+    const st = Mocks.get(m.id);
+    let statusHtml = '';
+    if (st && st.submittedAt && st.results) {
+      const r = st.results;
+      const pct = Math.round((r.totalAwarded / r.totalMax) * 100);
+      statusHtml = `<div class="mscore done">✅ Score: ${r.totalAwarded}/${r.totalMax} (${pct}%)</div>`;
+    } else if (st && st.startedAt) {
+      statusHtml = `<div class="mscore">⏸️ In progress — tap to resume</div>`;
+    }
+    card.innerHTML = `
+      <span class="mock-tag ${m.paper === 1 ? 'p1' : 'p2'}">PAPER ${m.paper}</span>
+      <span class="mname">${m.title}</span>
+      <span class="mmeta">${m.totalQuestions} questions · ${m.durationMin} min${m.totalMarks ? ' · ' + m.totalMarks + ' marks' : ''}</span>
+      ${statusHtml}`;
+    card.onclick = () => startMock(m.id);
+    (m.paper === 1 ? $('#mockListP1') : $('#mockListP2')).appendChild(card);
+  }
+}
+
+async function startMock(id) {
+  const { mocks } = await Mocks.load();
+  const mock = mocks.find(m => m.id === id);
+  let st = Mocks.get(id);
+  if (st && st.submittedAt && st.results) return showMockResults(mock, st);
+  if (!st) {
+    if (!confirm(`Start ${mock.title}?\n\nTimer: ${mock.durationMin} minutes (begins immediately). You can submit early.`)) return;
+    st = { startedAt: Date.now(), answers: {}, submittedAt: null, results: null };
+    Mocks.put(id, st);
+  }
+  enterExam(mock, st);
+}
+
+function enterExam(mock, st) {
+  show('mocks');
+  examState = { mock, idx: 0, tickHandle: null };
+  const body = $('#mocksBody');
+  body.innerHTML = `
+    <button class="back" id="examLeave">← Save &amp; leave</button>
+    <div class="exam-header">
+      <div class="exam-title">${mock.title}</div>
+      <div class="exam-timer" id="examTimer">--:--</div>
+      <button class="exam-submit" id="examSubmit">Submit</button>
+    </div>
+    <div id="examNav" class="qnav"></div>
+    <div id="examHost"></div>
+    <div style="text-align:center;margin-top:12px;color:var(--muted);font-size:13px">${mock.instructions}</div>`;
+  $('#examLeave').onclick = () => { stopTicker(); openMocksList(); };
+  $('#examSubmit').onclick = () => submitExam();
+  renderExamNav();
+  drawExamQuestion();
+  startTicker();
+  tickTimer();
+}
+
+function startTicker() {
+  stopTicker();
+  examState.tickHandle = setInterval(tickTimer, 1000);
+}
+function stopTicker() {
+  if (examState && examState.tickHandle) { clearInterval(examState.tickHandle); examState.tickHandle = null; }
+}
+
+function tickTimer() {
+  if (!examState) return;
+  const { mock } = examState;
+  const st = Mocks.get(mock.id);
+  if (!st || st.submittedAt) { stopTicker(); return; }
+  const elapsed = Math.floor((Date.now() - st.startedAt) / 1000);
+  const remain = mock.durationMin * 60 - elapsed;
+  const t = $('#examTimer');
+  if (!t) return;
+  if (remain <= 0) {
+    t.textContent = '00:00';
+    t.className = 'exam-timer danger';
+    stopTicker();
+    toast('Time up — submitting paper');
+    submitExam(true);
+    return;
+  }
+  const mm = String(Math.floor(remain / 60)).padStart(2, '0');
+  const ss = String(remain % 60).padStart(2, '0');
+  t.textContent = `${mm}:${ss}`;
+  t.className = 'exam-timer' + (remain <= 60 ? ' danger' : remain <= 300 ? ' warn' : '');
+}
+
+function renderExamNav() {
+  const nav = $('#examNav');
+  const st = Mocks.get(examState.mock.id);
+  nav.innerHTML = '';
+  examState.mock.questions.forEach((q, i) => {
+    const b = el('button', 'qnum', String(i + 1));
+    if (st && st.answers[q.id] !== undefined && st.answers[q.id] !== '') b.classList.add('answered');
+    if (i === examState.idx) b.classList.add('current');
+    b.onclick = () => { examState.idx = i; drawExamQuestion(); };
+    nav.appendChild(b);
+  });
+}
+
+function drawExamQuestion() {
+  const host = $('#examHost');
+  const { mock, idx } = examState;
+  const q = mock.questions[idx];
+  const st = Mocks.get(mock.id);
+  const saved = st.answers[q.id];
+  const card = el('div', 'q-card');
+  const meta = `${q.topicTitle} · ${q.type === 'mcq' ? 'Multiple choice' : 'Short answer'}${q.marks ? ' · ' + q.marks + ' mark' + (q.marks > 1 ? 's' : '') : ''} · Q${idx + 1}/${mock.questions.length}`;
+  card.appendChild(el('div', 'q-meta', meta));
+  card.appendChild(el('div', 'q-text', q.q));
+
+  if (q.type === 'mcq') {
+    const list = el('div', 'opt-list');
+    q.options.forEach((opt, oi) => {
+      const b = el('button', 'opt', opt);
+      if (saved === oi) b.classList.add('chosen');
+      b.onclick = () => {
+        st.answers[q.id] = oi;
+        Mocks.put(mock.id, st);
+        [...list.children].forEach(c => c.classList.remove('chosen'));
+        b.classList.add('chosen');
+        renderExamNav();
+      };
+      list.appendChild(b);
+    });
+    card.appendChild(list);
+  } else {
+    const ta = el('textarea', 'short-input');
+    ta.id = 'examShort';
+    ta.placeholder = 'Write your answer here…';
+    if (saved) ta.value = saved;
+    ta.oninput = () => {
+      st.answers[q.id] = ta.value;
+      Mocks.put(mock.id, st);
+      renderExamNav();
+    };
+    card.appendChild(ta);
+  }
+
+  const actions = el('div', 'q-actions');
+  const prev = el('button', 'btn ghost', '← Prev'); prev.disabled = idx === 0;
+  prev.onclick = () => { if (examState.idx > 0) { examState.idx--; drawExamQuestion(); renderExamNav(); } };
+  actions.appendChild(prev);
+  const next = el('button', 'btn ghost', 'Next →'); next.disabled = idx >= mock.questions.length - 1;
+  next.onclick = () => { if (examState.idx < mock.questions.length - 1) { examState.idx++; drawExamQuestion(); renderExamNav(); } };
+  actions.appendChild(next);
+  card.appendChild(actions);
+  host.innerHTML = ''; host.appendChild(card);
+}
+
+async function submitExam(auto) {
+  if (submittingExam) return;
+  const { mock } = examState;
+  const st = Mocks.get(mock.id);
+  const answered = mock.questions.filter(q => st.answers[q.id] !== undefined && st.answers[q.id] !== '').length;
+  if (!auto && answered < mock.questions.length) {
+    if (!confirm(`You've answered ${answered} of ${mock.questions.length}. Submit anyway?`)) return;
+  }
+  submittingExam = true;
+  stopTicker();
+  const host = $('#examHost');
+  host.innerHTML = `<div class="card" style="text-align:center"><p><span class="spinner"></span> Marking your paper… this can take ~30 seconds for short answers.</p></div>`;
+  const perQuestion = await Promise.all(mock.questions.map(async (q) => {
+    const ans = st.answers[q.id];
+    if (q.type === 'mcq') {
+      const chosen = (ans === undefined || ans === '') ? -1 : ans;
+      const correct = chosen === q.answer;
+      return {
+        qid: q.id, type: 'mcq', q: q.q, topic: q.topicTitle,
+        verdict: correct ? 'correct' : 'wrong',
+        awarded: correct ? 1 : 0, maxMarks: 1,
+        studentText: chosen >= 0 ? q.options[chosen] : '(not answered)',
+        correctText: q.options[q.answer],
+        feedback: q.explanation || ''
+      };
+    } else {
+      const text = ans || '';
+      const max = q.marks || 1;
+      if (!text.trim()) {
+        return { qid: q.id, type: 'short', q: q.q, topic: q.topicTitle, verdict: 'wrong',
+          awarded: 0, maxMarks: max, studentText: '(not answered)', correctText: q.modelAnswer, feedback: 'No answer given.' };
+      }
+      const res = await Grader.gradeShort(q, text);
+      const awarded = res.verdict === 'correct' ? max : res.verdict === 'partial' ? Math.ceil(max / 2) : 0;
+      return { qid: q.id, type: 'short', q: q.q, topic: q.topicTitle, verdict: res.verdict,
+        awarded, maxMarks: max, studentText: text, correctText: q.modelAnswer, feedback: res.feedback || '' };
+    }
+  }));
+  const totalAwarded = perQuestion.reduce((s, r) => s + r.awarded, 0);
+  const totalMax = perQuestion.reduce((s, r) => s + r.maxMarks, 0);
+  const mcqResults = perQuestion.filter(r => r.type === 'mcq');
+  st.submittedAt = Date.now();
+  st.results = {
+    perQuestion, totalAwarded, totalMax,
+    mcqCount: mcqResults.length,
+    mcqCorrect: mcqResults.filter(r => r.verdict === 'correct').length
+  };
+  Mocks.put(mock.id, st);
+  submittingExam = false;
+  showMockResults(mock, st);
+}
+
+function showMockResults(mock, st) {
+  show('mocks');
+  const r = st.results;
+  const pct = Math.round((r.totalAwarded / r.totalMax) * 100);
+  const elapsedMin = st.submittedAt && st.startedAt ? Math.round((st.submittedAt - st.startedAt) / 60000) : null;
+  const body = $('#mocksBody');
+  body.innerHTML = `
+    <button class="back" id="resBack">← All mock papers</button>
+    <div class="results-summary">
+      <div style="font-size:14px;opacity:.85">${mock.title}</div>
+      <div class="score">${r.totalAwarded} / ${r.totalMax}</div>
+      <div class="pct">${pct}% · ${mock.paper === 1 ? `${r.mcqCorrect} of ${r.mcqCount} MCQs correct` : `${r.perQuestion.length} questions marked`}${elapsedMin != null ? ' · ' + elapsedMin + ' min' : ''}</div>
+      <div class="detail"><button class="btn ghost" id="redoMock" style="margin-top:10px">Try again from scratch</button></div>
+    </div>
+    <div id="resList"></div>`;
+  $('#resBack').onclick = openMocksList;
+  $('#redoMock').onclick = () => {
+    if (!confirm('Clear this attempt and start again?')) return;
+    Mocks.del(mock.id);
+    startMock(mock.id);
+  };
+  const list = $('#resList');
+  r.perQuestion.forEach((row, i) => {
+    const item = el('div', 'result-item ' + row.verdict);
+    const verdictLabel = { correct: '✅ Correct', partial: '🟡 Partial', wrong: '❌ Wrong' }[row.verdict];
+    item.innerHTML = `
+      <div class="rhead"><span>Q${i + 1} · ${row.topic} · ${row.awarded}/${row.maxMarks}</span><span class="rverdict ${row.verdict}">${verdictLabel}</span></div>
+      <div class="rq">${row.q}</div>
+      <div class="ryour"><b>Your answer:</b> ${row.studentText}</div>
+      ${row.verdict !== 'correct' ? `<div class="rcorrect"><b>${row.type === 'mcq' ? 'Correct answer' : 'Model answer'}:</b> ${row.correctText}</div>` : ''}
+      ${row.feedback ? `<div class="rfeedback">${row.feedback}</div>` : ''}`;
+    list.appendChild(item);
+  });
+}
+
 // ---------- wiring ----------
 document.querySelectorAll('.mode-tabs .tab').forEach(b => b.onclick = () => setMode(b.dataset.mode));
 document.querySelectorAll('[data-go="home"]').forEach(b => b.onclick = renderHome);
 $('#homeBtn').onclick = renderHome;
+$('#mocksCard').onclick = openMocksList;
 
 renderCountdown();
 renderHome();
