@@ -85,6 +85,17 @@ body {
 .mock-tag { font-size: 11px; font-weight: 800; letter-spacing: .5px; color: #fff; padding: 2px 8px; border-radius: 999px; align-self: flex-start; }
 .mock-tag.p1 { background: var(--brand); }
 .mock-tag.p2 { background: var(--good); }
+.mock-tag.weak { background: var(--partial); }
+
+.weak-cta {
+  display: flex; align-items: center; justify-content: space-between; gap: 14px;
+  margin-top: 18px; background: var(--warn-bg); border: 1px solid var(--warn);
+  border-radius: var(--radius); padding: 14px 18px; flex-wrap: wrap;
+}
+.weak-cta b { color: #9a6b00; font-size: 15px; }
+.weak-cta .muted { font-size: 13px; }
+.weak-cta .btn { background: var(--partial); }
+.weak-cta .btn:hover:not(:disabled) { background: #b8731c; }
 .mock-card .mname { font-weight: 800; font-size: 17px; }
 .mock-card .mmeta { font-size: 13px; color: var(--muted); }
 .mock-card .mscore { font-size: 13px; font-weight: 800; color: var(--brand-d); margin-top: 4px; }

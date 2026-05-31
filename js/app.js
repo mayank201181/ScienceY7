@@ -384,18 +384,29 @@ function shuffle(a) { for (let i = a.length - 1; i > 0; i--) { const j = Math.fl
 // MOCK PAPERS — timed full-exam practice (Paper 1 MCQ, Paper 2 short answer)
 // ============================================================
 const Mocks = (() => {
-  let cached = null;
+  let fileData = null;
+  const CUSTOM_KEY = 'vsci_custom_mocks';
   async function load() {
-    if (cached) return cached;
-    const r = await fetch('content/mocks.json');
-    cached = await r.json();
-    return cached;
+    if (!fileData) { const r = await fetch('content/mocks.json'); fileData = await r.json(); }
+    let customs = [];
+    try { customs = JSON.parse(localStorage.getItem(CUSTOM_KEY) || '[]'); } catch {}
+    return { mocks: [...fileData.mocks, ...customs] };
   }
   const k = id => 'vsci_mock_' + id;
   function get(id) { try { return JSON.parse(localStorage.getItem(k(id)) || 'null'); } catch { return null; } }
   function put(id, s) { try { localStorage.setItem(k(id), JSON.stringify(s)); } catch {} }
   function del(id) { localStorage.removeItem(k(id)); }
-  return { load, get, put, del };
+  function _customs() { try { return JSON.parse(localStorage.getItem(CUSTOM_KEY) || '[]'); } catch { return []; } }
+  function saveCustom(mock) {
+    const c = _customs().filter(m => m.id !== mock.id);
+    c.push(mock);
+    localStorage.setItem(CUSTOM_KEY, JSON.stringify(c));
+  }
+  function deleteCustom(id) {
+    localStorage.setItem(CUSTOM_KEY, JSON.stringify(_customs().filter(m => m.id !== id)));
+    del(id);
+  }
+  return { load, get, put, del, saveCustom, deleteCustom };
 })();
 
 let examState = null;        // { mock, idx, tickHandle }
@@ -406,14 +417,44 @@ async function openMocksList() {
   const body = $('#mocksBody');
   body.innerHTML = '<p class="muted">Loading mock papers…</p>';
   const { mocks } = await Mocks.load();
+  const standard = mocks.filter(m => !m.isWeak);
+  const customs = mocks.filter(m => m.isWeak);
+
+  // Count weak questions across all submitted non-custom mocks (latest verdict per qid).
+  const latestByQid = {};
+  for (const m of standard) {
+    const st = Mocks.get(m.id);
+    if (!st || !st.submittedAt || !st.results) continue;
+    for (const r of st.results.perQuestion) {
+      const cur = latestByQid[r.qid];
+      if (!cur || st.submittedAt > cur.t) latestByQid[r.qid] = { v: r.verdict, t: st.submittedAt };
+    }
+  }
+  const weakCount = Object.values(latestByQid).filter(x => x.v !== 'correct').length;
+
   body.innerHTML = `
     <h1 style="margin:6px 0">📝 Mock Exam Papers</h1>
-    <p class="muted" style="margin-top:0">Timed practice in the real exam format. Your progress is saved if you pause.</p>
-    <h3 style="margin-top:18px">Paper 1 — multiple choice (60 questions · 45 min)</h3>
+    <p class="muted" style="margin-top:0">Timed practice in the real exam format. Press <b>✓ Check answer</b> on each question for instant feedback, or just answer everything and Submit at the end.</p>
+
+    <div class="weak-cta">
+      <div>
+        <b>🎯 Targeted practice</b><br>
+        <span class="muted">${weakCount > 0
+            ? `Build a custom mock from the ${weakCount} question${weakCount === 1 ? '' : 's'} you've got wrong or partial so far.`
+            : `Once you finish a mock paper, your wrong/partial questions will appear here for re-practice.`}</span>
+      </div>
+      <button class="btn" id="genWeak" ${weakCount === 0 ? 'disabled' : ''}>${weakCount === 0 ? 'No weak points yet' : '🎯 Generate weak-points mock'}</button>
+    </div>
+    ${customs.length ? `<div id="mockListCustom" class="mock-list" style="margin-top:14px"></div>` : ''}
+
+    <h3 style="margin-top:24px">Paper 1 — multiple choice (60 questions · 45 min)</h3>
     <div id="mockListP1" class="mock-list"></div>
     <h3 style="margin-top:24px">Paper 2 — short answer + skills (~45 marks · 45 min)</h3>
     <div id="mockListP2" class="mock-list"></div>`;
-  for (const m of mocks) {
+
+  $('#genWeak').onclick = buildWeakPointsMock;
+
+  function renderCard(m, target, opts = {}) {
     const card = el('button', 'mock-card');
     const st = Mocks.get(m.id);
     let statusHtml = '';
@@ -424,14 +465,67 @@ async function openMocksList() {
     } else if (st && st.startedAt) {
       statusHtml = `<div class="mscore">⏸️ In progress — tap to resume</div>`;
     }
+    const tag = m.isWeak ? '<span class="mock-tag weak">WEAK POINTS</span>' : `<span class="mock-tag ${m.paper === 1 ? 'p1' : 'p2'}">PAPER ${m.paper}</span>`;
     card.innerHTML = `
-      <span class="mock-tag ${m.paper === 1 ? 'p1' : 'p2'}">PAPER ${m.paper}</span>
+      ${tag}
       <span class="mname">${m.title}</span>
-      <span class="mmeta">${m.totalQuestions} questions · ${m.durationMin} min${m.totalMarks ? ' · ' + m.totalMarks + ' marks' : ''}</span>
+      <span class="mmeta">${m.totalQuestions} question${m.totalQuestions === 1 ? '' : 's'} · ${m.durationMin} min${m.totalMarks ? ' · ' + m.totalMarks + ' marks' : ''}</span>
       ${statusHtml}`;
     card.onclick = () => startMock(m.id);
-    (m.paper === 1 ? $('#mockListP1') : $('#mockListP2')).appendChild(card);
+    target.appendChild(card);
   }
+  standard.forEach(m => renderCard(m, m.paper === 1 ? $('#mockListP1') : $('#mockListP2')));
+  if (customs.length) customs.forEach(m => renderCard(m, $('#mockListCustom')));
+}
+
+function buildWeakPointsMock() {
+  // Aggregate latest-verdict-per-qid across all submitted standard mocks.
+  Mocks.load().then(({ mocks }) => {
+    const standard = mocks.filter(m => !m.isWeak);
+    const latest = {};            // qid -> { verdict, question, submittedAt }
+    const qIndex = new Map();
+    standard.forEach(m => m.questions.forEach(q => qIndex.set(q.id, q)));
+    for (const m of standard) {
+      const st = Mocks.get(m.id);
+      if (!st || !st.submittedAt || !st.results) continue;
+      for (const r of st.results.perQuestion) {
+        if (!latest[r.qid] || st.submittedAt > latest[r.qid].submittedAt) {
+          latest[r.qid] = { verdict: r.verdict, submittedAt: st.submittedAt };
+        }
+      }
+    }
+    const weakQs = Object.keys(latest)
+      .filter(qid => latest[qid].verdict !== 'correct')
+      .map(qid => qIndex.get(qid))
+      .filter(Boolean);
+    if (!weakQs.length) { toast('No weak-point questions yet.'); return; }
+
+    // Shuffle to vary order each time she regenerates.
+    const pool = shuffle(weakQs.slice());
+    const cap = Math.min(pool.length, 40);
+    const picked = pool.slice(0, cap);
+    const totalMarks = picked.reduce((s, q) => s + (q.marks || 1), 0);
+    const mcqCount = picked.filter(q => q.type === 'mcq').length;
+    const paper = mcqCount >= picked.length / 2 ? 1 : 2;
+    const mock = {
+      id: 'P-weak',
+      isWeak: true,
+      paper,
+      title: `🎯 Weak Points Practice`,
+      durationMin: Math.max(15, Math.ceil(picked.length * 0.9)),
+      totalQuestions: picked.length,
+      totalMarks: totalMarks,
+      instructions: `Practice on the ${picked.length} questions you've struggled with. Use ✓ Check answer for instant feedback, or do it timed.`,
+      questions: picked
+    };
+
+    const existing = Mocks.get(mock.id);
+    if (existing && !confirm('A weak-points mock already exists. Replace it with a fresh one based on your latest results?')) return;
+    Mocks.del(mock.id);                       // clear any prior attempt state
+    Mocks.saveCustom(mock);
+    toast(`Built a ${picked.length}-question weak-points mock.`);
+    openMocksList();
+  });
 }
 
 async function startMock(id) {
@@ -441,7 +535,7 @@ async function startMock(id) {
   if (st && st.submittedAt && st.results) return showMockResults(mock, st);
   if (!st) {
     if (!confirm(`Start ${mock.title}?\n\nTimer: ${mock.durationMin} minutes (begins immediately). You can submit early.`)) return;
-    st = { startedAt: Date.now(), answers: {}, submittedAt: null, results: null };
+    st = { startedAt: Date.now(), answers: {}, checks: {}, submittedAt: null, results: null };
     Mocks.put(id, st);
   }
   enterExam(mock, st);
@@ -506,7 +600,9 @@ function renderExamNav() {
   nav.innerHTML = '';
   examState.mock.questions.forEach((q, i) => {
     const b = el('button', 'qnum', String(i + 1));
-    if (st && st.answers[q.id] !== undefined && st.answers[q.id] !== '') b.classList.add('answered');
+    const chk = st && st.checks && st.checks[q.id];
+    if (chk) b.classList.add('answered', chk.verdict);
+    else if (st && st.answers[q.id] !== undefined && st.answers[q.id] !== '') b.classList.add('answered');
     if (i === examState.idx) b.classList.add('current');
     b.onclick = () => { examState.idx = i; drawExamQuestion(); };
     nav.appendChild(b);
@@ -518,32 +614,41 @@ function drawExamQuestion() {
   const { mock, idx } = examState;
   const q = mock.questions[idx];
   const st = Mocks.get(mock.id);
+  if (!st.checks) st.checks = {};
   const saved = st.answers[q.id];
+  const checked = st.checks[q.id];
   const card = el('div', 'q-card');
-  const meta = `${q.topicTitle} · ${q.type === 'mcq' ? 'Multiple choice' : 'Short answer'}${q.marks ? ' · ' + q.marks + ' mark' + (q.marks > 1 ? 's' : '') : ''} · Q${idx + 1}/${mock.questions.length}`;
-  card.appendChild(el('div', 'q-meta', meta));
+  card.appendChild(el('div', 'q-meta', `${q.topicTitle} · ${q.type === 'mcq' ? 'Multiple choice' : 'Short answer'}${q.marks ? ' · ' + q.marks + ' mark' + (q.marks > 1 ? 's' : '') : ''} · Q${idx + 1}/${mock.questions.length}`));
   card.appendChild(el('div', 'q-text', q.q));
 
+  let optList = null;
   if (q.type === 'mcq') {
-    const list = el('div', 'opt-list');
+    optList = el('div', 'opt-list');
     q.options.forEach((opt, oi) => {
       const b = el('button', 'opt', opt);
       if (saved === oi) b.classList.add('chosen');
-      b.onclick = () => {
-        st.answers[q.id] = oi;
-        Mocks.put(mock.id, st);
-        [...list.children].forEach(c => c.classList.remove('chosen'));
-        b.classList.add('chosen');
-        renderExamNav();
-      };
-      list.appendChild(b);
+      if (!checked) {
+        b.onclick = () => {
+          st.answers[q.id] = oi;
+          Mocks.put(mock.id, st);
+          [...optList.children].forEach(c => c.classList.remove('chosen'));
+          b.classList.add('chosen');
+          renderExamNav();
+        };
+      } else {
+        b.disabled = true;
+        if (oi === q.answer) b.classList.add('correct');
+        else if (oi === saved) b.classList.add('wrong');
+      }
+      optList.appendChild(b);
     });
-    card.appendChild(list);
+    card.appendChild(optList);
   } else {
     const ta = el('textarea', 'short-input');
     ta.id = 'examShort';
     ta.placeholder = 'Write your answer here…';
     if (saved) ta.value = saved;
+    if (checked) ta.disabled = true;
     ta.oninput = () => {
       st.answers[q.id] = ta.value;
       Mocks.put(mock.id, st);
@@ -556,11 +661,72 @@ function drawExamQuestion() {
   const prev = el('button', 'btn ghost', '← Prev'); prev.disabled = idx === 0;
   prev.onclick = () => { if (examState.idx > 0) { examState.idx--; drawExamQuestion(); renderExamNav(); } };
   actions.appendChild(prev);
+
+  const checkBtn = el('button', 'btn', checked ? '✓ Checked' : '✓ Check answer');
+  checkBtn.disabled = !!checked;
+  checkBtn.onclick = () => checkExamAnswer(q, checkBtn);
+  actions.appendChild(checkBtn);
+
+  const hintBtn = el('button', 'btn ghost', '💡 Hint');
+  hintBtn.onclick = () => {
+    if (card.querySelector('.hint-box')) return;
+    actions.insertAdjacentHTML('afterend', `<div class="hint-box"><b>Hint:</b> ${q.hint || 'Think about the key words from your study guide.'}</div>`);
+  };
+  actions.appendChild(hintBtn);
+
   const next = el('button', 'btn ghost', 'Next →'); next.disabled = idx >= mock.questions.length - 1;
   next.onclick = () => { if (examState.idx < mock.questions.length - 1) { examState.idx++; drawExamQuestion(); renderExamNav(); } };
   actions.appendChild(next);
   card.appendChild(actions);
+
+  // Restore verdict UI when she has already pressed Check on this question.
+  if (checked) {
+    const labels = { correct: '✅ Correct', partial: '🟡 Partially correct', wrong: '❌ Not quite' };
+    const v = el('div', 'verdict ' + checked.verdict);
+    v.innerHTML = `<div class="vhead">${labels[checked.verdict] || checked.verdict}</div><div>${checked.feedback || ''}</div>`;
+    if (checked.verdict !== 'correct' && checked.correctText) {
+      v.insertAdjacentHTML('beforeend', `<div class="model-ans"><b>${q.type === 'mcq' ? 'Correct answer' : 'Model answer'}:</b> ${checked.correctText}</div>`);
+    }
+    card.appendChild(v);
+  }
+
   host.innerHTML = ''; host.appendChild(card);
+}
+
+async function checkExamAnswer(q, btn) {
+  const { mock } = examState;
+  const st = Mocks.get(mock.id);
+  if (!st.checks) st.checks = {};
+  const ans = st.answers[q.id];
+  if (q.type === 'mcq') {
+    if (ans === undefined || ans === '') { toast('Pick an option first.'); return; }
+    const correct = ans === q.answer;
+    st.checks[q.id] = {
+      qid: q.id, type: 'mcq', q: q.q, topic: q.topicTitle,
+      verdict: correct ? 'correct' : 'wrong',
+      awarded: correct ? 1 : 0, maxMarks: 1,
+      studentText: q.options[ans], correctText: q.options[q.answer],
+      feedback: q.explanation || ''
+    };
+    Mocks.put(mock.id, st);
+    drawExamQuestion();
+    renderExamNav();
+  } else {
+    const text = (ans || '').trim();
+    if (!text) { toast('Write your answer first.'); return; }
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spinner"></span> Marking…';
+    const res = await Grader.gradeShort(q, text);
+    const max = q.marks || 1;
+    const awarded = res.verdict === 'correct' ? max : res.verdict === 'partial' ? Math.ceil(max / 2) : 0;
+    st.checks[q.id] = {
+      qid: q.id, type: 'short', q: q.q, topic: q.topicTitle, verdict: res.verdict,
+      awarded, maxMarks: max, studentText: text, correctText: q.modelAnswer, feedback: res.feedback || ''
+    };
+    Mocks.put(mock.id, st);
+    drawExamQuestion();
+    renderExamNav();
+  }
 }
 
 async function submitExam(auto) {
@@ -576,6 +742,8 @@ async function submitExam(auto) {
   const host = $('#examHost');
   host.innerHTML = `<div class="card" style="text-align:center"><p><span class="spinner"></span> Marking your paper… this can take ~30 seconds for short answers.</p></div>`;
   const perQuestion = await Promise.all(mock.questions.map(async (q) => {
+    const already = st.checks && st.checks[q.id];
+    if (already) return already;
     const ans = st.answers[q.id];
     if (q.type === 'mcq') {
       const chosen = (ans === undefined || ans === '') ? -1 : ans;
