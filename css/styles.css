@@ -96,6 +96,22 @@ body {
 .weak-cta .muted { font-size: 13px; }
 .weak-cta .btn { background: var(--partial); }
 .weak-cta .btn:hover:not(:disabled) { background: #b8731c; }
+.weak-info { flex: 1; min-width: 240px; }
+.weak-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.weak-controls label { font-size: 13px; color: #9a6b00; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; }
+.weak-controls select {
+  font: inherit; font-weight: 700; font-size: 13px; padding: 6px 10px;
+  border: 1px solid var(--warn); border-radius: 8px; background: #fff; color: #1f2a44;
+}
+
+/* Delete (×) button on weak-points mock cards */
+.mock-card { position: relative; }
+.mock-close {
+  position: absolute; top: 8px; right: 8px; width: 26px; height: 26px;
+  border: 1px solid var(--line); border-radius: 50%; background: #fff;
+  color: var(--muted); font: inherit; font-weight: 800; cursor: pointer; padding: 0; line-height: 1;
+}
+.mock-close:hover { background: var(--bad-bg); color: var(--bad); border-color: var(--bad); }
 .mock-card .mname { font-weight: 800; font-size: 17px; }
 .mock-card .mmeta { font-size: 13px; color: var(--muted); }
 .mock-card .mscore { font-size: 13px; font-weight: 800; color: var(--brand-d); margin-top: 4px; }

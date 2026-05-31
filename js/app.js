@@ -420,39 +420,57 @@ async function openMocksList() {
   const standard = mocks.filter(m => !m.isWeak);
   const customs = mocks.filter(m => m.isWeak);
 
-  // Count weak questions across all submitted non-custom mocks (latest verdict per qid).
-  const latestByQid = {};
-  for (const m of standard) {
-    const st = Mocks.get(m.id);
-    if (!st || !st.submittedAt || !st.results) continue;
+  // Count wrong attempts across all submitted standard mocks.
+  const submittedStandard = standard
+    .map(m => ({ m, st: Mocks.get(m.id) }))
+    .filter(x => x.st && x.st.submittedAt && x.st.results)
+    .sort((a, b) => a.st.submittedAt - b.st.submittedAt);
+  let totalWrongAcrossAll = 0;
+  const uniqueWrongAcrossAll = new Set();
+  submittedStandard.forEach(({ st }) => {
     for (const r of st.results.perQuestion) {
-      const cur = latestByQid[r.qid];
-      if (!cur || st.submittedAt > cur.t) latestByQid[r.qid] = { v: r.verdict, t: st.submittedAt };
+      if (r.verdict !== 'correct') {
+        totalWrongAcrossAll++;
+        uniqueWrongAcrossAll.add(r.qid);
+      }
     }
-  }
-  const weakCount = Object.values(latestByQid).filter(x => x.v !== 'correct').length;
+  });
+  const papersDone = submittedStandard.length;
 
   body.innerHTML = `
     <h1 style="margin:6px 0">📝 Mock Exam Papers</h1>
-    <p class="muted" style="margin-top:0">Timed practice in the real exam format. Press <b>✓ Check answer</b> on each question for instant feedback, or just answer everything and Submit at the end.</p>
+    <p class="muted" style="margin-top:0">Press <b>✓ Check answer</b> on each question for instant feedback, or just answer everything and Submit at the end.</p>
 
     <div class="weak-cta">
-      <div>
+      <div class="weak-info">
         <b>🎯 Targeted practice</b><br>
-        <span class="muted">${weakCount > 0
-            ? `Build a custom mock from the ${weakCount} question${weakCount === 1 ? '' : 's'} you've got wrong or partial so far.`
-            : `Once you finish a mock paper, your wrong/partial questions will appear here for re-practice.`}</span>
+        <span class="muted" id="weakStats">${papersDone === 0
+            ? 'Once you finish a mock paper, your wrong/partial questions will appear here for re-practice.'
+            : `You've got <b>${totalWrongAcrossAll}</b> wrong/partial attempt${totalWrongAcrossAll === 1 ? '' : 's'} across <b>${papersDone}</b> paper${papersDone === 1 ? '' : 's'} (covering <b>${uniqueWrongAcrossAll.size}</b> unique question${uniqueWrongAcrossAll.size === 1 ? '' : 's'}).`}</span>
       </div>
-      <button class="btn" id="genWeak" ${weakCount === 0 ? 'disabled' : ''}>${weakCount === 0 ? 'No weak points yet' : '🎯 Generate weak-points mock'}</button>
+      ${papersDone > 0 ? `
+      <div class="weak-controls">
+        <label>From <select id="weakScope">
+          <option value="all">all papers</option>
+          ${papersDone > 1 ? '<option value="last">latest paper only</option>' : ''}
+        </select></label>
+        <label>Size <select id="weakSize">
+          <option value="15">15 questions</option>
+          <option value="30" selected>30 questions</option>
+          <option value="60">60 questions</option>
+          <option value="0">All weak (max 60)</option>
+        </select></label>
+        <button class="btn" id="genWeak">🎯 Generate</button>
+      </div>` : ''}
     </div>
-    ${customs.length ? `<div id="mockListCustom" class="mock-list" style="margin-top:14px"></div>` : ''}
+    ${customs.length ? `<h3 style="margin-top:18px">Your weak-points mocks</h3><div id="mockListCustom" class="mock-list"></div>` : ''}
 
     <h3 style="margin-top:24px">Paper 1 — multiple choice (60 questions · 45 min)</h3>
     <div id="mockListP1" class="mock-list"></div>
     <h3 style="margin-top:24px">Paper 2 — short answer + skills (~45 marks · 45 min)</h3>
     <div id="mockListP2" class="mock-list"></div>`;
 
-  $('#genWeak').onclick = buildWeakPointsMock;
+  if (papersDone > 0) $('#genWeak').onclick = buildWeakPointsMock;
 
   function renderCard(m, target, opts = {}) {
     const card = el('button', 'mock-card');
@@ -466,66 +484,87 @@ async function openMocksList() {
       statusHtml = `<div class="mscore">⏸️ In progress — tap to resume</div>`;
     }
     const tag = m.isWeak ? '<span class="mock-tag weak">WEAK POINTS</span>' : `<span class="mock-tag ${m.paper === 1 ? 'p1' : 'p2'}">PAPER ${m.paper}</span>`;
+    const closeBtn = m.isWeak ? '<button class="mock-close" title="Delete this weak-points mock" aria-label="Delete">✕</button>' : '';
     card.innerHTML = `
+      ${closeBtn}
       ${tag}
       <span class="mname">${m.title}</span>
       <span class="mmeta">${m.totalQuestions} question${m.totalQuestions === 1 ? '' : 's'} · ${m.durationMin} min${m.totalMarks ? ' · ' + m.totalMarks + ' marks' : ''}</span>
       ${statusHtml}`;
     card.onclick = () => startMock(m.id);
+    if (m.isWeak) {
+      const close = card.querySelector('.mock-close');
+      close.onclick = (e) => {
+        e.stopPropagation();
+        if (!confirm(`Delete ${m.title}?`)) return;
+        Mocks.deleteCustom(m.id);
+        openMocksList();
+      };
+    }
     target.appendChild(card);
   }
   standard.forEach(m => renderCard(m, m.paper === 1 ? $('#mockListP1') : $('#mockListP2')));
   if (customs.length) customs.forEach(m => renderCard(m, $('#mockListCustom')));
 }
 
-function buildWeakPointsMock() {
-  // Aggregate latest-verdict-per-qid across all submitted standard mocks.
-  Mocks.load().then(({ mocks }) => {
-    const standard = mocks.filter(m => !m.isWeak);
-    const latest = {};            // qid -> { verdict, question, submittedAt }
-    const qIndex = new Map();
-    standard.forEach(m => m.questions.forEach(q => qIndex.set(q.id, q)));
-    for (const m of standard) {
-      const st = Mocks.get(m.id);
-      if (!st || !st.submittedAt || !st.results) continue;
-      for (const r of st.results.perQuestion) {
-        if (!latest[r.qid] || st.submittedAt > latest[r.qid].submittedAt) {
-          latest[r.qid] = { verdict: r.verdict, submittedAt: st.submittedAt };
-        }
+async function buildWeakPointsMock() {
+  const scope = $('#weakScope') ? $('#weakScope').value : 'all';
+  const sizeOpt = $('#weakSize') ? parseInt($('#weakSize').value, 10) : 30;
+  const { mocks } = await Mocks.load();
+  const standard = mocks.filter(m => !m.isWeak);
+  const qIndex = new Map();
+  standard.forEach(m => m.questions.forEach(q => qIndex.set(q.id, q)));
+
+  let submitted = standard
+    .map(m => ({ m, st: Mocks.get(m.id) }))
+    .filter(x => x.st && x.st.submittedAt && x.st.results)
+    .sort((a, b) => a.st.submittedAt - b.st.submittedAt);
+  if (scope === 'last' && submitted.length) submitted = [submitted[submitted.length - 1]];
+
+  // Count wrong attempts per qid (across the chosen scope).
+  const counts = {};
+  submitted.forEach(({ st }) => {
+    for (const r of st.results.perQuestion) {
+      if (r.verdict !== 'correct') {
+        if (!counts[r.qid]) counts[r.qid] = { wrongs: 0, lastAttempt: 0 };
+        counts[r.qid].wrongs++;
+        counts[r.qid].lastAttempt = Math.max(counts[r.qid].lastAttempt, st.submittedAt);
       }
     }
-    const weakQs = Object.keys(latest)
-      .filter(qid => latest[qid].verdict !== 'correct')
-      .map(qid => qIndex.get(qid))
-      .filter(Boolean);
-    if (!weakQs.length) { toast('No weak-point questions yet.'); return; }
-
-    // Shuffle to vary order each time she regenerates.
-    const pool = shuffle(weakQs.slice());
-    const cap = Math.min(pool.length, 40);
-    const picked = pool.slice(0, cap);
-    const totalMarks = picked.reduce((s, q) => s + (q.marks || 1), 0);
-    const mcqCount = picked.filter(q => q.type === 'mcq').length;
-    const paper = mcqCount >= picked.length / 2 ? 1 : 2;
-    const mock = {
-      id: 'P-weak',
-      isWeak: true,
-      paper,
-      title: `🎯 Weak Points Practice`,
-      durationMin: Math.max(15, Math.ceil(picked.length * 0.9)),
-      totalQuestions: picked.length,
-      totalMarks: totalMarks,
-      instructions: `Practice on the ${picked.length} questions you've struggled with. Use ✓ Check answer for instant feedback, or do it timed.`,
-      questions: picked
-    };
-
-    const existing = Mocks.get(mock.id);
-    if (existing && !confirm('A weak-points mock already exists. Replace it with a fresh one based on your latest results?')) return;
-    Mocks.del(mock.id);                       // clear any prior attempt state
-    Mocks.saveCustom(mock);
-    toast(`Built a ${picked.length}-question weak-points mock.`);
-    openMocksList();
   });
+  const sortedQids = Object.keys(counts).sort((a, b) =>
+    counts[b].wrongs - counts[a].wrongs || counts[b].lastAttempt - counts[a].lastAttempt
+  );
+  if (!sortedQids.length) { toast('No weak questions in the chosen scope.'); return; }
+
+  const cap = sizeOpt === 0
+    ? Math.min(60, sortedQids.length)
+    : Math.min(sizeOpt, sortedQids.length);
+  const pickedQids = sortedQids.slice(0, cap);
+  const picked = shuffle(pickedQids.map(id => qIndex.get(id)).filter(Boolean));
+
+  // Sequential numbering across existing weak mocks
+  const existingWeak = mocks.filter(m => m.isWeak);
+  const seq = existingWeak.length + 1;
+  const mcqCount = picked.filter(q => q.type === 'mcq').length;
+  const paper = mcqCount >= picked.length / 2 ? 1 : 2;
+  const totalMarks = picked.reduce((s, q) => s + (q.marks || 1), 0);
+  const scopeLabel = scope === 'last' ? ' · latest paper' : '';
+
+  const mock = {
+    id: 'P-weak-' + Date.now(),
+    isWeak: true,
+    paper,
+    title: `🎯 Weak Points #${seq}`,
+    durationMin: Math.max(15, Math.ceil(picked.length * 0.9)),
+    totalQuestions: picked.length,
+    totalMarks,
+    instructions: `Practice on ${picked.length} of your wrong/partial questions${scopeLabel}. Use ✓ Check answer, or do it timed.`,
+    questions: picked
+  };
+  Mocks.saveCustom(mock);
+  toast(`Built ${mock.title} with ${picked.length} questions.`);
+  openMocksList();
 }
 
 async function startMock(id) {
