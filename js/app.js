@@ -409,8 +409,26 @@ const Mocks = (() => {
   return { load, get, put, del, saveCustom, deleteCustom };
 })();
 
-let examState = null;        // { mock, idx, tickHandle }
+let examState = null;        // { mock, st, idx, tickHandle, saveTimer }
 let submittingExam = false;
+
+// Defer localStorage writes during typing — saves once she stops, so each
+// keystroke stays instant. examState.st is the source of truth in memory.
+function debouncedExamSave() {
+  if (!examState) return;
+  if (examState.saveTimer) clearTimeout(examState.saveTimer);
+  examState.saveTimer = setTimeout(() => {
+    examState.saveTimer = null;
+    if (examState && examState.st) Mocks.put(examState.mock.id, examState.st);
+  }, 400);
+}
+function flushExamSave() {
+  if (examState && examState.saveTimer) {
+    clearTimeout(examState.saveTimer);
+    examState.saveTimer = null;
+    Mocks.put(examState.mock.id, examState.st);
+  }
+}
 
 async function openMocksList() {
   show('mocks');
@@ -582,7 +600,7 @@ async function startMock(id) {
 
 function enterExam(mock, st) {
   show('mocks');
-  examState = { mock, idx: 0, tickHandle: null };
+  examState = { mock, st, idx: 0, tickHandle: null, saveTimer: null };
   const body = $('#mocksBody');
   body.innerHTML = `
     <button class="back" id="examLeave">← Save &amp; leave</button>
@@ -594,7 +612,7 @@ function enterExam(mock, st) {
     <div id="examNav" class="qnav"></div>
     <div id="examHost"></div>
     <div style="text-align:center;margin-top:12px;color:var(--muted);font-size:13px">${mock.instructions}</div>`;
-  $('#examLeave').onclick = () => { stopTicker(); openMocksList(); };
+  $('#examLeave').onclick = () => { flushExamSave(); stopTicker(); openMocksList(); };
   $('#examSubmit').onclick = () => submitExam();
   renderExamNav();
   drawExamQuestion();
@@ -612,8 +630,7 @@ function stopTicker() {
 
 function tickTimer() {
   if (!examState) return;
-  const { mock } = examState;
-  const st = Mocks.get(mock.id);
+  const { mock, st } = examState;
   if (!st || st.submittedAt) { stopTicker(); return; }
   const elapsed = Math.floor((Date.now() - st.startedAt) / 1000);
   const remain = mock.durationMin * 60 - elapsed;
@@ -635,7 +652,7 @@ function tickTimer() {
 
 function renderExamNav() {
   const nav = $('#examNav');
-  const st = Mocks.get(examState.mock.id);
+  const st = examState.st;
   nav.innerHTML = '';
   examState.mock.questions.forEach((q, i) => {
     const b = el('button', 'qnum', String(i + 1));
@@ -643,16 +660,15 @@ function renderExamNav() {
     if (chk) b.classList.add('answered', chk.verdict);
     else if (st && st.answers[q.id] !== undefined && st.answers[q.id] !== '') b.classList.add('answered');
     if (i === examState.idx) b.classList.add('current');
-    b.onclick = () => { examState.idx = i; drawExamQuestion(); };
+    b.onclick = () => { flushExamSave(); examState.idx = i; drawExamQuestion(); };
     nav.appendChild(b);
   });
 }
 
 function drawExamQuestion() {
   const host = $('#examHost');
-  const { mock, idx } = examState;
+  const { mock, st, idx } = examState;
   const q = mock.questions[idx];
-  const st = Mocks.get(mock.id);
   if (!st.checks) st.checks = {};
   const saved = st.answers[q.id];
   const checked = st.checks[q.id];
@@ -688,17 +704,22 @@ function drawExamQuestion() {
     ta.placeholder = 'Write your answer here…';
     if (saved) ta.value = saved;
     if (checked) ta.disabled = true;
+    let hadContent = !!(saved && String(saved).length);
     ta.oninput = () => {
-      st.answers[q.id] = ta.value;
-      Mocks.put(mock.id, st);
-      renderExamNav();
+      st.answers[q.id] = ta.value;     // in-memory: instant
+      debouncedExamSave();              // localStorage: 400ms after she stops typing
+      const has = ta.value.length > 0;
+      if (has !== hadContent) {         // only rebuild the nav on answered/unanswered transition
+        hadContent = has;
+        renderExamNav();
+      }
     };
     card.appendChild(ta);
   }
 
   const actions = el('div', 'q-actions');
   const prev = el('button', 'btn ghost', '← Prev'); prev.disabled = idx === 0;
-  prev.onclick = () => { if (examState.idx > 0) { examState.idx--; drawExamQuestion(); renderExamNav(); } };
+  prev.onclick = () => { flushExamSave(); if (examState.idx > 0) { examState.idx--; drawExamQuestion(); renderExamNav(); } };
   actions.appendChild(prev);
 
   const checkBtn = el('button', 'btn', checked ? '✓ Checked' : '✓ Check answer');
@@ -714,7 +735,7 @@ function drawExamQuestion() {
   actions.appendChild(hintBtn);
 
   const next = el('button', 'btn ghost', 'Next →'); next.disabled = idx >= mock.questions.length - 1;
-  next.onclick = () => { if (examState.idx < mock.questions.length - 1) { examState.idx++; drawExamQuestion(); renderExamNav(); } };
+  next.onclick = () => { flushExamSave(); if (examState.idx < mock.questions.length - 1) { examState.idx++; drawExamQuestion(); renderExamNav(); } };
   actions.appendChild(next);
   card.appendChild(actions);
 
@@ -733,8 +754,8 @@ function drawExamQuestion() {
 }
 
 async function checkExamAnswer(q, btn) {
-  const { mock } = examState;
-  const st = Mocks.get(mock.id);
+  flushExamSave();                   // make sure latest typing is captured
+  const { mock, st } = examState;
   if (!st.checks) st.checks = {};
   const ans = st.answers[q.id];
   if (q.type === 'mcq') {
@@ -770,8 +791,8 @@ async function checkExamAnswer(q, btn) {
 
 async function submitExam(auto) {
   if (submittingExam) return;
-  const { mock } = examState;
-  const st = Mocks.get(mock.id);
+  flushExamSave();                   // capture any pending keystrokes
+  const { mock, st } = examState;
   const answered = mock.questions.filter(q => st.answers[q.id] !== undefined && st.answers[q.id] !== '').length;
   if (!auto && answered < mock.questions.length) {
     if (!confirm(`You've answered ${answered} of ${mock.questions.length}. Submit anyway?`)) return;
