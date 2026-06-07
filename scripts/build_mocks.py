@@ -3,8 +3,8 @@
 Output is deterministic (fixed random seeds) so each mock is the same set of
 questions every time, letting Vanshika compare scores across attempts.
 
-Paper 1 mocks: 60 MCQs, 45 min, balanced across topics.
-Paper 2 mocks: short-answer questions totalling ~45 marks, 45 min.
+Paper 1 mocks: 60 MCQs, 45 min, balanced across topics. (Eight in total.)
+Paper 2 mocks: short-answer questions totalling ~45 marks, 45 min. (Four.)
 
 Run from the project root:
     python3 scripts/build_mocks.py
@@ -47,10 +47,10 @@ def gather(qtype):
 
 
 def build_paper1():
-    """4 mocks × 60 MCQs, balanced across topics."""
+    """8 mocks × 60 MCQs, balanced across topics."""
     pool = gather("mcq")  # ~135-145 MCQs
     mocks = []
-    for n in range(4):
+    for n in range(8):
         rng = random.Random(100 + n)
         # bucket by topic, then take a slice with a different rotation each mock
         by_topic = {c: [q for q in pool if q["topicCode"] == c] for c in TOPIC_CODES}
