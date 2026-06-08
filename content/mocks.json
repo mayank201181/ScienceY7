@@ -8241,6 +8241,4126 @@
       ]
     },
     {
+      "id": "P1-mock9",
+      "paper": 1,
+      "title": "Paper 1 — Mock 9",
+      "durationMin": 45,
+      "totalQuestions": 60,
+      "instructions": "60 multiple-choice questions. Fresh question set (different from Mocks 1-8). 45 minutes. 1 mark each.",
+      "questions": [
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which of the following is a female reproductive organ?",
+          "options": [
+            "Penis",
+            "Ovary",
+            "Prostate gland",
+            "Scrotum"
+          ],
+          "answer": 1,
+          "explanation": "The ovary is a female reproductive organ that produces eggs. The other options are all male reproductive structures.",
+          "hint": "Think about where eggs are made in females.",
+          "id": "RV-X-7",
+          "topicCode": "RV",
+          "topicTitle": "Reproduction and Variation"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Which separation technique would be most suitable for separating a mixture of two immiscible liquids with similar boiling points?",
+          "options": [
+            "Distillation",
+            "Chromatography",
+            "Separating funnel",
+            "Crystallisation"
+          ],
+          "answer": 2,
+          "explanation": "A separating funnel is used to separate immiscible liquids (liquids that do not mix) regardless of their boiling points.",
+          "hint": "Immiscible means the liquids don't mix - think of oil and water.",
+          "id": "MS-X-17",
+          "topicCode": "MS",
+          "topicTitle": "Matter and Separation"
+        },
+        {
+          "type": "mcq",
+          "level": "advanced",
+          "q": "Which statement best explains why specialised cells have many mitochondria?",
+          "options": [
+            "They need more mitochondria to store food",
+            "They perform functions that require large amounts of energy",
+            "Mitochondria protect the cell from damage",
+            "Multiple mitochondria help cells divide faster"
+          ],
+          "answer": 1,
+          "explanation": "Cells with high energy demands, like muscle cells and nerve cells, contain many mitochondria to produce sufficient ATP through aerobic respiration.",
+          "hint": "Think about which body cells work the hardest and need the most energy.",
+          "id": "CS-X-28",
+          "topicCode": "CS",
+          "topicTitle": "Cells to Systems"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "In paper chromatography, a dye travels 6 cm while the solvent travels 10 cm. What is the Rf value?",
+          "options": [
+            "0.4",
+            "0.6",
+            "1.6",
+            "16"
+          ],
+          "answer": 1,
+          "explanation": "Rf = distance travelled by substance ÷ distance travelled by solvent = 6 ÷ 10 = 0.6",
+          "hint": "Rf value = divide the distances",
+          "id": "MS-X-19",
+          "topicCode": "MS",
+          "topicTitle": "Matter and Separation"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "What is a hypothesis?",
+          "options": [
+            "A final conclusion after an experiment",
+            "A testable prediction based on scientific knowledge",
+            "A list of equipment needed for an experiment",
+            "The method you use to collect data"
+          ],
+          "answer": 1,
+          "explanation": "A hypothesis is an educated guess or prediction that can be tested through experimentation. It is based on existing scientific knowledge.",
+          "hint": "It's a prediction that you can test — think 'I think... because...'.",
+          "id": "IS-X-12",
+          "topicCode": "IS",
+          "topicTitle": "Introduction to Science"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "A student builds a parallel circuit with two identical resistors. How does the total resistance compare to a series circuit with the same two resistors?",
+          "options": [
+            "Parallel resistance is higher",
+            "Parallel resistance is lower",
+            "Both circuits have the same resistance",
+            "It depends on the battery voltage"
+          ],
+          "answer": 1,
+          "explanation": "In parallel circuits, current has multiple paths, so total resistance is lower than in series. For identical resistors, parallel resistance is half the series resistance.",
+          "hint": "More paths for current = easier flow = lower resistance.",
+          "id": "EE-X-19",
+          "topicCode": "EE",
+          "topicTitle": "Electricity and Energy"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "What does the wavelength of a wave measure?",
+          "options": [
+            "The time taken for one wave",
+            "The distance from one wave crest to the next crest",
+            "How fast the wave moves",
+            "How tall the wave is"
+          ],
+          "answer": 1,
+          "explanation": "Wavelength is the distance between two identical points on a wave, such as from one crest to the next crest.",
+          "hint": "Look at the distance between the highest points of a wave.",
+          "id": "WS-X-3",
+          "topicCode": "WS",
+          "topicTitle": "Waves and Sound"
+        },
+        {
+          "type": "mcq",
+          "level": "advanced",
+          "q": "An atom of nitrogen has 7 protons and 7 neutrons. What is its mass number?",
+          "options": [
+            "7",
+            "14",
+            "21",
+            "0"
+          ],
+          "answer": 1,
+          "explanation": "Mass number = protons + neutrons = 7 + 7 = 14",
+          "hint": "Mass number counts both protons and neutrons in the nucleus.",
+          "id": "AE-X-28",
+          "topicCode": "AE",
+          "topicTitle": "Atoms and Elements"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Which of the following is an example of a predator-prey relationship?",
+          "options": [
+            "A lion and a zebra",
+            "A bee and a flower",
+            "A remora fish and a shark",
+            "A clownfish and sea anemone"
+          ],
+          "answer": 0,
+          "explanation": "A predator hunts and eats prey. Lions hunt zebras. Bees and flowers have a mutualistic relationship (both benefit). Remora fish benefit from the shark but the shark is unaffected (commensalism). Clownfish and anemones both benefit (mutualism).",
+          "hint": "A predator kills and eats another animal. Which pair shows one hunting the other?",
+          "id": "EI-X-18",
+          "topicCode": "EI",
+          "topicTitle": "Ecological Interactions"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which type of data is 'colour of a flower'?",
+          "options": [
+            "Continuous data",
+            "Discrete data",
+            "Categoric data",
+            "Numerical data"
+          ],
+          "answer": 2,
+          "explanation": "Categoric data consists of words or labels, like colours, names, or types. It cannot be measured numerically.",
+          "hint": "Is this a word/label or a number you can measure?",
+          "id": "IS-X-8",
+          "topicCode": "IS",
+          "topicTitle": "Introduction to Science"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "In the food chain: lettuce → caterpillar → bird → cat, what is the cat?",
+          "options": [
+            "A producer",
+            "A primary consumer",
+            "A secondary consumer",
+            "A tertiary consumer"
+          ],
+          "answer": 3,
+          "explanation": "The cat is at the top of this chain, eating the bird (secondary consumer), making it a tertiary consumer.",
+          "hint": "Count how many steps up from the producer the cat is.",
+          "id": "EI-X-7",
+          "topicCode": "EI",
+          "topicTitle": "Ecological Interactions"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Liquid → gas is called…",
+          "options": [
+            "Freezing",
+            "Condensing",
+            "Evaporating",
+            "Subliming"
+          ],
+          "answer": 2,
+          "explanation": "Liquid to gas is evaporating, like water turning into steam when heated.",
+          "hint": "What happens to puddles on a sunny day?",
+          "id": "PM-X-2",
+          "topicCode": "PM",
+          "topicTitle": "The Particle Model"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Which statement about renewable and non-renewable energy sources is correct?",
+          "options": [
+            "Renewable sources can run out eventually",
+            "Non-renewable sources never need replacing",
+            "Solar energy is renewed naturally by the Sun",
+            "Wind turbines use non-renewable wind"
+          ],
+          "answer": 2,
+          "explanation": "Solar energy is renewable because the Sun continuously produces energy and will do so for billions of years. The other statements are false.",
+          "hint": "'Renewable' means it is naturally replaced or will last very long.",
+          "id": "EE-X-16",
+          "topicCode": "EE",
+          "topicTitle": "Electricity and Energy"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Why is the placenta an important organ during pregnancy?",
+          "options": [
+            "It produces the amniotic fluid",
+            "It is where the baby's heart develops",
+            "It allows nutrient and oxygen exchange between mother and baby",
+            "It controls how fast the baby grows"
+          ],
+          "answer": 2,
+          "explanation": "The placenta is embedded in the uterus wall and allows oxygen and nutrients to pass from mother's blood to baby's blood, and waste products to pass back.",
+          "hint": "What structure needs to pass materials between two separate blood systems?",
+          "id": "RV-X-22",
+          "topicCode": "RV",
+          "topicTitle": "Reproduction and Variation"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Which of the following is the correct order of organisation from smallest to largest?",
+          "options": [
+            "Organ system → organ → tissue → cell",
+            "Cell → tissue → organ → organ system",
+            "Tissue → cell → organ → organ system",
+            "Cell → organ → tissue → organ system"
+          ],
+          "answer": 1,
+          "explanation": "Cells are the smallest living units. Similar cells form tissues, tissues form organs, and organs work together in organ systems.",
+          "hint": "Start with the smallest unit of life and build up.",
+          "id": "CS-X-22",
+          "topicCode": "CS",
+          "topicTitle": "Cells to Systems"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "What is the chemical symbol for gold?",
+          "options": [
+            "Go",
+            "Gd",
+            "Au",
+            "Gl"
+          ],
+          "answer": 2,
+          "explanation": "Gold's symbol is Au, which comes from its Latin name 'aurum'.",
+          "hint": "The symbol comes from an old language name for gold.",
+          "id": "AE-X-4",
+          "topicCode": "AE",
+          "topicTitle": "Atoms and Elements"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "A substance has a melting point range of 45°C to 52°C. What does this suggest?",
+          "options": [
+            "It is very pure",
+            "It contains impurities",
+            "It is definitely a metal",
+            "It is a gas at room temperature"
+          ],
+          "answer": 1,
+          "explanation": "A wide melting point range indicates the substance is impure. Pure substances have a sharp, fixed melting point.",
+          "hint": "Compare to a pure substance which melts at one exact temperature.",
+          "id": "MS-X-20",
+          "topicCode": "MS",
+          "topicTitle": "Matter and Separation"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "When light travels from air into glass, it slows down and bends. This is an example of…",
+          "options": [
+            "Diffraction",
+            "Refraction",
+            "Reflection",
+            "Absorption"
+          ],
+          "answer": 1,
+          "explanation": "Refraction is the bending of a wave when it enters a different medium and changes speed. Diffraction is spreading; reflection is bouncing back.",
+          "hint": "What happens to a wave when it enters a different medium and changes speed?",
+          "id": "WS-X-15",
+          "topicCode": "WS",
+          "topicTitle": "Waves and Sound"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "In which state of matter are the particles closest together?",
+          "options": [
+            "Gas",
+            "Liquid",
+            "Solid",
+            "All states have particles equally spaced"
+          ],
+          "answer": 2,
+          "explanation": "Solid particles are closest together because they are tightly packed in fixed positions.",
+          "hint": "Which state takes up the least amount of space?",
+          "id": "PM-X-6",
+          "topicCode": "PM",
+          "topicTitle": "The Particle Model"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "In plant cells, the vacuole is mainly used for:",
+          "options": [
+            "Making energy",
+            "Storing water and maintaining cell shape",
+            "Controlling the cell",
+            "Breaking down waste"
+          ],
+          "answer": 1,
+          "explanation": "The large central vacuole in plant cells stores water, nutrients, and helps the plant cell maintain its rigid shape and firmness.",
+          "hint": "It keeps the plant cell firm and stores cell sap.",
+          "id": "CS-X-11",
+          "topicCode": "CS",
+          "topicTitle": "Cells to Systems"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "What is the correct order of state changes from solid to gas?",
+          "options": [
+            "Solid → Condensing → Gas",
+            "Solid → Freezing → Liquid → Gas",
+            "Solid → Melting → Liquid → Evaporating → Gas",
+            "Solid → Boiling → Gas"
+          ],
+          "answer": 2,
+          "explanation": "A solid first melts to become a liquid, then the liquid evaporates to become a gas.",
+          "hint": "Think about what happens to ice when it warms up.",
+          "id": "PM-X-5",
+          "topicCode": "PM",
+          "topicTitle": "The Particle Model"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which of the following is an example of discrete data?",
+          "options": [
+            "The temperature of water in °C",
+            "The height of a student in cm",
+            "The number of leaves on a plant",
+            "The mass of a rock in grams"
+          ],
+          "answer": 2,
+          "explanation": "Discrete data can only have whole number values - you cannot have 3.7 leaves. The other options are continuous (can have decimal values).",
+          "hint": "Think about whether you could have a decimal/fraction of the measurement.",
+          "id": "IS-X-5",
+          "topicCode": "IS",
+          "topicTitle": "Introduction to Science"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "A thermometer reads 23°C, 23°C, 23°C, and 45°C. What is the most likely explanation for the 45°C reading?",
+          "options": [
+            "The thermometer is broken",
+            "It is an anomalous result caused by random error",
+            "The temperature actually increased suddenly",
+            "Thermometers always give one incorrect reading"
+          ],
+          "answer": 1,
+          "explanation": "The 45°C reading is anomalous—it doesn't fit the pattern of the other three readings and should be ignored when calculating the mean.",
+          "hint": "Which reading is very different from the others?",
+          "id": "IS-X-18",
+          "topicCode": "IS",
+          "topicTitle": "Introduction to Science"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Which renewable energy source is most reliable because it works day and night?",
+          "options": [
+            "Solar power",
+            "Wind power",
+            "Tidal power",
+            "Geothermal power"
+          ],
+          "answer": 3,
+          "explanation": "Geothermal power uses heat from inside the Earth, which is constant day and night. Solar only works during daylight and wind varies throughout the day.",
+          "hint": "Which energy source does not depend on weather or time of day?",
+          "id": "EE-X-22",
+          "topicCode": "EE",
+          "topicTitle": "Electricity and Energy"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which of these is an example of inherited variation?",
+          "options": [
+            "A scar on your arm",
+            "Your eye colour",
+            "Muscles you develop from exercise",
+            "A broken bone"
+          ],
+          "answer": 1,
+          "explanation": "Eye colour is inherited from your parents through genes, making it inherited variation.",
+          "hint": "This characteristic comes from your parents' genes.",
+          "id": "RV-X-4",
+          "topicCode": "RV",
+          "topicTitle": "Reproduction and Variation"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Which of the following is a transverse wave?",
+          "options": [
+            "A sound wave in air",
+            "A wave on a stretched string",
+            "A compression wave in a spring",
+            "An ultrasound wave"
+          ],
+          "answer": 1,
+          "explanation": "A wave on a stretched string oscillates perpendicular (at right angles) to the direction of wave travel, making it transverse. Sound waves are longitudinal (parallel to travel direction).",
+          "hint": "Transverse waves vibrate perpendicular to the direction the wave travels.",
+          "id": "WS-X-16",
+          "topicCode": "WS",
+          "topicTitle": "Waves and Sound"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which of the following is a conductor?",
+          "options": [
+            "Rubber",
+            "Wood",
+            "Aluminium",
+            "Glass"
+          ],
+          "answer": 2,
+          "explanation": "Aluminium is a metal that allows electricity to flow through it easily — it is a conductor.",
+          "hint": "Conductors are usually shiny metals.",
+          "id": "EE-X-8",
+          "topicCode": "EE",
+          "topicTitle": "Electricity and Energy"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which of the following correctly describes the amplitude of a wave?",
+          "options": [
+            "The number of waves per second",
+            "The distance the wave travels in one second",
+            "The maximum distance a particle moves from its resting position",
+            "The distance from one crest to the next trough"
+          ],
+          "answer": 2,
+          "explanation": "Amplitude is how far a particle moves away from its resting position, measured from the centre to the crest or trough.",
+          "hint": "Think about how far up and down a particle moves from the middle.",
+          "id": "WS-X-4",
+          "topicCode": "WS",
+          "topicTitle": "Waves and Sound"
+        },
+        {
+          "type": "mcq",
+          "level": "advanced",
+          "q": "Which organelle is responsible for releasing energy in both plant and animal cells through aerobic respiration?",
+          "options": [
+            "Ribosome",
+            "Mitochondrion",
+            "Golgi apparatus",
+            "Lysosome"
+          ],
+          "answer": 1,
+          "explanation": "Mitochondria are the powerhouses of the cell, breaking down glucose to release energy in the form of ATP during aerobic respiration.",
+          "hint": "Think about which organelle produces the energy currency of the cell.",
+          "id": "CS-X-24",
+          "topicCode": "CS",
+          "topicTitle": "Cells to Systems"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which of these is a mixture?",
+          "options": [
+            "Pure water",
+            "Salt water",
+            "Oxygen gas",
+            "Copper metal"
+          ],
+          "answer": 1,
+          "explanation": "Salt water contains salt and water mixed together — it is a mixture.",
+          "hint": "A mixture has two or more substances that are not chemically joined.",
+          "id": "MS-X-2",
+          "topicCode": "MS",
+          "topicTitle": "Matter and Separation"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "What is the name of the solid left behind when sea water is evaporated?",
+          "options": [
+            "Sand",
+            "Salt",
+            "Rock",
+            "Minerals only"
+          ],
+          "answer": 1,
+          "explanation": "When sea water evaporates, salt crystallises and is left as a solid residue.",
+          "hint": "What is the main dissolved substance in sea water?",
+          "id": "MS-X-3",
+          "topicCode": "MS",
+          "topicTitle": "Matter and Separation"
+        },
+        {
+          "type": "mcq",
+          "level": "advanced",
+          "q": "When sodium and chlorine react to form sodium chloride, electrons are transferred from sodium to chlorine. What type of bonding occurs in the product?",
+          "options": [
+            "Covalent bonding",
+            "Ionic bonding",
+            "Metallic bonding",
+            "Hydrogen bonding"
+          ],
+          "answer": 1,
+          "explanation": "When electrons are transferred from one atom to another, ions are formed. The electrostatic attraction between these oppositely charged ions is called ionic bonding.",
+          "hint": "What happens when electrons move from one atom to another?",
+          "id": "AE-X-24",
+          "topicCode": "AE",
+          "topicTitle": "Atoms and Elements"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Why do solids have a definite shape?",
+          "options": [
+            "Particles are moving very fast",
+            "Particles are in fixed positions and held by strong forces",
+            "There is no gravity",
+            "Particles are far apart"
+          ],
+          "answer": 1,
+          "explanation": "Solids have a definite shape because their particles are held in fixed positions by strong attractive forces between them.",
+          "hint": "What keeps solid particles from moving around?",
+          "id": "PM-X-3",
+          "topicCode": "PM",
+          "topicTitle": "The Particle Model"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "The stomach is an organ made of several different tissues. Which tissues are found in the stomach wall?",
+          "options": [
+            "Only muscle tissue",
+            "Only epithelial tissue",
+            "Muscle tissue, epithelial tissue, and connective tissue",
+            "Bone tissue and nerve tissue"
+          ],
+          "answer": 2,
+          "explanation": "The stomach wall contains muscle tissue (for churning), epithelial tissue (lining the stomach), and connective tissue (holding layers together).",
+          "hint": "An organ needs to move, protect, and support itself.",
+          "id": "CS-X-21",
+          "topicCode": "CS",
+          "topicTitle": "Cells to Systems"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Two identical bulbs are connected in series to a battery. If one bulb fails and breaks the circuit, what happens to the other bulb?",
+          "options": [
+            "It gets brighter",
+            "It stays the same brightness",
+            "It goes off",
+            "It flickers"
+          ],
+          "answer": 2,
+          "explanation": "In a series circuit, if one component breaks, the circuit is broken and current cannot flow anywhere. Both bulbs go off.",
+          "hint": "In series, there is only one path for current to follow.",
+          "id": "EE-X-13",
+          "topicCode": "EE",
+          "topicTitle": "Electricity and Energy"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Which of the following is a property of sound waves?",
+          "options": [
+            "They can travel through a vacuum",
+            "They are longitudinal waves",
+            "They travel faster in air than in water",
+            "They do not require a medium to travel"
+          ],
+          "answer": 1,
+          "explanation": "Sound waves are longitudinal waves where particles vibrate parallel to the direction of energy flow. They cannot travel through a vacuum and travel faster in denser media like water.",
+          "hint": "Think about whether sound needs something to travel through.",
+          "id": "WS-X-19",
+          "topicCode": "WS",
+          "topicTitle": "Waves and Sound"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "What is a food web?",
+          "options": [
+            "A simple linear chain of organisms",
+            "Many interconnected food chains showing different feeding relationships",
+            "A predator hunting its prey",
+            "The energy used by plants"
+          ],
+          "answer": 1,
+          "explanation": "A food web is more complex than a single food chain—it shows multiple food chains linked together, representing the real feeding relationships in an ecosystem.",
+          "hint": "A web has many connections, while a chain is just one line.",
+          "id": "EI-X-5",
+          "topicCode": "EI",
+          "topicTitle": "Ecological Interactions"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which of the following is a conductor of electricity?",
+          "options": [
+            "Rubber",
+            "Glass",
+            "Aluminum",
+            "Wood"
+          ],
+          "answer": 2,
+          "explanation": "Aluminum is a metal and conducts electricity well. Rubber, glass and wood are insulators.",
+          "hint": "Metals are usually good conductors.",
+          "id": "EE-X-2",
+          "topicCode": "EE",
+          "topicTitle": "Electricity and Energy"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "What is the chemical symbol for oxygen?",
+          "options": [
+            "Ox",
+            "O",
+            "Og",
+            "O₂"
+          ],
+          "answer": 1,
+          "explanation": "The chemical symbol for oxygen is O (a single capital letter). O₂ is a molecule of oxygen gas with two atoms.",
+          "hint": "Chemical symbols are usually one or two letters.",
+          "id": "AE-X-10",
+          "topicCode": "AE",
+          "topicTitle": "Atoms and Elements"
+        },
+        {
+          "type": "mcq",
+          "level": "advanced",
+          "q": "Why do decomposers occupy a unique position in food webs rather than being part of a linear food chain?",
+          "options": [
+            "They eat everything",
+            "They break down dead organic matter from all trophic levels and return nutrients to the soil, feeding on material from multiple levels",
+            "They are not important to ecosystems",
+            "They only decompose plants"
+          ],
+          "answer": 1,
+          "explanation": "Decomposers consume dead organisms and waste from all trophic levels, not just one level above them, so they interact with the entire food web structure.",
+          "hint": "Where does a decomposer get its food from compared to a consumer?",
+          "id": "EI-X-30",
+          "topicCode": "EI",
+          "topicTitle": "Ecological Interactions"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "A drum is struck with a drumstick. Which sequence correctly shows the energy transfers?",
+          "options": [
+            "Light energy → Sound energy → Kinetic energy",
+            "Kinetic energy → Sound energy → Thermal energy",
+            "Kinetic energy → Sound energy → Kinetic energy of air particles",
+            "Thermal energy → Kinetic energy → Sound energy"
+          ],
+          "answer": 2,
+          "explanation": "The drumstick has kinetic energy. When it strikes the drum, it creates sound energy. This sound energy causes air particles to move (kinetic energy of the particles).",
+          "hint": "Start with the moving drumstick and follow what happens step by step.",
+          "id": "WS-X-10",
+          "topicCode": "WS",
+          "topicTitle": "Waves and Sound"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "What is an anomalous result?",
+          "options": [
+            "A result that is typical",
+            "A result that doesn't follow the pattern",
+            "A result that is very large",
+            "A result that is negative"
+          ],
+          "answer": 1,
+          "explanation": "An anomalous result is one that doesn't fit the pattern of your other results. It may be due to experimental error or an unexpected event.",
+          "hint": "It's the odd one out that doesn't fit the pattern.",
+          "id": "IS-X-11",
+          "topicCode": "IS",
+          "topicTitle": "Introduction to Science"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which of these is an example of competition in an ecosystem?",
+          "options": [
+            "A fox eating a rabbit",
+            "Two rabbits eating grass from the same field",
+            "A fungus breaking down a log",
+            "A bee pollinating a flower"
+          ],
+          "answer": 1,
+          "explanation": "Competition occurs when two organisms need the same resource. Two rabbits competing for the same grass is competition.",
+          "hint": "Competition is when organisms struggle for the same thing they need.",
+          "id": "EI-X-11",
+          "topicCode": "EI",
+          "topicTitle": "Ecological Interactions"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "What is the name of the variable you measure or observe as a result of your experiment?",
+          "options": [
+            "Independent variable",
+            "Control variable",
+            "Dependent variable",
+            "Random variable"
+          ],
+          "answer": 2,
+          "explanation": "The dependent variable is what you measure - it is the effect or result that depends on what you changed (the independent variable).",
+          "hint": "It 'depends on' the independent variable. It is the result you measure.",
+          "id": "IS-X-3",
+          "topicCode": "IS",
+          "topicTitle": "Introduction to Science"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which of the following shows a correct food chain?",
+          "options": [
+            "Fox → Rabbit → Grass",
+            "Grass → Rabbit → Fox",
+            "Rabbit → Grass → Fox",
+            "Grass → Fox → Rabbit"
+          ],
+          "answer": 1,
+          "explanation": "A food chain must start with a producer (grass) and show the correct feeding direction: grass is eaten by rabbit, and rabbit is eaten by fox.",
+          "hint": "Remember: arrows point FROM food TO the thing eating it.",
+          "id": "EI-X-4",
+          "topicCode": "EI",
+          "topicTitle": "Ecological Interactions"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Which of the following is the correct order of organisation in living organisms, from smallest to largest?",
+          "options": [
+            "Organ → tissue → cell → system → organism",
+            "Cell → tissue → organ → system → organism",
+            "Tissue → cell → organ → system → organism",
+            "System → organ → tissue → cell → organism"
+          ],
+          "answer": 1,
+          "explanation": "The correct hierarchy is: cells combine to form tissues, tissues form organs, organs form systems, and systems make up the organism.",
+          "hint": "Start with the smallest living unit.",
+          "id": "CS-X-14",
+          "topicCode": "CS",
+          "topicTitle": "Cells to Systems"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "In a sugar solution, what is the solvent?",
+          "options": [
+            "Sugar",
+            "Water",
+            "The mixture",
+            "Air"
+          ],
+          "answer": 1,
+          "explanation": "The solvent is the liquid that dissolves the solute. Water dissolves the sugar.",
+          "hint": "Which part is the liquid?",
+          "id": "MS-X-7",
+          "topicCode": "MS",
+          "topicTitle": "Matter and Separation"
+        },
+        {
+          "type": "mcq",
+          "level": "advanced",
+          "q": "A student observes a cheek cell under a microscope at ×400 magnification. The nucleus appears 0.2 mm in diameter. What is the actual diameter of the nucleus?",
+          "options": [
+            "0.0005 mm",
+            "0.5 mm",
+            "80 mm",
+            "2000 mm"
+          ],
+          "answer": 0,
+          "explanation": "Real size = image size ÷ magnification = 0.2 ÷ 400 = 0.0005 mm.",
+          "hint": "Remember: real size = image size divided by magnification.",
+          "id": "CS-X-23",
+          "topicCode": "CS",
+          "topicTitle": "Cells to Systems"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which process produces variation in offspring?",
+          "options": [
+            "Asexual reproduction",
+            "Mitosis",
+            "Sexual reproduction",
+            "Photosynthesis"
+          ],
+          "answer": 2,
+          "explanation": "Sexual reproduction produces variation because genetic material from two different parents combines. Asexual reproduction produces identical offspring.",
+          "hint": "It involves two parents contributing genes.",
+          "id": "RV-X-10",
+          "topicCode": "RV",
+          "topicTitle": "Reproduction and Variation"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "What does a voltmeter measure?",
+          "options": [
+            "Current in amps",
+            "Potential difference in volts",
+            "Resistance in ohms",
+            "Power in watts"
+          ],
+          "answer": 1,
+          "explanation": "A voltmeter measures the potential difference (voltage) across a component in volts.",
+          "hint": "Volt — it's in the name!",
+          "id": "EE-X-3",
+          "topicCode": "EE",
+          "topicTitle": "Electricity and Energy"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which method would you use to separate dye colours in an ink sample?",
+          "options": [
+            "Evaporation",
+            "Chromatography",
+            "Filtration",
+            "Distillation"
+          ],
+          "answer": 1,
+          "explanation": "Chromatography separates different coloured dyes by moving them at different speeds through paper.",
+          "hint": "This method is used to separate colours and pigments.",
+          "id": "MS-X-4",
+          "topicCode": "MS",
+          "topicTitle": "Matter and Separation"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "During freezing, what happens to the particles as a liquid cools down?",
+          "options": [
+            "Particles vibrate faster and move closer together",
+            "Particles vibrate slower and arrange into a fixed pattern",
+            "Particles escape into the air",
+            "Particles stop moving completely"
+          ],
+          "answer": 1,
+          "explanation": "As temperature drops during freezing, particles vibrate less. They slow down enough that forces between them hold them in fixed, orderly positions forming a solid.",
+          "hint": "What happens to particle vibration as temperature decreases?",
+          "id": "PM-X-17",
+          "topicCode": "PM",
+          "topicTitle": "The Particle Model"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "In a forest, a pine tree and a fungus form a mycorrhizal relationship where the fungus grows around the tree's roots. The fungus gets sugars from the tree, and the tree gains better water and mineral absorption. Which organisms benefit from this interaction?",
+          "options": [
+            "Only the tree",
+            "Only the fungus",
+            "Both the tree and the fungus",
+            "Neither organism"
+          ],
+          "answer": 2,
+          "explanation": "Both organisms gain advantages from this relationship. The fungus obtains sugars for energy, while the tree gains improved access to water and minerals. This is mutualism.",
+          "hint": "Identify what each organism gets from the relationship.",
+          "id": "EI-X-17",
+          "topicCode": "EI",
+          "topicTitle": "Ecological Interactions"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "What is the smallest particle of an element called?",
+          "options": [
+            "Molecule",
+            "Atom",
+            "Compound",
+            "Element"
+          ],
+          "answer": 1,
+          "explanation": "An atom is the smallest particle of an element that still has the properties of that element.",
+          "hint": "Think about what the smallest unit is...",
+          "id": "AE-X-8",
+          "topicCode": "AE",
+          "topicTitle": "Atoms and Elements"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "What is the name of the cell that is produced when a sperm and egg join together?",
+          "options": [
+            "Gamete",
+            "Zygote",
+            "Embryo",
+            "Fetus"
+          ],
+          "answer": 1,
+          "explanation": "A zygote is the cell formed when a sperm nucleus fuses with an egg nucleus during fertilisation.",
+          "hint": "It's what forms immediately after fertilisation.",
+          "id": "RV-X-9",
+          "topicCode": "RV",
+          "topicTitle": "Reproduction and Variation"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Liquid → gas is called…",
+          "options": [
+            "Condensing",
+            "Freezing",
+            "Evaporating",
+            "Subliming"
+          ],
+          "answer": 2,
+          "explanation": "Liquid to gas is evaporating, like water turning into steam.",
+          "hint": "What happens to puddles on a sunny day?",
+          "id": "PM-X-8",
+          "topicCode": "PM",
+          "topicTitle": "The Particle Model"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which statement about gas particles is true?",
+          "options": [
+            "They have a definite volume",
+            "They move slowly in all directions",
+            "They are far apart and move very quickly",
+            "They are arranged in a fixed pattern"
+          ],
+          "answer": 2,
+          "explanation": "Gas particles are far apart, move very quickly in all directions, and have no fixed arrangement.",
+          "hint": "What fills a balloon or a room?",
+          "id": "PM-X-4",
+          "topicCode": "PM",
+          "topicTitle": "The Particle Model"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "A student repeats a mass measurement four times and gets: 25.0 g, 25.1 g, 25.0 g, 25.2 g. The actual mass is 35.0 g. Which statement is true?",
+          "options": [
+            "The results are accurate but not precise",
+            "The results are precise but not accurate",
+            "The results are both accurate and precise",
+            "The results are neither accurate nor precise"
+          ],
+          "answer": 1,
+          "explanation": "Results are close together (25.0–25.2 g) so they are precise. But they are far from 35.0 g so they are not accurate—there is a systematic error.",
+          "hint": "Check if readings are close to each other AND close to the true value.",
+          "id": "IS-X-16",
+          "topicCode": "IS",
+          "topicTitle": "Introduction to Science"
+        },
+        {
+          "type": "mcq",
+          "level": "advanced",
+          "q": "In the periodic table, why do elements in Group 1 (alkali metals) have similar chemical properties?",
+          "options": [
+            "They have the same number of neutrons",
+            "They have the same number of electrons in their outermost shell",
+            "They have the same atomic mass",
+            "They all form the same compounds"
+          ],
+          "answer": 1,
+          "explanation": "Elements in the same group have the same number of electrons in their outermost shell, which determines their chemical behavior and reactivity patterns.",
+          "hint": "What feature of an atom determines how it reacts with other elements?",
+          "id": "AE-X-26",
+          "topicCode": "AE",
+          "topicTitle": "Atoms and Elements"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Which statement correctly describes the role of the umbilical cord?",
+          "options": [
+            "It produces hormones to control the baby's growth",
+            "It carries blood containing nutrients and oxygen from mother to baby",
+            "It protects the baby from infections",
+            "It removes only waste products from the baby"
+          ],
+          "answer": 1,
+          "explanation": "The umbilical cord contains blood vessels that transport oxygen, nutrients, and waste between the mother and developing baby.",
+          "hint": "Think of it like a pipeline connecting the baby to the mother's blood supply.",
+          "id": "RV-X-21",
+          "topicCode": "RV",
+          "topicTitle": "Reproduction and Variation"
+        }
+      ]
+    },
+    {
+      "id": "P1-mock10",
+      "paper": 1,
+      "title": "Paper 1 — Mock 10",
+      "durationMin": 45,
+      "totalQuestions": 60,
+      "instructions": "60 multiple-choice questions. Fresh question set (different from Mocks 1-8). 45 minutes. 1 mark each.",
+      "questions": [
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which statement correctly describes a pure substance?",
+          "options": [
+            "It always contains water",
+            "It contains only one type of particle",
+            "It must be a solid",
+            "It always tastes the same"
+          ],
+          "answer": 1,
+          "explanation": "A pure substance contains only one type of particle or molecule throughout.",
+          "hint": "A pure substance has a fixed composition.",
+          "id": "MS-X-5",
+          "topicCode": "MS",
+          "topicTitle": "Matter and Separation"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "What is the main function of the placenta during pregnancy?",
+          "options": [
+            "To produce hormones only",
+            "To exchange nutrients and oxygen between mother and fetus",
+            "To protect the baby from infection",
+            "To control the baby's heart rate"
+          ],
+          "answer": 1,
+          "explanation": "The placenta allows the exchange of nutrients, oxygen, and waste between the mother's blood and the fetus's blood, without them mixing directly.",
+          "hint": "Think about what the baby needs to survive and grow in the womb.",
+          "id": "RV-X-14",
+          "topicCode": "RV",
+          "topicTitle": "Reproduction and Variation"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "A sound wave travels through air at 340 m/s. If the wavelength is 0.68 m, what is the frequency of the sound?",
+          "options": [
+            "500 Hz",
+            "231 Hz",
+            "231 m/s",
+            "0.002 Hz"
+          ],
+          "answer": 0,
+          "explanation": "Using the wave equation v = f × λ, we rearrange to f = v ÷ λ = 340 ÷ 0.68 = 500 Hz.",
+          "hint": "Use the formula: frequency = speed ÷ wavelength",
+          "id": "WS-X-13",
+          "topicCode": "WS",
+          "topicTitle": "Waves and Sound"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Which of the following is an example of a qualitative observation?",
+          "options": [
+            "The temperature increased by 5°C",
+            "The solution turned blue",
+            "The mass decreased from 10 g to 8 g",
+            "The volume of gas was 250 mL"
+          ],
+          "answer": 1,
+          "explanation": "A qualitative observation describes a quality or characteristic (colour, smell, texture) without numbers. The other options are quantitative—they use measurements.",
+          "hint": "Qualitative = descriptions without numbers. Which doesn't have a number in it?",
+          "id": "IS-X-15",
+          "topicCode": "IS",
+          "topicTitle": "Introduction to Science"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Which statement best explains why an ecosystem needs producers?",
+          "options": [
+            "Producers eat all the waste from consumers",
+            "Producers capture energy from the sun and make it available to all other organisms",
+            "Producers are the only organisms that need energy",
+            "Producers prevent predators from eating herbivores"
+          ],
+          "answer": 1,
+          "explanation": "Producers (plants) convert sunlight into chemical energy through photosynthesis. This energy enters the ecosystem and flows through all food chains. Without producers, there would be no energy source for any other organism.",
+          "hint": "Think about where all the energy in an ecosystem comes from.",
+          "id": "EI-X-22",
+          "topicCode": "EI",
+          "topicTitle": "Ecological Interactions"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which organism breaks down dead material and returns nutrients to the soil?",
+          "options": [
+            "Producer",
+            "Herbivore",
+            "Decomposer",
+            "Carnivore"
+          ],
+          "answer": 2,
+          "explanation": "Decomposers like bacteria and fungi break down dead organisms and recycle nutrients.",
+          "hint": "These organisms 'decompose' (break down) dead things.",
+          "id": "EI-X-9",
+          "topicCode": "EI",
+          "topicTitle": "Ecological Interactions"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which statement about the periodic table is true?",
+          "options": [
+            "It lists all known compounds",
+            "It lists all known elements",
+            "It lists all known mixtures",
+            "It lists all known atoms"
+          ],
+          "answer": 1,
+          "explanation": "The periodic table is an organized list of all known elements arranged by their properties.",
+          "hint": "Think about what the periodic table organizes.",
+          "id": "AE-X-11",
+          "topicCode": "AE",
+          "topicTitle": "Atoms and Elements"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which of these is an example of inherited variation?",
+          "options": [
+            "A scar on your arm",
+            "Your eye colour",
+            "Muscles you develop from exercise",
+            "A broken bone"
+          ],
+          "answer": 1,
+          "explanation": "Eye colour is inherited from your parents through genes, making it inherited variation.",
+          "hint": "This characteristic comes from your parents' genes.",
+          "id": "RV-X-4",
+          "topicCode": "RV",
+          "topicTitle": "Reproduction and Variation"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "In paper chromatography, a dye travels 6 cm while the solvent travels 10 cm. What is the Rf value?",
+          "options": [
+            "0.4",
+            "0.6",
+            "1.6",
+            "16"
+          ],
+          "answer": 1,
+          "explanation": "Rf = distance travelled by substance ÷ distance travelled by solvent = 6 ÷ 10 = 0.6",
+          "hint": "Rf value = divide the distances",
+          "id": "MS-X-19",
+          "topicCode": "MS",
+          "topicTitle": "Matter and Separation"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Which process involves particles gaining enough energy to overcome all forces between them and escape into the air?",
+          "options": [
+            "Melting",
+            "Condensation",
+            "Vaporisation",
+            "Freezing"
+          ],
+          "answer": 2,
+          "explanation": "Vaporisation (boiling or evaporation) is when particles gain enough energy to completely overcome forces and become a gas.",
+          "hint": "Which change of state takes a liquid to a gas?",
+          "id": "PM-X-16",
+          "topicCode": "PM",
+          "topicTitle": "The Particle Model"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "A container of gas is cooled while keeping the volume constant. What happens to the pressure?",
+          "options": [
+            "Pressure increases",
+            "Pressure stays constant",
+            "Pressure decreases",
+            "The gas changes state to liquid"
+          ],
+          "answer": 2,
+          "explanation": "When cooled, gas particles move slower and hit the container walls less often and with less force, so the pressure decreases.",
+          "hint": "How does the motion of particles change when temperature drops?",
+          "id": "PM-X-18",
+          "topicCode": "PM",
+          "topicTitle": "The Particle Model"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "What does the law of conservation of energy state?",
+          "options": [
+            "Energy can be created",
+            "Energy can be destroyed",
+            "Energy cannot be created or destroyed, only changed from one form to another",
+            "Energy only exists in moving objects"
+          ],
+          "answer": 2,
+          "explanation": "Energy cannot be created or destroyed, only converted from one form to another (e.g., chemical to electrical to light).",
+          "hint": "Think about whether energy disappears or just changes.",
+          "id": "EE-X-11",
+          "topicCode": "EE",
+          "topicTitle": "Electricity and Energy"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which type of data is the colour of a flower?",
+          "options": [
+            "Continuous data",
+            "Discrete data",
+            "Categoric data",
+            "Numerical data"
+          ],
+          "answer": 2,
+          "explanation": "Categoric data is descriptive - it is a label or category (like colours, plant species, or names). It is not a number.",
+          "hint": "Can you count the colours on a scale, or are they just different types/categories?",
+          "id": "IS-X-4",
+          "topicCode": "IS",
+          "topicTitle": "Introduction to Science"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Which of the following is a property of sound waves?",
+          "options": [
+            "They can travel through a vacuum",
+            "They are longitudinal waves",
+            "They travel faster in air than in water",
+            "They do not require a medium to travel"
+          ],
+          "answer": 1,
+          "explanation": "Sound waves are longitudinal waves where particles vibrate parallel to the direction of energy flow. They cannot travel through a vacuum and travel faster in denser media like water.",
+          "hint": "Think about whether sound needs something to travel through.",
+          "id": "WS-X-19",
+          "topicCode": "WS",
+          "topicTitle": "Waves and Sound"
+        },
+        {
+          "type": "mcq",
+          "level": "advanced",
+          "q": "Which statement best explains why specialised cells have many mitochondria?",
+          "options": [
+            "They need more mitochondria to store food",
+            "They perform functions that require large amounts of energy",
+            "Mitochondria protect the cell from damage",
+            "Multiple mitochondria help cells divide faster"
+          ],
+          "answer": 1,
+          "explanation": "Cells with high energy demands, like muscle cells and nerve cells, contain many mitochondria to produce sufficient ATP through aerobic respiration.",
+          "hint": "Think about which body cells work the hardest and need the most energy.",
+          "id": "CS-X-28",
+          "topicCode": "CS",
+          "topicTitle": "Cells to Systems"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Liquid → gas is called…",
+          "options": [
+            "Freezing",
+            "Condensing",
+            "Evaporating",
+            "Subliming"
+          ],
+          "answer": 2,
+          "explanation": "Liquid to gas is evaporating, like water turning into steam when heated.",
+          "hint": "What happens to puddles on a sunny day?",
+          "id": "PM-X-2",
+          "topicCode": "PM",
+          "topicTitle": "The Particle Model"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "A block of ice is left in a warm room. Solid water particles vibrate more vigorously. What does this lead to?",
+          "options": [
+            "The particles get bigger",
+            "The ice melts because forces between particles are overcome",
+            "The ice sublimates directly to gas",
+            "The particles move apart but remain solid"
+          ],
+          "answer": 1,
+          "explanation": "As particles vibrate more due to heating, they eventually vibrate fast enough to overcome the forces holding them in fixed positions, causing melting.",
+          "hint": "What happens to forces between particles when they vibrate faster?",
+          "id": "PM-X-14",
+          "topicCode": "PM",
+          "topicTitle": "The Particle Model"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "When a gas is compressed into a smaller volume at constant temperature, what happens to the pressure?",
+          "options": [
+            "Pressure decreases because particles have less space",
+            "Pressure increases because particles collide with walls more frequently",
+            "Pressure stays the same because temperature hasn't changed",
+            "Pressure becomes zero"
+          ],
+          "answer": 1,
+          "explanation": "Compressing a gas reduces the volume, so particles hit the walls in a smaller space more frequently, increasing pressure even though temperature and particle speed remain constant.",
+          "hint": "How does reducing space affect how often particles hit the walls?",
+          "id": "PM-X-22",
+          "topicCode": "PM",
+          "topicTitle": "The Particle Model"
+        },
+        {
+          "type": "mcq",
+          "level": "advanced",
+          "q": "In the periodic table, why do elements in Group 1 (alkali metals) have similar chemical properties?",
+          "options": [
+            "They have the same number of neutrons",
+            "They have the same number of electrons in their outermost shell",
+            "They have the same atomic mass",
+            "They all form the same compounds"
+          ],
+          "answer": 1,
+          "explanation": "Elements in the same group have the same number of electrons in their outermost shell, which determines their chemical behavior and reactivity patterns.",
+          "hint": "What feature of an atom determines how it reacts with other elements?",
+          "id": "AE-X-26",
+          "topicCode": "AE",
+          "topicTitle": "Atoms and Elements"
+        },
+        {
+          "type": "mcq",
+          "level": "advanced",
+          "q": "In a stable ecosystem, what does the cycling of nutrients between biotic and abiotic components primarily depend on?",
+          "options": [
+            "The number of producers only",
+            "Decomposers breaking down dead material and returning elements to the soil",
+            "Predators eating their prey",
+            "Plants being green"
+          ],
+          "answer": 1,
+          "explanation": "Decomposers are essential for nutrient cycling because they break down dead organisms and waste, returning nutrients (like nitrogen and carbon) to the soil and atmosphere so producers can use them again.",
+          "hint": "What organism breaks down dead leaves and returns nutrients to soil?",
+          "id": "EI-X-25",
+          "topicCode": "EI",
+          "topicTitle": "Ecological Interactions"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "What is the chemical symbol for gold?",
+          "options": [
+            "Go",
+            "Gd",
+            "Au",
+            "Gl"
+          ],
+          "answer": 2,
+          "explanation": "Gold's symbol is Au, which comes from its Latin name 'aurum'.",
+          "hint": "The symbol comes from an old language name for gold.",
+          "id": "AE-X-4",
+          "topicCode": "AE",
+          "topicTitle": "Atoms and Elements"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Two identical bulbs are connected in series to a battery. If one bulb fails and breaks the circuit, what happens to the other bulb?",
+          "options": [
+            "It gets brighter",
+            "It stays the same brightness",
+            "It goes off",
+            "It flickers"
+          ],
+          "answer": 2,
+          "explanation": "In a series circuit, if one component breaks, the circuit is broken and current cannot flow anywhere. Both bulbs go off.",
+          "hint": "In series, there is only one path for current to follow.",
+          "id": "EE-X-13",
+          "topicCode": "EE",
+          "topicTitle": "Electricity and Energy"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "What does a voltmeter measure?",
+          "options": [
+            "Current in amps",
+            "Potential difference in volts",
+            "Resistance in ohms",
+            "Power in watts"
+          ],
+          "answer": 1,
+          "explanation": "A voltmeter measures the potential difference (voltage) across a component in volts.",
+          "hint": "Volt — it's in the name!",
+          "id": "EE-X-3",
+          "topicCode": "EE",
+          "topicTitle": "Electricity and Energy"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Cells become specialised to perform specific functions. What is this process called?",
+          "options": [
+            "Multiplication",
+            "Differentiation",
+            "Division",
+            "Adaptation"
+          ],
+          "answer": 1,
+          "explanation": "Differentiation is when a cell changes to become specialised for a particular job (e.g., nerve cells, muscle cells).",
+          "hint": "It's when cells change to fit different jobs.",
+          "id": "CS-X-6",
+          "topicCode": "CS",
+          "topicTitle": "Cells to Systems"
+        },
+        {
+          "type": "mcq",
+          "level": "advanced",
+          "q": "A sample of pure copper has a mass of 64 g. How many moles of copper are present? (Relative atomic mass of Cu = 64)",
+          "options": [
+            "1 mole",
+            "2 moles",
+            "64 moles",
+            "0.5 moles"
+          ],
+          "answer": 0,
+          "explanation": "Number of moles = mass ÷ relative atomic mass = 64 ÷ 64 = 1 mole",
+          "hint": "Use the formula: moles = mass ÷ Ar",
+          "id": "AE-X-30",
+          "topicCode": "AE",
+          "topicTitle": "Atoms and Elements"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "A kettle has a power rating of 2000 W. Which statement about energy transfer is correct?",
+          "options": [
+            "It transfers 2000 J every second",
+            "It transfers 2000 J every hour",
+            "It transfers 2000 W of heat energy",
+            "It stores 2000 J in the water"
+          ],
+          "answer": 0,
+          "explanation": "Power is measured in watts (W), where 1 W = 1 J/s. So 2000 W means 2000 joules of energy transferred every second.",
+          "hint": "Power = energy ÷ time. What is power measured in joules per?",
+          "id": "EE-X-20",
+          "topicCode": "EE",
+          "topicTitle": "Electricity and Energy"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "What is the chemical formula for a molecule containing 2 nitrogen atoms and 5 oxygen atoms?",
+          "options": [
+            "NO₂",
+            "N₂O₅",
+            "NO₅",
+            "N₅O₂"
+          ],
+          "answer": 1,
+          "explanation": "The subscript numbers show how many atoms of each element are present. 2 nitrogen atoms and 5 oxygen atoms is written as N₂O₅.",
+          "hint": "The number after each element symbol shows how many atoms of that element are in the molecule.",
+          "id": "AE-X-20",
+          "topicCode": "AE",
+          "topicTitle": "Atoms and Elements"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "An oscilloscope display shows two sound waves side by side. Wave X has waves that are closer together than Wave Y. What can you conclude?",
+          "options": [
+            "Wave X is louder than Wave Y",
+            "Wave X has a shorter wavelength than Wave Y",
+            "Wave X travels faster than Wave Y",
+            "Wave Y has a higher frequency than Wave X"
+          ],
+          "answer": 1,
+          "explanation": "Waves that are closer together have a shorter wavelength. Wavelength depends on how the waves are spaced, not on loudness, speed (in the same medium), or frequency directly.",
+          "hint": "Waves closer together means the distance between peaks is smaller—that's wavelength.",
+          "id": "WS-X-17",
+          "topicCode": "WS",
+          "topicTitle": "Waves and Sound"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "A power station generates 1,000,000 joules of energy. If it took 1 minute to generate this energy, what was the power output?",
+          "options": [
+            "1,000,000 W",
+            "16,667 W",
+            "60,000,000 W",
+            "1,000 W"
+          ],
+          "answer": 1,
+          "explanation": "Power = Energy ÷ Time = 1,000,000 J ÷ 60 s = 16,667 W (approximately).",
+          "hint": "Power is measured in watts. 1 watt = 1 joule per second.",
+          "id": "EE-X-18",
+          "topicCode": "EE",
+          "topicTitle": "Electricity and Energy"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "In plant cells, the vacuole is mainly used for:",
+          "options": [
+            "Making energy",
+            "Storing water and maintaining cell shape",
+            "Controlling the cell",
+            "Breaking down waste"
+          ],
+          "answer": 1,
+          "explanation": "The large central vacuole in plant cells stores water, nutrients, and helps the plant cell maintain its rigid shape and firmness.",
+          "hint": "It keeps the plant cell firm and stores cell sap.",
+          "id": "CS-X-11",
+          "topicCode": "CS",
+          "topicTitle": "Cells to Systems"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which process produces variation in offspring?",
+          "options": [
+            "Asexual reproduction",
+            "Mitosis",
+            "Sexual reproduction",
+            "Photosynthesis"
+          ],
+          "answer": 2,
+          "explanation": "Sexual reproduction produces variation because genetic material from two different parents combines. Asexual reproduction produces identical offspring.",
+          "hint": "It involves two parents contributing genes.",
+          "id": "RV-X-10",
+          "topicCode": "RV",
+          "topicTitle": "Reproduction and Variation"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "What does it mean to replicate an experiment?",
+          "options": [
+            "To do the experiment multiple times",
+            "To copy someone else's work",
+            "To change all the variables",
+            "To predict the answer first"
+          ],
+          "answer": 0,
+          "explanation": "Replication means repeating an experiment several times to check that your results are reliable and not due to chance.",
+          "hint": "Think about doing the same thing over and over again.",
+          "id": "IS-X-9",
+          "topicCode": "IS",
+          "topicTitle": "Introduction to Science"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which component stores and releases electrical energy?",
+          "options": [
+            "Switch",
+            "Ammeter",
+            "Battery",
+            "Wire"
+          ],
+          "answer": 2,
+          "explanation": "A battery stores chemical energy and converts it into electrical energy to power a circuit.",
+          "hint": "Look for the portable source of power.",
+          "id": "EE-X-10",
+          "topicCode": "EE",
+          "topicTitle": "Electricity and Energy"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "A student measures the time it takes for sugar to dissolve in water at different temperatures. What is the independent variable?",
+          "options": [
+            "The time taken for sugar to dissolve",
+            "The temperature of the water",
+            "The amount of sugar used",
+            "The type of container"
+          ],
+          "answer": 1,
+          "explanation": "The independent variable is what you deliberately change. The student is changing the temperature to see how it affects dissolving time.",
+          "hint": "Ask yourself: 'What am I deliberately changing?' That is your independent variable.",
+          "id": "IS-X-2",
+          "topicCode": "IS",
+          "topicTitle": "Introduction to Science"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Two species of bird live in the same woodland and eat the same insects. Over time, one species begins to hunt only at night while the other hunts during the day. This is an example of:",
+          "options": [
+            "Predation",
+            "Mutualism",
+            "Niche differentiation",
+            "Parasitism"
+          ],
+          "answer": 2,
+          "explanation": "The two species are reducing competition by occupying different niches (time periods). Each species now feeds in a different way, allowing both to survive.",
+          "hint": "What has changed to reduce competition between them?",
+          "id": "EI-X-15",
+          "topicCode": "EI",
+          "topicTitle": "Ecological Interactions"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Why do cells that line the small intestine have many finger-like projections called villi?",
+          "options": [
+            "To produce digestive enzymes",
+            "To increase surface area for absorption of nutrients",
+            "To help the intestine move food along",
+            "To store glucose"
+          ],
+          "answer": 1,
+          "explanation": "The villi greatly increase the surface area of the epithelial tissue, allowing more efficient absorption of digested nutrients.",
+          "hint": "What advantage does a larger surface area give for absorption?",
+          "id": "CS-X-16",
+          "topicCode": "CS",
+          "topicTitle": "Cells to Systems"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "What is the SI unit for measuring frequency?",
+          "options": [
+            "Metres (m)",
+            "Seconds (s)",
+            "Hertz (Hz)",
+            "Decibels (dB)"
+          ],
+          "answer": 2,
+          "explanation": "Frequency is measured in Hertz (Hz). It represents the number of waves passing a point per second.",
+          "hint": "Frequency tells us how many complete waves occur in one second.",
+          "id": "WS-X-11",
+          "topicCode": "WS",
+          "topicTitle": "Waves and Sound"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "A drum is struck and produces a sound. Which of the following describes the motion of the drum head?",
+          "options": [
+            "It vibrates side-to-side",
+            "It moves in a straight line away from you",
+            "It vibrates up and down",
+            "It rotates continuously"
+          ],
+          "answer": 2,
+          "explanation": "When struck, the drum head oscillates (vibrates) up and down repeatedly, creating compressions and rarefactions in the air that form sound waves.",
+          "hint": "Think about what happens to the surface of a drum when you hit it.",
+          "id": "WS-X-14",
+          "topicCode": "WS",
+          "topicTitle": "Waves and Sound"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "In which state of matter are the particles closest together?",
+          "options": [
+            "Gas",
+            "Liquid",
+            "Solid",
+            "All states have particles equally spaced"
+          ],
+          "answer": 2,
+          "explanation": "Solid particles are closest together because they are tightly packed in fixed positions.",
+          "hint": "Which state takes up the least amount of space?",
+          "id": "PM-X-6",
+          "topicCode": "PM",
+          "topicTitle": "The Particle Model"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "A substance dissolves completely in water at room temperature. After cooling the solution in a freezer, crystals form at the bottom. What is this process called?",
+          "options": [
+            "Crystallisation",
+            "Distillation",
+            "Evaporation",
+            "Condensation"
+          ],
+          "answer": 0,
+          "explanation": "Crystallisation is when a dissolved solid forms solid crystals as the solution cools or evaporates.",
+          "hint": "What happens when a solution becomes too concentrated for the dissolved solid to stay dissolved?",
+          "id": "MS-X-15",
+          "topicCode": "MS",
+          "topicTitle": "Matter and Separation"
+        },
+        {
+          "type": "mcq",
+          "level": "advanced",
+          "q": "In a food chain: grass → rabbit → fox → wolf, which organism has the least available energy?",
+          "options": [
+            "Grass",
+            "Rabbit",
+            "Fox",
+            "Wolf"
+          ],
+          "answer": 3,
+          "explanation": "The wolf is at the highest trophic level. Energy decreases by approximately 90% at each step up the food chain, so top predators have the least energy available.",
+          "hint": "Think about which organism is furthest from the original energy source (the Sun).",
+          "id": "EI-X-28",
+          "topicCode": "EI",
+          "topicTitle": "Ecological Interactions"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "In a household circuit, a fuse or circuit breaker is designed to:",
+          "options": [
+            "Increase the current flowing through appliances",
+            "Prevent too much current from causing a fire",
+            "Store electrical energy",
+            "Make the circuit more efficient"
+          ],
+          "answer": 1,
+          "explanation": "Fuses and circuit breakers protect circuits by breaking the connection if current becomes dangerously high, preventing overheating and potential fires.",
+          "hint": "What safety feature stops current if something goes wrong?",
+          "id": "EE-X-21",
+          "topicCode": "EE",
+          "topicTitle": "Electricity and Energy"
+        },
+        {
+          "type": "mcq",
+          "level": "advanced",
+          "q": "In humans, eye colour is controlled by multiple genes. Why does this produce a range of eye colours rather than just two distinct types?",
+          "options": [
+            "Because eye colour is only determined by the environment",
+            "Because multiple genes contribute additive effects, creating continuous variation",
+            "Because eye colour cannot be inherited",
+            "Because mutations always occur in eye colour genes"
+          ],
+          "answer": 1,
+          "explanation": "When multiple genes control a trait, their combined effects produce a spectrum of phenotypes rather than distinct categories. This is polygenic inheritance.",
+          "hint": "Think about how several genes working together can add up to create a range.",
+          "id": "RV-X-23",
+          "topicCode": "RV",
+          "topicTitle": "Reproduction and Variation"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "A sperm cell is specialised for fertilisation. Which two features help it reach and fertilise an egg?",
+          "options": [
+            "Large nucleus and thick tail",
+            "Flagellum for movement and acrosome with enzymes to penetrate egg",
+            "Chloroplasts and cell wall",
+            "Vacuole and ribosomes"
+          ],
+          "answer": 1,
+          "explanation": "The flagellum (tail) provides movement, while the acrosome releases enzymes that help the sperm penetrate the egg cell membrane.",
+          "hint": "Think about what the sperm cell needs to do: move quickly and break through the egg.",
+          "id": "CS-X-17",
+          "topicCode": "CS",
+          "topicTitle": "Cells to Systems"
+        },
+        {
+          "type": "mcq",
+          "level": "advanced",
+          "q": "When sodium and chlorine react to form sodium chloride, electrons are transferred from sodium to chlorine. What type of bonding occurs in the product?",
+          "options": [
+            "Covalent bonding",
+            "Ionic bonding",
+            "Metallic bonding",
+            "Hydrogen bonding"
+          ],
+          "answer": 1,
+          "explanation": "When electrons are transferred from one atom to another, ions are formed. The electrostatic attraction between these oppositely charged ions is called ionic bonding.",
+          "hint": "What happens when electrons move from one atom to another?",
+          "id": "AE-X-24",
+          "topicCode": "AE",
+          "topicTitle": "Atoms and Elements"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "A substance has a melting point range of 45°C to 52°C. What does this suggest?",
+          "options": [
+            "It is very pure",
+            "It contains impurities",
+            "It is definitely a metal",
+            "It is a gas at room temperature"
+          ],
+          "answer": 1,
+          "explanation": "A wide melting point range indicates the substance is impure. Pure substances have a sharp, fixed melting point.",
+          "hint": "Compare to a pure substance which melts at one exact temperature.",
+          "id": "MS-X-20",
+          "topicCode": "MS",
+          "topicTitle": "Matter and Separation"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "In a sugar solution, what is the solvent?",
+          "options": [
+            "Sugar",
+            "Water",
+            "The spoon",
+            "The cup"
+          ],
+          "answer": 1,
+          "explanation": "Water is the liquid that dissolves the sugar — the solvent.",
+          "hint": "The solvent is the liquid part of a solution.",
+          "id": "MS-X-1",
+          "topicCode": "MS",
+          "topicTitle": "Matter and Separation"
+        },
+        {
+          "type": "mcq",
+          "level": "advanced",
+          "q": "Why do decomposers occupy a unique position in food webs rather than being part of a linear food chain?",
+          "options": [
+            "They eat everything",
+            "They break down dead organic matter from all trophic levels and return nutrients to the soil, feeding on material from multiple levels",
+            "They are not important to ecosystems",
+            "They only decompose plants"
+          ],
+          "answer": 1,
+          "explanation": "Decomposers consume dead organisms and waste from all trophic levels, not just one level above them, so they interact with the entire food web structure.",
+          "hint": "Where does a decomposer get its food from compared to a consumer?",
+          "id": "EI-X-30",
+          "topicCode": "EI",
+          "topicTitle": "Ecological Interactions"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which structure in sperm helps it to swim towards the egg?",
+          "options": [
+            "Head",
+            "Nucleus",
+            "Tail (flagellum)",
+            "Mitochondria"
+          ],
+          "answer": 2,
+          "explanation": "The tail (flagellum) of a sperm cell moves side-to-side to propel the sperm forward through the female reproductive tract towards the egg.",
+          "hint": "It's the long structure at the back of the sperm.",
+          "id": "RV-X-12",
+          "topicCode": "RV",
+          "topicTitle": "Reproduction and Variation"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which method separates different coloured dyes in ink?",
+          "options": [
+            "Filtration",
+            "Evaporation",
+            "Chromatography",
+            "Distillation"
+          ],
+          "answer": 2,
+          "explanation": "Chromatography separates substances by how they move at different rates up absorbent paper.",
+          "hint": "This method creates a colourful pattern on paper.",
+          "id": "MS-X-11",
+          "topicCode": "MS",
+          "topicTitle": "Matter and Separation"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Liquid → gas is called…",
+          "options": [
+            "Condensing",
+            "Freezing",
+            "Evaporating",
+            "Subliming"
+          ],
+          "answer": 2,
+          "explanation": "Liquid to gas is evaporating, like water turning into steam.",
+          "hint": "What happens to puddles on a sunny day?",
+          "id": "PM-X-8",
+          "topicCode": "PM",
+          "topicTitle": "The Particle Model"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Which of these is a characteristic that shows continuous variation?",
+          "options": [
+            "Presence or absence of freckles",
+            "Height",
+            "Attached or unattached earlobes",
+            "Presence or absence of a widow's peak"
+          ],
+          "answer": 1,
+          "explanation": "Height shows continuous variation - it can be any value across a range. Freckles, earlobes, and widow's peaks show discontinuous variation - you either have them or don't.",
+          "hint": "Which one can be measured as many different values, not just yes or no?",
+          "id": "RV-X-17",
+          "topicCode": "RV",
+          "topicTitle": "Reproduction and Variation"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which of the following is an example of discrete data?",
+          "options": [
+            "The temperature of water in °C",
+            "The height of a student in cm",
+            "The number of leaves on a plant",
+            "The mass of a rock in grams"
+          ],
+          "answer": 2,
+          "explanation": "Discrete data can only have whole number values - you cannot have 3.7 leaves. The other options are continuous (can have decimal values).",
+          "hint": "Think about whether you could have a decimal/fraction of the measurement.",
+          "id": "IS-X-5",
+          "topicCode": "IS",
+          "topicTitle": "Introduction to Science"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "A loudspeaker has a cone that vibrates back and forth very quickly. What does this vibration create?",
+          "options": [
+            "Light",
+            "Heat only",
+            "Sound waves",
+            "Electromagnetic waves"
+          ],
+          "answer": 2,
+          "explanation": "When the loudspeaker cone vibrates, it pushes on the air particles around it, creating sound waves that travel outward.",
+          "hint": "Sound is made by vibration, and the speaker cone is vibrating.",
+          "id": "WS-X-5",
+          "topicCode": "WS",
+          "topicTitle": "Waves and Sound"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "What is a hypothesis in science?",
+          "options": [
+            "A proven fact",
+            "A prediction based on scientific knowledge",
+            "The result of an experiment",
+            "A list of equipment needed"
+          ],
+          "answer": 1,
+          "explanation": "A hypothesis is an educated guess or prediction that can be tested by an experiment. It is not yet proven.",
+          "hint": "It's what you think will happen BEFORE you do the experiment.",
+          "id": "IS-X-7",
+          "topicCode": "IS",
+          "topicTitle": "Introduction to Science"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "A digital balance reads 45.67 g for the same object each time it is weighed. This measurement is:",
+          "options": [
+            "Accurate but not precise",
+            "Precise but not accurate",
+            "Both accurate and precise",
+            "Neither accurate nor precise"
+          ],
+          "answer": 2,
+          "explanation": "The readings are consistent (precise—to 2 decimal places) and, assuming 45.67 g is the true value, they are also close to the correct value (accurate).",
+          "hint": "Are the readings close together and close to the true value?",
+          "id": "IS-X-22",
+          "topicCode": "IS",
+          "topicTitle": "Introduction to Science"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Which of the following is the correct order of organisation in living organisms, from smallest to largest?",
+          "options": [
+            "Organ → tissue → cell → system → organism",
+            "Cell → tissue → organ → system → organism",
+            "Tissue → cell → organ → system → organism",
+            "System → organ → tissue → cell → organism"
+          ],
+          "answer": 1,
+          "explanation": "The correct hierarchy is: cells combine to form tissues, tissues form organs, organs form systems, and systems make up the organism.",
+          "hint": "Start with the smallest living unit.",
+          "id": "CS-X-14",
+          "topicCode": "CS",
+          "topicTitle": "Cells to Systems"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "What does the cytoplasm do?",
+          "options": [
+            "Controls the cell",
+            "Contains cell fluid where reactions occur",
+            "Absorbs sunlight",
+            "Stores genetic information"
+          ],
+          "answer": 1,
+          "explanation": "The cytoplasm is a gel-like substance that fills the cell and contains dissolved nutrients where many chemical reactions take place.",
+          "hint": "It's the 'jelly' inside the cell where things happen.",
+          "id": "CS-X-9",
+          "topicCode": "CS",
+          "topicTitle": "Cells to Systems"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which of the following is a mixture?",
+          "options": [
+            "Pure water",
+            "Salt water",
+            "Oxygen gas",
+            "Iron metal"
+          ],
+          "answer": 1,
+          "explanation": "Salt water contains two substances (salt and water) mixed together, making it a mixture.",
+          "hint": "A mixture has more than one substance that can be separated.",
+          "id": "MS-X-8",
+          "topicCode": "MS",
+          "topicTitle": "Matter and Separation"
+        },
+        {
+          "type": "mcq",
+          "level": "advanced",
+          "q": "Which statement best explains why a parasitic relationship (like fleas on a dog) is different from a predator-prey relationship?",
+          "options": [
+            "Parasites kill their host immediately",
+            "Parasites feed on their host over a long period without killing it quickly",
+            "Predators only eat plants",
+            "Parasites always live outside the body"
+          ],
+          "answer": 1,
+          "explanation": "Parasites depend on their host's survival for their own survival, so they do not kill the host quickly. Predators kill and eat their prey completely.",
+          "hint": "Does a flea kill a dog quickly or slowly?",
+          "id": "EI-X-24",
+          "topicCode": "EI",
+          "topicTitle": "Ecological Interactions"
+        }
+      ]
+    },
+    {
+      "id": "P1-mock11",
+      "paper": 1,
+      "title": "Paper 1 — Mock 11",
+      "durationMin": 45,
+      "totalQuestions": 60,
+      "instructions": "60 multiple-choice questions. Fresh question set (different from Mocks 1-8). 45 minutes. 1 mark each.",
+      "questions": [
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Pure water boils at exactly 100°C. A sample of water boils between 99°C and 101°C. What conclusion can you draw?",
+          "options": [
+            "The water is pure",
+            "The water contains dissolved impurities",
+            "The thermometer is broken",
+            "The water is being heated too quickly"
+          ],
+          "answer": 1,
+          "explanation": "A boiling point range indicates the presence of dissolved impurities. Pure water has a fixed boiling point of exactly 100°C.",
+          "hint": "Compare the boiling point range to what happens with pure water.",
+          "id": "MS-X-22",
+          "topicCode": "MS",
+          "topicTitle": "Matter and Separation"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Which statement about renewable and non-renewable energy sources is correct?",
+          "options": [
+            "Renewable sources can run out eventually",
+            "Non-renewable sources never need replacing",
+            "Solar energy is renewed naturally by the Sun",
+            "Wind turbines use non-renewable wind"
+          ],
+          "answer": 2,
+          "explanation": "Solar energy is renewable because the Sun continuously produces energy and will do so for billions of years. The other statements are false.",
+          "hint": "'Renewable' means it is naturally replaced or will last very long.",
+          "id": "EE-X-16",
+          "topicCode": "EE",
+          "topicTitle": "Electricity and Energy"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "What does the periodic table show?",
+          "options": [
+            "All the compounds in the world",
+            "All the known elements",
+            "All the mixtures",
+            "All the atoms"
+          ],
+          "answer": 1,
+          "explanation": "The periodic table is an organized display of all the known elements.",
+          "hint": "It's a table that chemists use.",
+          "id": "AE-X-3",
+          "topicCode": "AE",
+          "topicTitle": "Atoms and Elements"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "What do we call the number of waves that pass a point in one second?",
+          "options": [
+            "Amplitude",
+            "Frequency",
+            "Wavelength",
+            "Speed"
+          ],
+          "answer": 1,
+          "explanation": "Frequency measures how many complete waves pass a point per second, measured in Hertz (Hz).",
+          "hint": "Think about how often waves repeat.",
+          "id": "WS-X-12",
+          "topicCode": "WS",
+          "topicTitle": "Waves and Sound"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Which of the following is an example of a qualitative observation?",
+          "options": [
+            "The temperature increased by 5°C",
+            "The solution turned blue",
+            "The mass decreased from 10 g to 8 g",
+            "The volume of gas was 250 mL"
+          ],
+          "answer": 1,
+          "explanation": "A qualitative observation describes a quality or characteristic (colour, smell, texture) without numbers. The other options are quantitative—they use measurements.",
+          "hint": "Qualitative = descriptions without numbers. Which doesn't have a number in it?",
+          "id": "IS-X-15",
+          "topicCode": "IS",
+          "topicTitle": "Introduction to Science"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Which statement about paper chromatography is correct?",
+          "options": [
+            "The solvent moves down the paper by gravity",
+            "Dyes with smaller molecules travel further up the paper",
+            "The baseline must be drawn in pencil, not pen",
+            "All dyes in a mixture travel at the same speed"
+          ],
+          "answer": 2,
+          "explanation": "The baseline must be in pencil because pen ink would dissolve in the solvent and interfere with the results.",
+          "hint": "What do you draw the baseline with? Why can't you use certain materials?",
+          "id": "MS-X-14",
+          "topicCode": "MS",
+          "topicTitle": "Matter and Separation"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which of the following best describes gas particles?",
+          "options": [
+            "Close together and moving slowly",
+            "Far apart and moving randomly",
+            "Tightly packed and fixed in position",
+            "Far apart and not moving"
+          ],
+          "answer": 1,
+          "explanation": "Gas particles are far apart and move randomly in all directions at high speeds.",
+          "hint": "Think about air or smoke spreading throughout a room.",
+          "id": "PM-X-9",
+          "topicCode": "PM",
+          "topicTitle": "The Particle Model"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "During freezing, what happens to the particles as a liquid cools down?",
+          "options": [
+            "Particles vibrate faster and move closer together",
+            "Particles vibrate slower and arrange into a fixed pattern",
+            "Particles escape into the air",
+            "Particles stop moving completely"
+          ],
+          "answer": 1,
+          "explanation": "As temperature drops during freezing, particles vibrate less. They slow down enough that forces between them hold them in fixed, orderly positions forming a solid.",
+          "hint": "What happens to particle vibration as temperature decreases?",
+          "id": "PM-X-17",
+          "topicCode": "PM",
+          "topicTitle": "The Particle Model"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "A student builds a parallel circuit with two identical resistors. How does the total resistance compare to a series circuit with the same two resistors?",
+          "options": [
+            "Parallel resistance is higher",
+            "Parallel resistance is lower",
+            "Both circuits have the same resistance",
+            "It depends on the battery voltage"
+          ],
+          "answer": 1,
+          "explanation": "In parallel circuits, current has multiple paths, so total resistance is lower than in series. For identical resistors, parallel resistance is half the series resistance.",
+          "hint": "More paths for current = easier flow = lower resistance.",
+          "id": "EE-X-19",
+          "topicCode": "EE",
+          "topicTitle": "Electricity and Energy"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Which of the following is the correct order of organisation from smallest to largest?",
+          "options": [
+            "Organ system → organ → tissue → cell",
+            "Cell → tissue → organ → organ system",
+            "Tissue → cell → organ → organ system",
+            "Cell → organ → tissue → organ system"
+          ],
+          "answer": 1,
+          "explanation": "Cells are the smallest living units. Similar cells form tissues, tissues form organs, and organs work together in organ systems.",
+          "hint": "Start with the smallest unit of life and build up.",
+          "id": "CS-X-22",
+          "topicCode": "CS",
+          "topicTitle": "Cells to Systems"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which of the following correctly describes the amplitude of a wave?",
+          "options": [
+            "The number of waves per second",
+            "The distance the wave travels in one second",
+            "The maximum distance a particle moves from its resting position",
+            "The distance from one crest to the next trough"
+          ],
+          "answer": 2,
+          "explanation": "Amplitude is how far a particle moves away from its resting position, measured from the centre to the crest or trough.",
+          "hint": "Think about how far up and down a particle moves from the middle.",
+          "id": "WS-X-4",
+          "topicCode": "WS",
+          "topicTitle": "Waves and Sound"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Two species of bird live in the same woodland and eat the same insects. Over time, one species begins to hunt only at night while the other hunts during the day. This is an example of:",
+          "options": [
+            "Predation",
+            "Mutualism",
+            "Niche differentiation",
+            "Parasitism"
+          ],
+          "answer": 2,
+          "explanation": "The two species are reducing competition by occupying different niches (time periods). Each species now feeds in a different way, allowing both to survive.",
+          "hint": "What has changed to reduce competition between them?",
+          "id": "EI-X-15",
+          "topicCode": "EI",
+          "topicTitle": "Ecological Interactions"
+        },
+        {
+          "type": "mcq",
+          "level": "advanced",
+          "q": "Which of the following correctly describes the relationship between cells, tissues, and organs in a multicellular organism?",
+          "options": [
+            "Organs are made of cells, tissues are made of organs",
+            "Cells are made of tissues, tissues are made of organs",
+            "Tissues are made of cells, organs are made of tissues",
+            "Organs are made of tissues, tissues are made of organs"
+          ],
+          "answer": 2,
+          "explanation": "The correct hierarchy is: cells form tissues, tissues combine to form organs. For example, muscle cells form muscle tissue, which is part of the heart organ.",
+          "hint": "Think of the smallest unit (cells) and how they build up into larger structures.",
+          "id": "CS-X-26",
+          "topicCode": "CS",
+          "topicTitle": "Cells to Systems"
+        },
+        {
+          "type": "mcq",
+          "level": "advanced",
+          "q": "Which statement correctly explains why sodium and chlorine react to form sodium chloride?",
+          "options": [
+            "Sodium and chlorine atoms are identical in size",
+            "Sodium atoms transfer electrons to chlorine atoms, forming an ionic compound",
+            "Chlorine atoms repel sodium atoms",
+            "The reaction requires no energy"
+          ],
+          "answer": 1,
+          "explanation": "Sodium is a reactive metal that loses electrons to chlorine, a reactive non-metal, forming ionic bonds and the compound NaCl.",
+          "hint": "Think about what reactive metals and non-metals do during bonding.",
+          "id": "AE-X-29",
+          "topicCode": "AE",
+          "topicTitle": "Atoms and Elements"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "During sexual reproduction, what is the main advantage of inheriting genetic material from both parents?",
+          "options": [
+            "The offspring grows faster",
+            "It creates genetic variation in the population",
+            "The offspring is guaranteed to be healthy",
+            "It requires less energy than asexual reproduction"
+          ],
+          "answer": 1,
+          "explanation": "Genetic material from two parents combines in different ways, creating variation. This variation helps populations adapt to changing environments.",
+          "hint": "How does having genes from two different sources create something new?",
+          "id": "RV-X-20",
+          "topicCode": "RV",
+          "topicTitle": "Reproduction and Variation"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "What is the name of a single complete back-and-forth movement of a vibrating object?",
+          "options": [
+            "A wave",
+            "An oscillation",
+            "A frequency",
+            "An amplitude"
+          ],
+          "answer": 1,
+          "explanation": "An oscillation is one complete vibration, going back and forth once.",
+          "hint": "Think of a pendulum swinging once from one side to the other and back.",
+          "id": "WS-X-1",
+          "topicCode": "WS",
+          "topicTitle": "Waves and Sound"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which organelle contains genetic information in plant and animal cells?",
+          "options": [
+            "Ribosome",
+            "Vacuole",
+            "Nucleus",
+            "Cell wall"
+          ],
+          "answer": 2,
+          "explanation": "The nucleus contains DNA, which carries all genetic information needed to control the cell.",
+          "hint": "Think of it as the cell's instruction manual.",
+          "id": "CS-X-5",
+          "topicCode": "CS",
+          "topicTitle": "Cells to Systems"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which of the following is an example of discrete data?",
+          "options": [
+            "The temperature of water in °C",
+            "The height of a student in cm",
+            "The number of leaves on a plant",
+            "The mass of a rock in grams"
+          ],
+          "answer": 2,
+          "explanation": "Discrete data can only have whole number values - you cannot have 3.7 leaves. The other options are continuous (can have decimal values).",
+          "hint": "Think about whether you could have a decimal/fraction of the measurement.",
+          "id": "IS-X-5",
+          "topicCode": "IS",
+          "topicTitle": "Introduction to Science"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "On an oscilloscope display, which feature indicates a louder sound?",
+          "options": [
+            "Waves that are closer together",
+            "Waves with a greater amplitude",
+            "Waves that are further apart",
+            "A lower frequency displayed"
+          ],
+          "answer": 1,
+          "explanation": "Amplitude determines loudness; greater amplitude = louder sound. Frequency determines pitch, and wavelength determines the spacing of waves.",
+          "hint": "Loudness is related to how much energy the wave carries, shown by wave height.",
+          "id": "WS-X-20",
+          "topicCode": "WS",
+          "topicTitle": "Waves and Sound"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "What is variation?",
+          "options": [
+            "The process of reproduction",
+            "Differences between organisms of the same species",
+            "The joining of sperm and egg",
+            "How plants grow"
+          ],
+          "answer": 1,
+          "explanation": "Variation refers to the differences in characteristics between individual organisms of the same species.",
+          "hint": "Think about why your classmates look different from each other.",
+          "id": "RV-X-2",
+          "topicCode": "RV",
+          "topicTitle": "Reproduction and Variation"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "A parasite differs from a predator because a parasite…",
+          "options": [
+            "Is larger than its host",
+            "Lives on or inside its host and feeds without killing it",
+            "Hunts many different prey",
+            "Only affects plants"
+          ],
+          "answer": 1,
+          "explanation": "Parasites live on or inside a host organism and feed on it over time without immediately killing it (this would harm their food source). Predators hunt, kill and eat their prey immediately.",
+          "hint": "A parasite needs its host to stay alive for a long time. Why would a predator kill immediately?",
+          "id": "EI-X-21",
+          "topicCode": "EI",
+          "topicTitle": "Ecological Interactions"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "A mobile phone battery stores 20,000 joules of energy. If the phone uses 10 joules per second, how long will the battery last?",
+          "options": [
+            "200 seconds",
+            "2,000 seconds",
+            "20,000 seconds",
+            "200,000 seconds"
+          ],
+          "answer": 1,
+          "explanation": "Time = Energy ÷ Power. Time = 20,000 J ÷ 10 J/s = 2,000 seconds (about 33 minutes).",
+          "hint": "Power is joules per second. Divide energy by power.",
+          "id": "EE-X-15",
+          "topicCode": "EE",
+          "topicTitle": "Electricity and Energy"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Which statement correctly describes the role of the umbilical cord?",
+          "options": [
+            "It produces hormones to control the baby's growth",
+            "It carries blood containing nutrients and oxygen from mother to baby",
+            "It protects the baby from infections",
+            "It removes only waste products from the baby"
+          ],
+          "answer": 1,
+          "explanation": "The umbilical cord contains blood vessels that transport oxygen, nutrients, and waste between the mother and developing baby.",
+          "hint": "Think of it like a pipeline connecting the baby to the mother's blood supply.",
+          "id": "RV-X-21",
+          "topicCode": "RV",
+          "topicTitle": "Reproduction and Variation"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "An oscilloscope display shows two sound waves side by side. Wave X has waves that are closer together than Wave Y. What can you conclude?",
+          "options": [
+            "Wave X is louder than Wave Y",
+            "Wave X has a shorter wavelength than Wave Y",
+            "Wave X travels faster than Wave Y",
+            "Wave Y has a higher frequency than Wave X"
+          ],
+          "answer": 1,
+          "explanation": "Waves that are closer together have a shorter wavelength. Wavelength depends on how the waves are spaced, not on loudness, speed (in the same medium), or frequency directly.",
+          "hint": "Waves closer together means the distance between peaks is smaller—that's wavelength.",
+          "id": "WS-X-17",
+          "topicCode": "WS",
+          "topicTitle": "Waves and Sound"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "In plant cells, the vacuole is mainly used for:",
+          "options": [
+            "Making energy",
+            "Storing water and maintaining cell shape",
+            "Controlling the cell",
+            "Breaking down waste"
+          ],
+          "answer": 1,
+          "explanation": "The large central vacuole in plant cells stores water, nutrients, and helps the plant cell maintain its rigid shape and firmness.",
+          "hint": "It keeps the plant cell firm and stores cell sap.",
+          "id": "CS-X-11",
+          "topicCode": "CS",
+          "topicTitle": "Cells to Systems"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Which method would separate sand from water in a muddy sand-water mixture?",
+          "options": [
+            "Evaporation",
+            "Distillation",
+            "Filtration",
+            "Chromatography"
+          ],
+          "answer": 2,
+          "explanation": "Filtration separates insoluble solids (sand) from liquids (water) using a filter paper.",
+          "hint": "Sand does not dissolve in water - it is insoluble.",
+          "id": "MS-X-21",
+          "topicCode": "MS",
+          "topicTitle": "Matter and Separation"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "When a gas is compressed into a smaller volume at constant temperature, what happens to the pressure?",
+          "options": [
+            "Pressure decreases because particles have less space",
+            "Pressure increases because particles collide with walls more frequently",
+            "Pressure stays the same because temperature hasn't changed",
+            "Pressure becomes zero"
+          ],
+          "answer": 1,
+          "explanation": "Compressing a gas reduces the volume, so particles hit the walls in a smaller space more frequently, increasing pressure even though temperature and particle speed remain constant.",
+          "hint": "How does reducing space affect how often particles hit the walls?",
+          "id": "PM-X-22",
+          "topicCode": "PM",
+          "topicTitle": "The Particle Model"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which statement about ribosomes is correct?",
+          "options": [
+            "They only exist in plant cells",
+            "They make proteins for the cell",
+            "They store energy",
+            "They contain chlorophyll"
+          ],
+          "answer": 1,
+          "explanation": "Ribosomes are found in all cells and are responsible for synthesizing (making) proteins based on instructions from the nucleus.",
+          "hint": "Think about what small structures make proteins in cells.",
+          "id": "CS-X-12",
+          "topicCode": "CS",
+          "topicTitle": "Cells to Systems"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "In plants, which structure contains the male gamete?",
+          "options": [
+            "Sepal",
+            "Pollen",
+            "Carpel",
+            "Stigma"
+          ],
+          "answer": 1,
+          "explanation": "Pollen contains the male gamete (sperm cell) in plants.",
+          "hint": "The powder-like substance that causes hay fever.",
+          "id": "RV-X-3",
+          "topicCode": "RV",
+          "topicTitle": "Reproduction and Variation"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "What is a saturated solution?",
+          "options": [
+            "A solution with no solute",
+            "A solution where no more solute can dissolve",
+            "A solution that is boiling",
+            "A solution made with hot water"
+          ],
+          "answer": 1,
+          "explanation": "A saturated solution contains the maximum amount of dissolved solute at that temperature.",
+          "hint": "Think about when you cannot dissolve any more sugar in your tea.",
+          "id": "MS-X-12",
+          "topicCode": "MS",
+          "topicTitle": "Matter and Separation"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "What is the chemical symbol for oxygen?",
+          "options": [
+            "Ox",
+            "O",
+            "Og",
+            "O₂"
+          ],
+          "answer": 1,
+          "explanation": "The chemical symbol for oxygen is O (a single capital letter). O₂ is a molecule of oxygen gas with two atoms.",
+          "hint": "Chemical symbols are usually one or two letters.",
+          "id": "AE-X-10",
+          "topicCode": "AE",
+          "topicTitle": "Atoms and Elements"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "In an experiment testing how temperature affects the speed of a reaction, which is the independent variable?",
+          "options": [
+            "The speed of the reaction",
+            "The temperature",
+            "The time taken",
+            "The volume of liquid"
+          ],
+          "answer": 1,
+          "explanation": "Temperature is the variable being deliberately changed by the scientist, making it the independent variable.",
+          "hint": "Which variable does the scientist change intentionally?",
+          "id": "IS-X-19",
+          "topicCode": "IS",
+          "topicTitle": "Introduction to Science"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "What is the atomic number of an element?",
+          "options": [
+            "The total number of protons and neutrons",
+            "The number of protons in an atom",
+            "The number of neutrons in an atom",
+            "The mass of the atom in grams"
+          ],
+          "answer": 1,
+          "explanation": "The atomic number is the number of protons in an atom of an element. This number identifies which element it is.",
+          "hint": "The atomic number tells you the identity of the element.",
+          "id": "AE-X-16",
+          "topicCode": "AE",
+          "topicTitle": "Atoms and Elements"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which method separates different coloured dyes in ink?",
+          "options": [
+            "Filtration",
+            "Evaporation",
+            "Chromatography",
+            "Distillation"
+          ],
+          "answer": 2,
+          "explanation": "Chromatography separates substances by how they move at different rates up absorbent paper.",
+          "hint": "This method creates a colourful pattern on paper.",
+          "id": "MS-X-11",
+          "topicCode": "MS",
+          "topicTitle": "Matter and Separation"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "A drum is struck with a drumstick. Which sequence correctly shows the energy transfers?",
+          "options": [
+            "Light energy → Sound energy → Kinetic energy",
+            "Kinetic energy → Sound energy → Thermal energy",
+            "Kinetic energy → Sound energy → Kinetic energy of air particles",
+            "Thermal energy → Kinetic energy → Sound energy"
+          ],
+          "answer": 2,
+          "explanation": "The drumstick has kinetic energy. When it strikes the drum, it creates sound energy. This sound energy causes air particles to move (kinetic energy of the particles).",
+          "hint": "Start with the moving drumstick and follow what happens step by step.",
+          "id": "WS-X-10",
+          "topicCode": "WS",
+          "topicTitle": "Waves and Sound"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "What happens to the grass population if all the rabbits in a meadow die from disease?",
+          "options": [
+            "Grass population decreases",
+            "Grass population increases",
+            "Grass population stays the same",
+            "Grass becomes poisonous"
+          ],
+          "answer": 1,
+          "explanation": "Rabbits eat grass (they are herbivores). Without rabbits to graze, more grass survives and grows, so the population increases.",
+          "hint": "Rabbits eat grass. What happens to food when consumers are removed?",
+          "id": "EI-X-19",
+          "topicCode": "EI",
+          "topicTitle": "Ecological Interactions"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Which of the following is an example of a variation caused only by genes?",
+          "options": [
+            "Skin tone from sun exposure",
+            "Blood type",
+            "Muscle size from exercise",
+            "Hair length"
+          ],
+          "answer": 1,
+          "explanation": "Blood type is inherited and cannot be changed by the environment. Skin tone can be affected by sun exposure, muscle size by exercise, and hair length by cutting.",
+          "hint": "Which trait cannot be changed by what you do or where you live?",
+          "id": "RV-X-13",
+          "topicCode": "RV",
+          "topicTitle": "Reproduction and Variation"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which organism breaks down dead material and returns nutrients to the soil?",
+          "options": [
+            "Producer",
+            "Herbivore",
+            "Decomposer",
+            "Carnivore"
+          ],
+          "answer": 2,
+          "explanation": "Decomposers like bacteria and fungi break down dead organisms and recycle nutrients.",
+          "hint": "These organisms 'decompose' (break down) dead things.",
+          "id": "EI-X-9",
+          "topicCode": "EI",
+          "topicTitle": "Ecological Interactions"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which state of matter has particles that are tightly packed and cannot move around?",
+          "options": [
+            "Gas",
+            "Liquid",
+            "Solid",
+            "Plasma"
+          ],
+          "answer": 2,
+          "explanation": "Solid particles are tightly packed in fixed positions and can only vibrate.",
+          "hint": "Think about something you can hold in your hand that keeps its shape.",
+          "id": "PM-X-7",
+          "topicCode": "PM",
+          "topicTitle": "The Particle Model"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "A power station generates 1,000,000 joules of energy. If it took 1 minute to generate this energy, what was the power output?",
+          "options": [
+            "1,000,000 W",
+            "16,667 W",
+            "60,000,000 W",
+            "1,000 W"
+          ],
+          "answer": 1,
+          "explanation": "Power = Energy ÷ Time = 1,000,000 J ÷ 60 s = 16,667 W (approximately).",
+          "hint": "Power is measured in watts. 1 watt = 1 joule per second.",
+          "id": "EE-X-18",
+          "topicCode": "EE",
+          "topicTitle": "Electricity and Energy"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "What is the total number of atoms in one molecule of calcium carbonate (CaCO₃)?",
+          "options": [
+            "3",
+            "5",
+            "6",
+            "8"
+          ],
+          "answer": 2,
+          "explanation": "Calcium carbonate contains: 1 calcium atom + 1 carbon atom + 3 oxygen atoms = 5 atoms total.",
+          "hint": "Count Ca(1) + C(1) + O(3) carefully.",
+          "id": "AE-X-13",
+          "topicCode": "AE",
+          "topicTitle": "Atoms and Elements"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which of the following is a control variable in an experiment?",
+          "options": [
+            "The amount of light you change to measure plant growth",
+            "The height of the plant that you measure",
+            "The type of soil you keep the same for all plants",
+            "The time period over which you collect data"
+          ],
+          "answer": 2,
+          "explanation": "A control variable is kept the same throughout an experiment to ensure a fair test. The soil type is kept constant while other factors change.",
+          "hint": "Think 'Control' = keeping things the same to make it fair.",
+          "id": "IS-X-1",
+          "topicCode": "IS",
+          "topicTitle": "Introduction to Science"
+        },
+        {
+          "type": "mcq",
+          "level": "advanced",
+          "q": "Why do decomposers occupy a unique position in food webs rather than being part of a linear food chain?",
+          "options": [
+            "They eat everything",
+            "They break down dead organic matter from all trophic levels and return nutrients to the soil, feeding on material from multiple levels",
+            "They are not important to ecosystems",
+            "They only decompose plants"
+          ],
+          "answer": 1,
+          "explanation": "Decomposers consume dead organisms and waste from all trophic levels, not just one level above them, so they interact with the entire food web structure.",
+          "hint": "Where does a decomposer get its food from compared to a consumer?",
+          "id": "EI-X-30",
+          "topicCode": "EI",
+          "topicTitle": "Ecological Interactions"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "In which state of matter are the particles closest together?",
+          "options": [
+            "Gas",
+            "Liquid",
+            "Solid",
+            "All states have particles equally spaced"
+          ],
+          "answer": 2,
+          "explanation": "Solid particles are closest together because they are tightly packed in fixed positions.",
+          "hint": "Which state takes up the least amount of space?",
+          "id": "PM-X-6",
+          "topicCode": "PM",
+          "topicTitle": "The Particle Model"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "A kettle has a power rating of 2000 W. Which statement about energy transfer is correct?",
+          "options": [
+            "It transfers 2000 J every second",
+            "It transfers 2000 J every hour",
+            "It transfers 2000 W of heat energy",
+            "It stores 2000 J in the water"
+          ],
+          "answer": 0,
+          "explanation": "Power is measured in watts (W), where 1 W = 1 J/s. So 2000 W means 2000 joules of energy transferred every second.",
+          "hint": "Power = energy ÷ time. What is power measured in joules per?",
+          "id": "EE-X-20",
+          "topicCode": "EE",
+          "topicTitle": "Electricity and Energy"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "What is the name of the variable you measure or observe as a result of your experiment?",
+          "options": [
+            "Independent variable",
+            "Control variable",
+            "Dependent variable",
+            "Random variable"
+          ],
+          "answer": 2,
+          "explanation": "The dependent variable is what you measure - it is the effect or result that depends on what you changed (the independent variable).",
+          "hint": "It 'depends on' the independent variable. It is the result you measure.",
+          "id": "IS-X-3",
+          "topicCode": "IS",
+          "topicTitle": "Introduction to Science"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which of the following is a mixture?",
+          "options": [
+            "Pure water",
+            "Salt water",
+            "Oxygen gas",
+            "Iron metal"
+          ],
+          "answer": 1,
+          "explanation": "Salt water contains two substances (salt and water) mixed together, making it a mixture.",
+          "hint": "A mixture has more than one substance that can be separated.",
+          "id": "MS-X-8",
+          "topicCode": "MS",
+          "topicTitle": "Matter and Separation"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which of these is a function of the cell wall?",
+          "options": [
+            "It stores water",
+            "It releases energy",
+            "It provides support and protection",
+            "It makes food"
+          ],
+          "answer": 2,
+          "explanation": "The cell wall is a rigid structure around plant cells that provides structural support and protection.",
+          "hint": "It's only found in plant cells and helps them stay rigid and strong.",
+          "id": "CS-X-8",
+          "topicCode": "CS",
+          "topicTitle": "Cells to Systems"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Which pair of elements would you expect to have the most similar chemical properties?",
+          "options": [
+            "Hydrogen and helium",
+            "Chlorine and bromine",
+            "Carbon and nitrogen",
+            "Magnesium and aluminum"
+          ],
+          "answer": 1,
+          "explanation": "Chlorine and bromine are both in Group 17 (halogens) of the periodic table. They have similar electron arrangements in their outer shells, making their properties similar.",
+          "hint": "Look at which elements are in the same group (column) of the periodic table.",
+          "id": "AE-X-22",
+          "topicCode": "AE",
+          "topicTitle": "Atoms and Elements"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "What is the correct order of state changes from solid to gas?",
+          "options": [
+            "Solid → Condensing → Gas",
+            "Solid → Freezing → Liquid → Gas",
+            "Solid → Melting → Liquid → Evaporating → Gas",
+            "Solid → Boiling → Gas"
+          ],
+          "answer": 2,
+          "explanation": "A solid first melts to become a liquid, then the liquid evaporates to become a gas.",
+          "hint": "Think about what happens to ice when it warms up.",
+          "id": "PM-X-5",
+          "topicCode": "PM",
+          "topicTitle": "The Particle Model"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "A student measures the temperature of boiling water five times and records: 98°C, 99°C, 100°C, 100°C, 101°C. What is the mean temperature?",
+          "options": [
+            "99°C",
+            "99.6°C",
+            "100°C",
+            "101°C"
+          ],
+          "answer": 1,
+          "explanation": "Sum = 98 + 99 + 100 + 100 + 101 = 498. Mean = 498 ÷ 5 = 99.6°C",
+          "hint": "Add all five values together, then divide by 5.",
+          "id": "IS-X-13",
+          "topicCode": "IS",
+          "topicTitle": "Introduction to Science"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which state of matter has a fixed shape and a fixed volume?",
+          "options": [
+            "Gas",
+            "Liquid",
+            "Solid",
+            "None of these"
+          ],
+          "answer": 2,
+          "explanation": "Only solids have both a fixed shape and fixed volume because their particles are in fixed positions.",
+          "hint": "Which one doesn't change shape when you move it?",
+          "id": "PM-X-11",
+          "topicCode": "PM",
+          "topicTitle": "The Particle Model"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Why do cells that line the small intestine have many finger-like projections called villi?",
+          "options": [
+            "To produce digestive enzymes",
+            "To increase surface area for absorption of nutrients",
+            "To help the intestine move food along",
+            "To store glucose"
+          ],
+          "answer": 1,
+          "explanation": "The villi greatly increase the surface area of the epithelial tissue, allowing more efficient absorption of digested nutrients.",
+          "hint": "What advantage does a larger surface area give for absorption?",
+          "id": "CS-X-16",
+          "topicCode": "CS",
+          "topicTitle": "Cells to Systems"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which type of data is 'colour of a flower'?",
+          "options": [
+            "Continuous data",
+            "Discrete data",
+            "Categoric data",
+            "Numerical data"
+          ],
+          "answer": 2,
+          "explanation": "Categoric data consists of words or labels, like colours, names, or types. It cannot be measured numerically.",
+          "hint": "Is this a word/label or a number you can measure?",
+          "id": "IS-X-8",
+          "topicCode": "IS",
+          "topicTitle": "Introduction to Science"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "What is the SI unit of electrical current?",
+          "options": [
+            "Volt",
+            "Ampere",
+            "Ohm",
+            "Watt"
+          ],
+          "answer": 1,
+          "explanation": "The ampere (A) is the SI unit used to measure electrical current.",
+          "hint": "Think of the device that measures current — an ammeter.",
+          "id": "EE-X-12",
+          "topicCode": "EE",
+          "topicTitle": "Electricity and Energy"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which separation method uses paper to separate insoluble solids from liquids?",
+          "options": [
+            "Evaporation",
+            "Filtration",
+            "Distillation",
+            "Chromatography"
+          ],
+          "answer": 1,
+          "explanation": "Filtration uses filter paper with tiny holes. Liquids pass through but solid particles are trapped.",
+          "hint": "The word contains 'filter'.",
+          "id": "MS-X-10",
+          "topicCode": "MS",
+          "topicTitle": "Matter and Separation"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which of the following is made in the ovaries?",
+          "options": [
+            "Sperm cells",
+            "Egg cells",
+            "Pollen",
+            "Seeds"
+          ],
+          "answer": 1,
+          "explanation": "Egg cells are produced in the ovaries in females.",
+          "hint": "The female reproductive organ that produces eggs.",
+          "id": "RV-X-1",
+          "topicCode": "RV",
+          "topicTitle": "Reproduction and Variation"
+        },
+        {
+          "type": "mcq",
+          "level": "advanced",
+          "q": "A food web shows multiple interconnected food chains in an ecosystem. Why is a food web more useful than a single food chain for understanding real ecosystems?",
+          "options": [
+            "Food webs have prettier diagrams",
+            "Real organisms eat multiple food sources, and food webs show how removing one species affects many others",
+            "Food chains are too easy to draw",
+            "Food webs show the same information but faster"
+          ],
+          "answer": 1,
+          "explanation": "Food webs realistically show that most organisms have multiple food sources and are food sources for multiple predators. This helps predict cascading effects when one species is removed or population changes.",
+          "hint": "Does a rabbit only eat one type of plant?",
+          "id": "EI-X-27",
+          "topicCode": "EI",
+          "topicTitle": "Ecological Interactions"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which symbol represents a cell (battery) in an electrical circuit diagram?",
+          "options": [
+            "A circle",
+            "A long line and a short line",
+            "An arrow",
+            "A spiral"
+          ],
+          "answer": 1,
+          "explanation": "A cell is represented by one long line and one short line. A battery is two or more cells.",
+          "hint": "The long line is the positive terminal.",
+          "id": "EE-X-5",
+          "topicCode": "EE",
+          "topicTitle": "Electricity and Energy"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which of the following is a primary consumer in a food chain?",
+          "options": [
+            "Lion",
+            "Zebra",
+            "Grass",
+            "Bacteria"
+          ],
+          "answer": 1,
+          "explanation": "A primary consumer eats plants (producers). The zebra is a herbivore that eats grass.",
+          "hint": "Primary consumers eat plants, not other animals.",
+          "id": "EI-X-6",
+          "topicCode": "EI",
+          "topicTitle": "Ecological Interactions"
+        }
+      ]
+    },
+    {
+      "id": "P1-mock12",
+      "paper": 1,
+      "title": "Paper 1 — Mock 12",
+      "durationMin": 45,
+      "totalQuestions": 60,
+      "instructions": "60 multiple-choice questions. Fresh question set (different from Mocks 1-8). 45 minutes. 1 mark each.",
+      "questions": [
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Which separation technique would be most suitable for separating a mixture of two immiscible liquids with similar boiling points?",
+          "options": [
+            "Distillation",
+            "Chromatography",
+            "Separating funnel",
+            "Crystallisation"
+          ],
+          "answer": 2,
+          "explanation": "A separating funnel is used to separate immiscible liquids (liquids that do not mix) regardless of their boiling points.",
+          "hint": "Immiscible means the liquids don't mix - think of oil and water.",
+          "id": "MS-X-17",
+          "topicCode": "MS",
+          "topicTitle": "Matter and Separation"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which type of data is the colour of a flower?",
+          "options": [
+            "Continuous data",
+            "Discrete data",
+            "Categoric data",
+            "Numerical data"
+          ],
+          "answer": 2,
+          "explanation": "Categoric data is descriptive - it is a label or category (like colours, plant species, or names). It is not a number.",
+          "hint": "Can you count the colours on a scale, or are they just different types/categories?",
+          "id": "IS-X-4",
+          "topicCode": "IS",
+          "topicTitle": "Introduction to Science"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "What is the unit of electrical resistance?",
+          "options": [
+            "Amp",
+            "Volt",
+            "Ohm",
+            "Watt"
+          ],
+          "answer": 2,
+          "explanation": "Electrical resistance is measured in ohms (Ω).",
+          "hint": "It sounds like the Greek letter omega.",
+          "id": "EE-X-6",
+          "topicCode": "EE",
+          "topicTitle": "Electricity and Energy"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Which of the following best explains why a solid has a fixed shape?",
+          "options": [
+            "Particles in a solid don't move at all",
+            "Particles are tightly packed and vibrate in fixed positions around strong attractive forces",
+            "Particles are very large and cannot move",
+            "The solid is held in place by gravity"
+          ],
+          "answer": 1,
+          "explanation": "In a solid, particles vibrate around fixed positions due to strong forces between them, giving the solid its rigid shape.",
+          "hint": "Are particles in a solid completely still or do they have some movement?",
+          "id": "PM-X-21",
+          "topicCode": "PM",
+          "topicTitle": "The Particle Model"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "A sound wave travels through air at 340 m/s. If the wavelength is 0.68 m, what is the frequency of the sound?",
+          "options": [
+            "500 Hz",
+            "231 Hz",
+            "231 m/s",
+            "0.002 Hz"
+          ],
+          "answer": 0,
+          "explanation": "Using the wave equation v = f × λ, we rearrange to f = v ÷ λ = 340 ÷ 0.68 = 500 Hz.",
+          "hint": "Use the formula: frequency = speed ÷ wavelength",
+          "id": "WS-X-13",
+          "topicCode": "WS",
+          "topicTitle": "Waves and Sound"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Two species of bird live in the same woodland and eat the same insects. Over time, one species begins to hunt only at night while the other hunts during the day. This is an example of:",
+          "options": [
+            "Predation",
+            "Mutualism",
+            "Niche differentiation",
+            "Parasitism"
+          ],
+          "answer": 2,
+          "explanation": "The two species are reducing competition by occupying different niches (time periods). Each species now feeds in a different way, allowing both to survive.",
+          "hint": "What has changed to reduce competition between them?",
+          "id": "EI-X-15",
+          "topicCode": "EI",
+          "topicTitle": "Ecological Interactions"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Which of the following is a compound?",
+          "options": [
+            "Oxygen gas",
+            "Nitrogen gas",
+            "Carbon dioxide",
+            "Argon"
+          ],
+          "answer": 2,
+          "explanation": "Carbon dioxide (CO₂) is made of two different elements chemically bonded together, making it a compound. The others are elements.",
+          "hint": "A compound must contain at least two different elements joined together.",
+          "id": "AE-X-15",
+          "topicCode": "AE",
+          "topicTitle": "Atoms and Elements"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "What is the main function of the cell membrane?",
+          "options": [
+            "To store water",
+            "To control what enters and leaves the cell",
+            "To produce energy",
+            "To hold the cell rigid"
+          ],
+          "answer": 1,
+          "explanation": "The cell membrane controls which substances can enter and leave the cell.",
+          "hint": "Think about what acts as a barrier or gatekeeper.",
+          "id": "CS-X-1",
+          "topicCode": "CS",
+          "topicTitle": "Cells to Systems"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "In paper chromatography, a dye travels 6 cm while the solvent travels 10 cm. What is the Rf value?",
+          "options": [
+            "0.4",
+            "0.6",
+            "1.6",
+            "16"
+          ],
+          "answer": 1,
+          "explanation": "Rf = distance travelled by substance ÷ distance travelled by solvent = 6 ÷ 10 = 0.6",
+          "hint": "Rf value = divide the distances",
+          "id": "MS-X-19",
+          "topicCode": "MS",
+          "topicTitle": "Matter and Separation"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Two identical bulbs are connected in series to a battery. If one bulb fails and breaks the circuit, what happens to the other bulb?",
+          "options": [
+            "It gets brighter",
+            "It stays the same brightness",
+            "It goes off",
+            "It flickers"
+          ],
+          "answer": 2,
+          "explanation": "In a series circuit, if one component breaks, the circuit is broken and current cannot flow anywhere. Both bulbs go off.",
+          "hint": "In series, there is only one path for current to follow.",
+          "id": "EE-X-13",
+          "topicCode": "EE",
+          "topicTitle": "Electricity and Energy"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which state of matter has a fixed shape and a fixed volume?",
+          "options": [
+            "Gas",
+            "Liquid",
+            "Solid",
+            "None of these"
+          ],
+          "answer": 2,
+          "explanation": "Only solids have both a fixed shape and fixed volume because their particles are in fixed positions.",
+          "hint": "Which one doesn't change shape when you move it?",
+          "id": "PM-X-11",
+          "topicCode": "PM",
+          "topicTitle": "The Particle Model"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "What do we call the number of waves that pass a point in one second?",
+          "options": [
+            "Amplitude",
+            "Frequency",
+            "Wavelength",
+            "Speed"
+          ],
+          "answer": 1,
+          "explanation": "Frequency measures how many complete waves pass a point per second, measured in Hertz (Hz).",
+          "hint": "Think about how often waves repeat.",
+          "id": "WS-X-12",
+          "topicCode": "WS",
+          "topicTitle": "Waves and Sound"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which of the following is an example of a predator?",
+          "options": [
+            "Grass",
+            "Sheep",
+            "Lion",
+            "Lettuce"
+          ],
+          "answer": 2,
+          "explanation": "A predator is an animal that hunts and eats other animals. A lion hunts other animals for food.",
+          "hint": "Think of an animal that hunts other animals for food.",
+          "id": "EI-X-12",
+          "topicCode": "EI",
+          "topicTitle": "Ecological Interactions"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Which statement about renewable and non-renewable energy sources is correct?",
+          "options": [
+            "Renewable sources can run out eventually",
+            "Non-renewable sources never need replacing",
+            "Solar energy is renewed naturally by the Sun",
+            "Wind turbines use non-renewable wind"
+          ],
+          "answer": 2,
+          "explanation": "Solar energy is renewable because the Sun continuously produces energy and will do so for billions of years. The other statements are false.",
+          "hint": "'Renewable' means it is naturally replaced or will last very long.",
+          "id": "EE-X-16",
+          "topicCode": "EE",
+          "topicTitle": "Electricity and Energy"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "What does evaporation leave behind when salt water is heated?",
+          "options": [
+            "Pure water",
+            "Salt crystals",
+            "Steam only",
+            "An empty container"
+          ],
+          "answer": 1,
+          "explanation": "Salt does not evaporate with water, so it stays in the container as crystals.",
+          "hint": "Which part has a higher boiling point?",
+          "id": "MS-X-9",
+          "topicCode": "MS",
+          "topicTitle": "Matter and Separation"
+        },
+        {
+          "type": "mcq",
+          "level": "advanced",
+          "q": "Human skin colour is controlled by multiple genes. A child born to parents with different skin colours often has an intermediate shade. This is best explained by…",
+          "options": [
+            "Discontinuous variation in skin colour",
+            "Polygenic inheritance, where alleles combine additively",
+            "Environmental factors alone determining skin colour",
+            "The child always inheriting skin colour from one parent only"
+          ],
+          "answer": 1,
+          "explanation": "Multiple genes each contribute small effects to skin colour, producing a range. Alleles from both parents combine additively, resulting in intermediate phenotypes.",
+          "hint": "Many genes + additive effects = what type of variation?",
+          "id": "RV-X-27",
+          "topicCode": "RV",
+          "topicTitle": "Reproduction and Variation"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "What is the symbol for voltage in equations?",
+          "options": [
+            "I",
+            "R",
+            "V",
+            "P"
+          ],
+          "answer": 2,
+          "explanation": "V is the symbol for voltage, measured in volts (V).",
+          "hint": "V stands for 'volt'.",
+          "id": "EE-X-9",
+          "topicCode": "EE",
+          "topicTitle": "Electricity and Energy"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Plant cells have a cell wall made of cellulose. What is the main advantage of this structure?",
+          "options": [
+            "It allows photosynthesis to occur",
+            "It provides rigidity and structural support to the plant",
+            "It stores glucose for growth",
+            "It controls what enters and leaves the cell"
+          ],
+          "answer": 1,
+          "explanation": "The cell wall is rigid and provides mechanical support, allowing plants to stand upright and maintain their shape.",
+          "hint": "Why can plants stand up without a skeleton?",
+          "id": "CS-X-19",
+          "topicCode": "CS",
+          "topicTitle": "Cells to Systems"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which of the following is NOT an element?",
+          "options": [
+            "Carbon",
+            "Hydrogen",
+            "Salt",
+            "Nitrogen"
+          ],
+          "answer": 2,
+          "explanation": "Salt is a compound made of sodium and chlorine atoms bonded together, not an element.",
+          "hint": "Which one is made from two different elements?",
+          "id": "AE-X-2",
+          "topicCode": "AE",
+          "topicTitle": "Atoms and Elements"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Why is the placenta an important organ during pregnancy?",
+          "options": [
+            "It produces the amniotic fluid",
+            "It is where the baby's heart develops",
+            "It allows nutrient and oxygen exchange between mother and baby",
+            "It controls how fast the baby grows"
+          ],
+          "answer": 2,
+          "explanation": "The placenta is embedded in the uterus wall and allows oxygen and nutrients to pass from mother's blood to baby's blood, and waste products to pass back.",
+          "hint": "What structure needs to pass materials between two separate blood systems?",
+          "id": "RV-X-22",
+          "topicCode": "RV",
+          "topicTitle": "Reproduction and Variation"
+        },
+        {
+          "type": "mcq",
+          "level": "advanced",
+          "q": "Which statement correctly explains why sodium and chlorine react to form sodium chloride?",
+          "options": [
+            "Sodium and chlorine atoms are identical in size",
+            "Sodium atoms transfer electrons to chlorine atoms, forming an ionic compound",
+            "Chlorine atoms repel sodium atoms",
+            "The reaction requires no energy"
+          ],
+          "answer": 1,
+          "explanation": "Sodium is a reactive metal that loses electrons to chlorine, a reactive non-metal, forming ionic bonds and the compound NaCl.",
+          "hint": "Think about what reactive metals and non-metals do during bonding.",
+          "id": "AE-X-29",
+          "topicCode": "AE",
+          "topicTitle": "Atoms and Elements"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Which statement about paper chromatography is correct?",
+          "options": [
+            "The solvent moves down the paper by gravity",
+            "Dyes with smaller molecules travel further up the paper",
+            "The baseline must be drawn in pencil, not pen",
+            "All dyes in a mixture travel at the same speed"
+          ],
+          "answer": 2,
+          "explanation": "The baseline must be in pencil because pen ink would dissolve in the solvent and interfere with the results.",
+          "hint": "What do you draw the baseline with? Why can't you use certain materials?",
+          "id": "MS-X-14",
+          "topicCode": "MS",
+          "topicTitle": "Matter and Separation"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "A sound wave travels through air at 340 m/s. If the wavelength of a note is 0.68 m, what is the frequency of this note?",
+          "options": [
+            "500 Hz",
+            "231 Hz",
+            "340 Hz",
+            "680 Hz"
+          ],
+          "answer": 0,
+          "explanation": "Using the equation: frequency = speed ÷ wavelength. f = 340 ÷ 0.68 = 500 Hz.",
+          "hint": "Use the wave equation: speed = frequency × wavelength, or rearrange to find frequency.",
+          "id": "WS-X-18",
+          "topicCode": "WS",
+          "topicTitle": "Waves and Sound"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "A digital balance reads 45.67 g for the same object each time it is weighed. This measurement is:",
+          "options": [
+            "Accurate but not precise",
+            "Precise but not accurate",
+            "Both accurate and precise",
+            "Neither accurate nor precise"
+          ],
+          "answer": 2,
+          "explanation": "The readings are consistent (precise—to 2 decimal places) and, assuming 45.67 g is the true value, they are also close to the correct value (accurate).",
+          "hint": "Are the readings close together and close to the true value?",
+          "id": "IS-X-22",
+          "topicCode": "IS",
+          "topicTitle": "Introduction to Science"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Which statement about asexual reproduction is correct?",
+          "options": [
+            "It requires two parents",
+            "Offspring are genetically identical to the parent",
+            "It produces genetic variation",
+            "It involves the fusion of gametes"
+          ],
+          "answer": 1,
+          "explanation": "Asexual reproduction uses only one parent and produces offspring that are clones - genetically identical. Sexual reproduction involves two parents and creates variation.",
+          "hint": "Does asexual reproduction need sperm and egg to mix?",
+          "id": "RV-X-15",
+          "topicCode": "RV",
+          "topicTitle": "Reproduction and Variation"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which of the following is a consumer in a food chain?",
+          "options": [
+            "Oak tree",
+            "Grass",
+            "Rabbit",
+            "Soil"
+          ],
+          "answer": 2,
+          "explanation": "A consumer is an organism that eats other organisms for food. The rabbit eats grass, making it a consumer. Plants are producers, and soil is neither.",
+          "hint": "A consumer has to eat something else to survive.",
+          "id": "EI-X-1",
+          "topicCode": "EI",
+          "topicTitle": "Ecological Interactions"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Which statement best describes competition in an ecosystem?",
+          "options": [
+            "Two species hunting each other for food",
+            "Two species fighting over the same resources like food or space",
+            "One species living inside another species",
+            "Two species helping each other to survive"
+          ],
+          "answer": 1,
+          "explanation": "Competition occurs when organisms fight over limited resources such as food, water, light, or space. This can happen between species (interspecific) or within a species (intraspecific).",
+          "hint": "Competition is about fighting over what?",
+          "id": "EI-X-16",
+          "topicCode": "EI",
+          "topicTitle": "Ecological Interactions"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Which statement about the periodic table is correct?",
+          "options": [
+            "Elements are arranged by colour from left to right",
+            "Elements in the same period have similar chemical properties",
+            "Elements in the same group have similar chemical properties",
+            "All elements in row 2 are gases"
+          ],
+          "answer": 2,
+          "explanation": "Elements in the same group (vertical column) have similar chemical properties because they have the same number of outer shell electrons.",
+          "hint": "Remember: groups are columns, periods are rows.",
+          "id": "AE-X-14",
+          "topicCode": "AE",
+          "topicTitle": "Atoms and Elements"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "What is the name of the variable you measure or observe as a result of your experiment?",
+          "options": [
+            "Independent variable",
+            "Control variable",
+            "Dependent variable",
+            "Random variable"
+          ],
+          "answer": 2,
+          "explanation": "The dependent variable is what you measure - it is the effect or result that depends on what you changed (the independent variable).",
+          "hint": "It 'depends on' the independent variable. It is the result you measure.",
+          "id": "IS-X-3",
+          "topicCode": "IS",
+          "topicTitle": "Introduction to Science"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which tube carries the egg from the ovary to the uterus?",
+          "options": [
+            "Urethra",
+            "Oviduct",
+            "Vagina",
+            "Bladder"
+          ],
+          "answer": 1,
+          "explanation": "The oviduct (fallopian tube) carries the egg from the ovary to the uterus.",
+          "hint": "It is also called the fallopian tube.",
+          "id": "RV-X-6",
+          "topicCode": "RV",
+          "topicTitle": "Reproduction and Variation"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which of the following is a primary consumer in a food chain?",
+          "options": [
+            "Lion",
+            "Zebra",
+            "Grass",
+            "Bacteria"
+          ],
+          "answer": 1,
+          "explanation": "A primary consumer eats plants (producers). The zebra is a herbivore that eats grass.",
+          "hint": "Primary consumers eat plants, not other animals.",
+          "id": "EI-X-6",
+          "topicCode": "EI",
+          "topicTitle": "Ecological Interactions"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which type of data is 'colour of a flower'?",
+          "options": [
+            "Continuous data",
+            "Discrete data",
+            "Categoric data",
+            "Numerical data"
+          ],
+          "answer": 2,
+          "explanation": "Categoric data consists of words or labels, like colours, names, or types. It cannot be measured numerically.",
+          "hint": "Is this a word/label or a number you can measure?",
+          "id": "IS-X-8",
+          "topicCode": "IS",
+          "topicTitle": "Introduction to Science"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "In plants, which structure contains the male gamete?",
+          "options": [
+            "Sepal",
+            "Pollen",
+            "Carpel",
+            "Stigma"
+          ],
+          "answer": 1,
+          "explanation": "Pollen contains the male gamete (sperm cell) in plants.",
+          "hint": "The powder-like substance that causes hay fever.",
+          "id": "RV-X-3",
+          "topicCode": "RV",
+          "topicTitle": "Reproduction and Variation"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Liquid → gas is called…",
+          "options": [
+            "Condensing",
+            "Freezing",
+            "Evaporating",
+            "Subliming"
+          ],
+          "answer": 2,
+          "explanation": "Liquid to gas is evaporating, like water turning into steam.",
+          "hint": "What happens to puddles on a sunny day?",
+          "id": "PM-X-8",
+          "topicCode": "PM",
+          "topicTitle": "The Particle Model"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "In plant cells, the vacuole is mainly used for:",
+          "options": [
+            "Making energy",
+            "Storing water and maintaining cell shape",
+            "Controlling the cell",
+            "Breaking down waste"
+          ],
+          "answer": 1,
+          "explanation": "The large central vacuole in plant cells stores water, nutrients, and helps the plant cell maintain its rigid shape and firmness.",
+          "hint": "It keeps the plant cell firm and stores cell sap.",
+          "id": "CS-X-11",
+          "topicCode": "CS",
+          "topicTitle": "Cells to Systems"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "What is the smallest particle of an element called?",
+          "options": [
+            "Molecule",
+            "Atom",
+            "Compound",
+            "Element"
+          ],
+          "answer": 1,
+          "explanation": "An atom is the smallest particle of an element that still has the properties of that element.",
+          "hint": "Think about what the smallest unit is...",
+          "id": "AE-X-8",
+          "topicCode": "AE",
+          "topicTitle": "Atoms and Elements"
+        },
+        {
+          "type": "mcq",
+          "level": "advanced",
+          "q": "Which organelle is responsible for releasing energy in both plant and animal cells through aerobic respiration?",
+          "options": [
+            "Ribosome",
+            "Mitochondrion",
+            "Golgi apparatus",
+            "Lysosome"
+          ],
+          "answer": 1,
+          "explanation": "Mitochondria are the powerhouses of the cell, breaking down glucose to release energy in the form of ATP during aerobic respiration.",
+          "hint": "Think about which organelle produces the energy currency of the cell.",
+          "id": "CS-X-24",
+          "topicCode": "CS",
+          "topicTitle": "Cells to Systems"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "What is the SI unit of electrical current?",
+          "options": [
+            "Volt",
+            "Amp",
+            "Ohm",
+            "Watt"
+          ],
+          "answer": 1,
+          "explanation": "The SI unit of electrical current is the Amp (ampere).",
+          "hint": "An ammeter measures this unit.",
+          "id": "EE-X-1",
+          "topicCode": "EE",
+          "topicTitle": "Electricity and Energy"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "What is the name of the cell that is produced when a sperm and egg join together?",
+          "options": [
+            "Gamete",
+            "Zygote",
+            "Embryo",
+            "Fetus"
+          ],
+          "answer": 1,
+          "explanation": "A zygote is the cell formed when a sperm nucleus fuses with an egg nucleus during fertilisation.",
+          "hint": "It's what forms immediately after fertilisation.",
+          "id": "RV-X-9",
+          "topicCode": "RV",
+          "topicTitle": "Reproduction and Variation"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "A nerve cell has a very long extension called an axon. Why is this adaptation useful?",
+          "options": [
+            "To store more nutrients",
+            "To transmit electrical signals over long distances in the body",
+            "To produce more energy",
+            "To absorb oxygen from the air"
+          ],
+          "answer": 1,
+          "explanation": "The axon allows nerve cells to send signals quickly from the brain or spinal cord to distant parts of the body.",
+          "hint": "Think about what nerve cells need to do to communicate with distant body parts.",
+          "id": "CS-X-18",
+          "topicCode": "CS",
+          "topicTitle": "Cells to Systems"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "What does the wavelength of a wave measure?",
+          "options": [
+            "The time taken for one wave",
+            "The distance from one wave crest to the next crest",
+            "How fast the wave moves",
+            "How tall the wave is"
+          ],
+          "answer": 1,
+          "explanation": "Wavelength is the distance between two identical points on a wave, such as from one crest to the next crest.",
+          "hint": "Look at the distance between the highest points of a wave.",
+          "id": "WS-X-3",
+          "topicCode": "WS",
+          "topicTitle": "Waves and Sound"
+        },
+        {
+          "type": "mcq",
+          "level": "advanced",
+          "q": "In a stable ecosystem, what does the cycling of nutrients between biotic and abiotic components primarily depend on?",
+          "options": [
+            "The number of producers only",
+            "Decomposers breaking down dead material and returning elements to the soil",
+            "Predators eating their prey",
+            "Plants being green"
+          ],
+          "answer": 1,
+          "explanation": "Decomposers are essential for nutrient cycling because they break down dead organisms and waste, returning nutrients (like nitrogen and carbon) to the soil and atmosphere so producers can use them again.",
+          "hint": "What organism breaks down dead leaves and returns nutrients to soil?",
+          "id": "EI-X-25",
+          "topicCode": "EI",
+          "topicTitle": "Ecological Interactions"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "A student repeats a mass measurement four times and gets: 25.0 g, 25.1 g, 25.0 g, 25.2 g. The actual mass is 35.0 g. Which statement is true?",
+          "options": [
+            "The results are accurate but not precise",
+            "The results are precise but not accurate",
+            "The results are both accurate and precise",
+            "The results are neither accurate nor precise"
+          ],
+          "answer": 1,
+          "explanation": "Results are close together (25.0–25.2 g) so they are precise. But they are far from 35.0 g so they are not accurate—there is a systematic error.",
+          "hint": "Check if readings are close to each other AND close to the true value.",
+          "id": "IS-X-16",
+          "topicCode": "IS",
+          "topicTitle": "Introduction to Science"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which method separates different coloured dyes in ink?",
+          "options": [
+            "Filtration",
+            "Evaporation",
+            "Chromatography",
+            "Distillation"
+          ],
+          "answer": 2,
+          "explanation": "Chromatography separates substances by how they move at different rates up absorbent paper.",
+          "hint": "This method creates a colourful pattern on paper.",
+          "id": "MS-X-11",
+          "topicCode": "MS",
+          "topicTitle": "Matter and Separation"
+        },
+        {
+          "type": "mcq",
+          "level": "advanced",
+          "q": "An element has the electron configuration 2,8,7. Which of the following statements is true?",
+          "options": [
+            "It is an alkali metal with atomic number 17",
+            "It is a halogen with atomic number 17",
+            "It is a transition metal with atomic number 17",
+            "It is a noble gas with atomic number 18"
+          ],
+          "answer": 1,
+          "explanation": "An element with 2,8,7 electrons has 17 protons (atomic number 17), making it chlorine. With 7 electrons in the outermost shell, it is in Group 17 (halogens), not a noble gas.",
+          "hint": "Count the total electrons to find the atomic number. What group has 7 outer electrons?",
+          "id": "AE-X-27",
+          "topicCode": "AE",
+          "topicTitle": "Atoms and Elements"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Which of the following is the correct order of organisation from smallest to largest?",
+          "options": [
+            "Organ system → organ → tissue → cell",
+            "Cell → tissue → organ → organ system",
+            "Tissue → cell → organ → organ system",
+            "Cell → organ → tissue → organ system"
+          ],
+          "answer": 1,
+          "explanation": "Cells are the smallest living units. Similar cells form tissues, tissues form organs, and organs work together in organ systems.",
+          "hint": "Start with the smallest unit of life and build up.",
+          "id": "CS-X-22",
+          "topicCode": "CS",
+          "topicTitle": "Cells to Systems"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "A red blood cell is specialised to carry oxygen. Which feature helps it do this job most effectively?",
+          "options": [
+            "It has a large nucleus",
+            "It contains haemoglobin protein",
+            "It has a thick cell wall",
+            "It contains many chloroplasts"
+          ],
+          "answer": 1,
+          "explanation": "Haemoglobin is a protein in red blood cells that binds to oxygen and transports it around the body.",
+          "hint": "Think about what substance red blood cells need to carry.",
+          "id": "CS-X-13",
+          "topicCode": "CS",
+          "topicTitle": "Cells to Systems"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Liquid → gas is called…",
+          "options": [
+            "Freezing",
+            "Condensing",
+            "Evaporating",
+            "Subliming"
+          ],
+          "answer": 2,
+          "explanation": "Liquid to gas is evaporating, like water turning into steam when heated.",
+          "hint": "What happens to puddles on a sunny day?",
+          "id": "PM-X-2",
+          "topicCode": "PM",
+          "topicTitle": "The Particle Model"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "A drum is struck and produces a sound. Which of the following describes the motion of the drum head?",
+          "options": [
+            "It vibrates side-to-side",
+            "It moves in a straight line away from you",
+            "It vibrates up and down",
+            "It rotates continuously"
+          ],
+          "answer": 2,
+          "explanation": "When struck, the drum head oscillates (vibrates) up and down repeatedly, creating compressions and rarefactions in the air that form sound waves.",
+          "hint": "Think about what happens to the surface of a drum when you hit it.",
+          "id": "WS-X-14",
+          "topicCode": "WS",
+          "topicTitle": "Waves and Sound"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which of the following is a conductor?",
+          "options": [
+            "Rubber",
+            "Wood",
+            "Aluminium",
+            "Glass"
+          ],
+          "answer": 2,
+          "explanation": "Aluminium is a metal that allows electricity to flow through it easily — it is a conductor.",
+          "hint": "Conductors are usually shiny metals.",
+          "id": "EE-X-8",
+          "topicCode": "EE",
+          "topicTitle": "Electricity and Energy"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "What term describes when one animal hunts and eats another animal?",
+          "options": [
+            "Parasitism",
+            "Predation",
+            "Photosynthesis",
+            "Decomposition"
+          ],
+          "answer": 1,
+          "explanation": "Predation is the relationship where a predator hunts and eats prey.",
+          "hint": "Think of a word that sounds like 'predator'.",
+          "id": "EI-X-8",
+          "topicCode": "EI",
+          "topicTitle": "Ecological Interactions"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "In a sugar solution, what is the solvent?",
+          "options": [
+            "Sugar",
+            "Water",
+            "The mixture",
+            "Air"
+          ],
+          "answer": 1,
+          "explanation": "The solvent is the liquid that dissolves the solute. Water dissolves the sugar.",
+          "hint": "Which part is the liquid?",
+          "id": "MS-X-7",
+          "topicCode": "MS",
+          "topicTitle": "Matter and Separation"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "What is the name of the process when liquid → solid?",
+          "options": [
+            "Evaporating",
+            "Melting",
+            "Freezing",
+            "Condensing"
+          ],
+          "answer": 2,
+          "explanation": "Liquid to solid is freezing, like water turning into ice.",
+          "hint": "This is the opposite of melting.",
+          "id": "PM-X-12",
+          "topicCode": "PM",
+          "topicTitle": "The Particle Model"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Why does a puddle of water eventually disappear on a sunny day without reaching 100°C?",
+          "options": [
+            "The water is absorbed into the ground",
+            "Evaporation occurs at the surface where some particles have enough energy to escape",
+            "The water turns into ice",
+            "Wind blows all the water away"
+          ],
+          "answer": 1,
+          "explanation": "Evaporation happens at any temperature when particles at the surface have enough kinetic energy to overcome forces and escape into the air.",
+          "hint": "Not all particles need the same energy to leave the liquid surface.",
+          "id": "PM-X-15",
+          "topicCode": "PM",
+          "topicTitle": "The Particle Model"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Why is it important to use appropriate units when recording scientific measurements?",
+          "options": [
+            "It makes the work look neater",
+            "It ensures others can understand and interpret your results correctly",
+            "It reduces the need for repeats",
+            "It automatically makes the experiment more accurate"
+          ],
+          "answer": 1,
+          "explanation": "Units (g, cm, °C, mL, etc.) communicate the type and scale of measurement. Without them, results are meaningless and others cannot compare or use your data.",
+          "hint": "What would '25' mean without knowing if it's grams, kilograms, or millilitres?",
+          "id": "IS-X-17",
+          "topicCode": "IS",
+          "topicTitle": "Introduction to Science"
+        },
+        {
+          "type": "mcq",
+          "level": "basic",
+          "q": "Which state of matter has particles that are tightly packed and vibrate in fixed positions?",
+          "options": [
+            "Gas",
+            "Liquid",
+            "Solid",
+            "Plasma"
+          ],
+          "answer": 2,
+          "explanation": "Solid particles are tightly packed together and can only vibrate in fixed positions, giving solids a definite shape and volume.",
+          "hint": "Think of something hard like a rock or metal.",
+          "id": "PM-X-1",
+          "topicCode": "PM",
+          "topicTitle": "The Particle Model"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Which renewable energy source is most reliable because it works day and night?",
+          "options": [
+            "Solar power",
+            "Wind power",
+            "Tidal power",
+            "Geothermal power"
+          ],
+          "answer": 3,
+          "explanation": "Geothermal power uses heat from inside the Earth, which is constant day and night. Solar only works during daylight and wind varies throughout the day.",
+          "hint": "Which energy source does not depend on weather or time of day?",
+          "id": "EE-X-22",
+          "topicCode": "EE",
+          "topicTitle": "Electricity and Energy"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Which of the following is a transverse wave?",
+          "options": [
+            "A sound wave in air",
+            "A wave on a stretched string",
+            "A compression wave in a spring",
+            "An ultrasound wave"
+          ],
+          "answer": 1,
+          "explanation": "A wave on a stretched string oscillates perpendicular (at right angles) to the direction of wave travel, making it transverse. Sound waves are longitudinal (parallel to travel direction).",
+          "hint": "Transverse waves vibrate perpendicular to the direction the wave travels.",
+          "id": "WS-X-16",
+          "topicCode": "WS",
+          "topicTitle": "Waves and Sound"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Which piece of equipment would be most suitable for measuring exactly 25 mL of liquid in a chemistry experiment?",
+          "options": [
+            "A beaker",
+            "A measuring cylinder",
+            "A pipette or burette",
+            "A funnel"
+          ],
+          "answer": 2,
+          "explanation": "A pipette or burette measures liquids very precisely. A measuring cylinder is less precise. Beakers are for rough estimates only.",
+          "hint": "Which equipment is designed for precise volume measurement?",
+          "id": "IS-X-14",
+          "topicCode": "IS",
+          "topicTitle": "Introduction to Science"
+        },
+        {
+          "type": "mcq",
+          "level": "intermediate",
+          "q": "Why is distillation used to separate salt from seawater but not to separate sand from seawater?",
+          "options": [
+            "Sand dissolves in water but salt does not",
+            "Salt has a higher boiling point than water",
+            "Sand does not dissolve in water, so it can be filtered out first",
+            "Distillation only works with dissolved solids"
+          ],
+          "answer": 2,
+          "explanation": "Sand is insoluble and settles, so it can be removed by filtration before distillation. Distillation then separates the dissolved salt from water.",
+          "hint": "Think about what each substance does in water - does it dissolve or not?",
+          "id": "MS-X-13",
+          "topicCode": "MS",
+          "topicTitle": "Matter and Separation"
+        }
+      ]
+    },
+    {
       "id": "P2-mock1",
       "paper": 2,
       "title": "Paper 2 — Mock 1",

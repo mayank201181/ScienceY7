@@ -83,6 +83,55 @@ def build_paper1():
     return mocks
 
 
+def build_paper1_fresh():
+    """4 mocks × 60 MCQs from fresh AI-generated questions (Mocks 9-12).
+
+    Uses content/mocks_extra_questions.json (built by generate_extra_mcqs.py).
+    Returns an empty list if that file isn't present yet.
+    """
+    extra_path = os.path.join(CONTENT, "mocks_extra_questions.json")
+    if not os.path.exists(extra_path):
+        return []
+    extra = json.load(open(extra_path))["topics"]
+    pool = []
+    for code in TOPIC_CODES:
+        for q in extra.get(code, []):
+            q["topicCode"] = code
+            q["topicTitle"] = TOPIC_TITLES[code]
+            pool.append(q)
+    if not pool:
+        return []
+    mocks = []
+    for n in range(4):
+        rng = random.Random(500 + n)
+        by_topic = {c: [q for q in pool if q["topicCode"] == c] for c in TOPIC_CODES}
+        for c in TOPIC_CODES:
+            rng.shuffle(by_topic[c])
+        paper, topics_q = [], {c: list(by_topic[c]) for c in TOPIC_CODES}
+        while len(paper) < 60:
+            progressed = False
+            for c in TOPIC_CODES:
+                if topics_q[c] and len(paper) < 60:
+                    paper.append(topics_q[c].pop(0))
+                    progressed = True
+            if not progressed:
+                refill = list(pool)
+                rng.shuffle(refill)
+                paper.extend(refill[: 60 - len(paper)])
+                break
+        rng.shuffle(paper)
+        mocks.append({
+            "id": f"P1-mock{n + 9}",
+            "paper": 1,
+            "title": f"Paper 1 — Mock {n + 9}",
+            "durationMin": 45,
+            "totalQuestions": len(paper),
+            "instructions": "60 multiple-choice questions. Fresh question set (different from Mocks 1-8). 45 minutes. 1 mark each.",
+            "questions": paper,
+        })
+    return mocks
+
+
 def build_paper2():
     """4 mocks × ~45 marks of short-answer, balanced across topics."""
     pool = gather("short")  # ~120 shorts with various marks
@@ -125,7 +174,7 @@ def build_paper2():
 
 
 def main():
-    mocks = build_paper1() + build_paper2()
+    mocks = build_paper1() + build_paper1_fresh() + build_paper2()
     out_path = os.path.join(CONTENT, "mocks.json")
     with open(out_path, "w") as f:
         json.dump({"mocks": mocks}, f, indent=2, ensure_ascii=False)
